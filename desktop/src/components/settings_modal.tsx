@@ -284,7 +284,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                         <span>Cập nhật ứng dụng</span>
                       </h3>
                       <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                        Kiểm tra phiên bản mới nhất và cập nhật bảo trì hệ thống cho macOS.
+                        Kiểm tra phiên bản mới nhất và cập nhật ứng dụng.
                       </p>
                     </div>
                     <span className="px-2.5 py-1 text-xs font-mono font-semibold bg-cyan-100 dark:bg-cyan-500/20 text-cyan-800 dark:text-cyan-300 rounded-full border border-cyan-300 dark:border-cyan-500/30">
