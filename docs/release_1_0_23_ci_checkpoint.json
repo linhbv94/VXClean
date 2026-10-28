@@ -1,0 +1,37 @@
+{
+  "status": "queued",
+  "conclusion": "",
+  "head_sha": "a9ea43d725e17d41d943e145ac5e52211d91b61b",
+  "url": "https://github.com/linhbv94/VXClean/actions/runs/40622337715",
+  "jobs": [
+    {
+      "name": "prepare",
+      "status": "completed",
+      "conclusion": "success",
+      "active": []
+    },
+    {
+      "name": "build (xcode-27, aarch64-apple-darwin, app,dmg, macos_silicon)",
+      "status": "in_progress",
+      "conclusion": "",
+      "active": [
+        "Build and upload signed updater packages"
+      ]
+    },
+    {
+      "name": "build (windows-2022, x86_64-pc-windows-msvc, nsis, windows_x64)",
+      "status": "completed",
+      "conclusion": "success",
+      "active": []
+    },
+    {
+      "name": "build (xcode-27, x86_64-apple-darwin, app,dmg, macos_intel)",
+      "status": "queued",
+      "conclusion": "",
+      "active": []
+    }
+  ],
+  "repo": "linhbv94/VXClean",
+  "run_id": 40622337715,
+  "observed_at_utc": "2026-10-28T03:01:56.692254+00:00"
+}

@@ -1,3 +1,11 @@
+# VXClean — Secrets hiện hành
+
+Workflow VXClean dùng TAURI_SIGNING_PRIVATE_KEY, TAURI_SIGNING_PRIVATE_KEY_PASSWORD, VXCLEAN_MACOS_CERTIFICATE và VXCLEAN_MACOS_CERTIFICATE_PASSWORD đã có trong repo. Giữ key/certificate hiện tại; không in giá trị hoặc tạo lại khi chỉ lỗi build. Không cần Apple Developer ID/notarization trả phí trong profile này. Đọc [hướng dẫn release](../docs/desktop_release.md) và workflow thật.
+
+---
+
+**Phần dưới là tài liệu upstream được giữ làm lịch sử; không dùng các repo/Secrets/notarization instructions đó để phát hành VXClean hiện tại.**
+
 # Release pipeline secrets
 
 `.github/workflows/release.yml` requires the following GitHub Actions secrets

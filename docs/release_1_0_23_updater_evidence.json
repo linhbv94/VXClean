@@ -1,0 +1,14 @@
+{
+  "state": "baseline_verified",
+  "platform": "macos_silicon",
+  "before_version": "1.0.22",
+  "identifier": "com.vxclean.desktop",
+  "before_sha256": "54410ff4aa64d991090992c1f7e9ef6d1d1d44c387a29344c6bdbc7f26e42361",
+  "before_dr": "designated => identifier \"com.vxclean.desktop\" and certificate leaf = H\"fe024021592c718a39ad70b76d2edc5da0cd6b70\"\nExecutable=/private/tmp/vxclean_release_20261028/updater_fixture/VXClean.app/Contents/MacOS/vxclean",
+  "scope": "Owned CI bundle fixture; user installation unchanged",
+  "before_fda_manual_probe": "access_confirmed",
+  "before_ui_version": "1.0.22",
+  "permission_granted_during_test": false,
+  "expected_theme": "system",
+  "expected_language": "vi"
+}

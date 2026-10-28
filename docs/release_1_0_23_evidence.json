@@ -1,0 +1,134 @@
+{
+  "version": "1.0.23",
+  "state": "local_qa_ci_pending",
+  "local_qa": {
+    "rust": 51,
+    "native": {
+      "passed": [
+        "detailed_scan_has_twelve_categories_with_policy_metadata",
+        "foundation_http_payload_cold_miss_regeneration_database_and_state_preserved",
+        "quick_owns_diagnostics_detailed_cannot_borrow_child_authority",
+        "scope_groups_ai_history_protected_large_files_opt_in_symlink_exclusion",
+        "reject_missing_confirmation_outside_roots_wrong_method_symlinks_identity",
+        "maintained_system_cache_removed_fresh_logs_trash_and_mixed_npm_blocked",
+        "mclean_system_junk_full_temp_rules_user_cache_protection_unchanged",
+        "system_recursive_partial_failure_keeps_unknown_journal_no_false_skip_or_replay",
+        "system_junk_exact_path_size_default_selection_parity_with_independent_original_mclean_42cf1f8_reference",
+        "quick_all_advertised_targets_cleaned_exact_bytes_profile_copy_lock_ipc_hardlink_external_alias_preserved",
+        "live_chrome_quick_cache_refresh_preserves_profile_rejects_links_and_state_detailed_stays_strict",
+        "live_codex_quick_cache_preserves_history_runtime_rejects_state_injection_and_root_replacement",
+        "active_wifi_log_absent_from_quick_scope_and_revalidation_rotated_log_still_cleanable",
+        "quick_scan_and_revalidation_no_specialized_cli",
+        "capcut_exact_http_only_preserves_profile_project_new_child_and_hardlinks",
+        "durable_journal_no_automatic_replay",
+        "node_cli_custom_allowlist_and_rejection_preserves_documents",
+        "lens_root_external_read_only_partial_progress_allocated_hardlinks_symlinks",
+        "lens_package_and_real_trash_or_permission_failure",
+        "orphan_policy_protects_apple_and_personal_data",
+        "cleanup_cannot_delete_uninstall_project_root_or_borrow_operation_scope",
+        "uninstall_broad_discovery_exact_names_unselected_no_symlinks",
+        "apps_exact_residual_matching_sip_rejection_and_uninstall",
+        "uninstall_unit_bundle_does_not_follow_external_symlink",
+        "invalid_commands_fail_closed",
+        "rust_quick_orphan_uninstall_producers_to_native_consumers_identity_manifest_scope",
+        "ai_frontend_exact_cache_preserves_history_state_plugins_runtime",
+        "chrome_7000_cache_files_durable_journal_preserves_profile_under_180s",
+        "chrome_25001_files_scan_selectable_streaming_cleanup_preserves_profile",
+        "admin_guard_raw_tmp_var_tmp_uses_physical_realpath",
+        "single_admin_pass_success_cancel_quoting_identity_guard",
+        "admin_changed_parent_or_metadata_does_not_abort_valid_sibling",
+        "blocked_large_file_worker_timeout_preserves_other_scan_categories",
+        "passive_reconcile_running_updated_app_without_duplicate_launch",
+        "appkit_fixture_quit_cancel_rescan_cleanup_reopen_no_duplicate",
+        "quick_live_cache_no_quit_detailed_lifecycle_preserved"
+      ],
+      "count": 36,
+      "trash_outcomes": [
+        {
+          "success_count": 1,
+          "failure_count": 0,
+          "details": [
+            {
+              "affected_bytes": 48,
+              "method_used": "trash",
+              "path": "/Users/vic/_Work/zTools/vxclean/desktop/native/.vxclean_fixture_dhi1nir5/home/Documents/vxclean_fixture_122e141444f4409b87547b01302d6029.txt",
+              "status": "success",
+              "test_trash_path": "/Users/vic/.Trash/vxclean_fixture_122e141444f4409b87547b01302d6029.txt"
+            }
+          ]
+        },
+        {
+          "success_count": 1,
+          "failure_count": 0,
+          "details": [
+            {
+              "affected_bytes": 461,
+              "method_used": "trash",
+              "path": "/Users/vic/_Work/zTools/vxclean/desktop/native/.vxclean_fixture_dhi1nir5/home/Applications/Vendor/vxclean_fixture_122e141444f4409b87547b01302d6029.app",
+              "status": "success",
+              "test_trash_path": "/Users/vic/.Trash/vxclean_fixture_122e141444f4409b87547b01302d6029.app"
+            }
+          ]
+        }
+      ],
+      "memory_checks": [
+        {
+          "scenario": "native_chrome_7000_cache_files",
+          "peak_rss_bytes": 119472128
+        },
+        {
+          "scenario": "native_chrome_7000_cache_files",
+          "peak_rss_bytes": 177324032
+        }
+      ]
+    },
+    "manager": {
+      "count": 9,
+      "passed": [
+        "pnpm_cli_only_prune_no_scan_mutation_preserves_referenced_hardlink_and_project_inventory_not_reclaimable",
+        "pnpm_nonzero_exit_is_failure_not_success",
+        "pnpm_partial_failure_keeps_durable_unknown_no_replay",
+        "pnpm_timeout_no_replay_truthful_partial_unknown",
+        "pnpm_outside_store_and_changed_plan_rejected",
+        "pnpm_confirmation_and_cancel_no_mutation",
+        "anti_exact_installer_version_match_shipit_advice_mismatch_no_grant",
+        "anti_deletes_only_selected_archive_keeps_pending_state_shipit_app",
+        "detailed_quick_path_child_parent_no_overlap_external_media_preserved"
+      ],
+      "real_user_data_deleted": false
+    },
+    "frontend": "pass",
+    "release_profile_tests": 7
+  },
+  "real_user_data_deleted": false,
+  "baseline_public": "1.0.22",
+  "profile": {
+    "macos": "native engine",
+    "windows": "UI/update-only"
+  },
+  "cost_policy": "public repo, standard xcode-27/windows-2022; no caches or workflow artifacts",
+  "pr": 8,
+  "native_ui": {
+    "platform": "macos_silicon",
+    "telemetry": "real populated values",
+    "quick_scan": "readonly result; no clean action",
+    "user_cache_selectable": "5.56GB",
+    "google_excluded_bytes": 0,
+    "excluded_rows": 17,
+    "excluded_sorted_descending": true,
+    "warning": "system_junk incomplete read/traversal bounds; UI surfaces warning",
+    "fda_manual_probe": "access_confirmed; no permission granted this turn",
+    "mutation_real_data": false
+  },
+  "local_os_signature": {
+    "certificate_leaf_sha1": "fe024021592c718a39ad70b76d2edc5da0cd6b70",
+    "strict_verify": true,
+    "sdk": "27.0"
+  },
+  "tag": "v1.0.23",
+  "sha": "a9ea43d725e17d41d943e145ac5e52211d91b61b",
+  "build_run_id": 40622337715,
+  "pr_checks_run_id": 40621379489,
+  "pr_checks": "Mac and Windows success before final text-only copy update",
+  "local_keychain_relocked": true
+}

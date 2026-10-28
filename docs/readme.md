@@ -1,5 +1,7 @@
 # Thư Mục Tài Liệu Kỹ Thuật VXClean (Documentation Index)
 
+**Phát hành hiện tại:** đọc [hướng dẫn release](desktop_release.md) và [QA1.0.23](release_1_0_23_review.md). Các mục spike/handoff phía dưới có thể là thông tin lịch sử.
+
 Thư mục này tập trung toàn bộ tài liệu đặc tả, báo cáo kiểm định kỹ thuật, hồ sơ nguồn gốc mã nguồn và lịch sử quy trình phối hợp phát triển dự án **VXClean**.
 
 Scope mới nhất: [Quick ba nhóm và Dọn chi tiết từng nhóm/toàn bộ lựa chọn](spec/14_quick_detailed_scope.md). Đã triển khai Quick3groups và một phần policy/Detail/tray; trạng thái thực và nhánh blocked ở [implementation local](spec/17_local_implementation_status.md). Implementation hiện tại: [truth engine](spec/13_engine_behavior_truth.md). Bằng chứng review: [audit engine](engine_scope_audit_2026_10_10.md) và [fixture rà Quick](quick_scope_recheck_evidence.json). Đọc scope mới trước khi dùng các yêu cầu “giữ nguyên Quick” trong tài liệu/lịch sử cũ.
