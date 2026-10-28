@@ -27,3 +27,7 @@ AI Apps đã chuyển sang Codex/Antigravity/ChatGPT; history/images/plugin/runt
 ## Quét nhanh — cập nhật tiếp2026-10-10
 
 Adapter mới cho HTTPpayload UUID tại fsCachedData của helpd/tipsd/AMPLibraryAgent; giữ parent/database/WAL/SHM/HSTS/state. Diagnostic cá nhân .ips/.crash/.diag trực tiếp cũ≥7ngày có thể chọn, mặc định bỏ chọn vì báo cáo cũ không tái tạo. System/temp/log khác vẫn khóa. UI hiển thị lý do khóa, hậu quả và tổng phát hiện/đủ điều kiện riêng.22nativegroups/20Rust đạt: Foundation cold cache500KB→native dọn payload→cache miss→tạo lại500KB; database/state giữ bytes; báo cáo mới/type sai/nested bị từ chối. Scan thật chỉ đọc~15MB cacheeligible; không dọn dữ liệu thật lượt này. [Spec](19_quick_cleanup_validation.md) · [Evidence](../quick_cleanup_validation_evidence.json). Gói/QA UI ghi trạng thái hiện tại trong evidence, không suy từ build sang nghiệm thu mọi scope.
+
+## Quick live cache lớn — 2026-10-27
+
+Theo [spec24](24_single_admin_pass_quick_live_cache.md), live_cache_root dùng ticket root identity; native duyệt kiểm chứng toàn cây rồi batch512file, không dùng full-subtree manifest hoặc cap20.000entries/3MiB để loại cache lớn. Quyền/rule/link/identity/journal vẫn đối soát độc lập. Strict cleanup và Lens không đổi. Xem [báo cáo/evidence](../large_cache_cleanup_report.md).

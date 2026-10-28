@@ -34,6 +34,9 @@ jobs:
         with:
           ref: refs/tags/${{ inputs.tag || github.ref_name }}
           persist-credentials: false
+      - name: Select exact macOS SDK27.0
+        if: runner.os == 'macOS'
+        run: node scripts/macos_sdk_gate.mjs --select-ci
       - uses: actions/setup-node@v5
         with:
           node-version: '24'
@@ -61,11 +64,15 @@ jobs:
       max-parallel: 1
       matrix:
         include:
-          - runner: macos-15
+          - runner: windows-2022
+            target: x86_64-pc-windows-msvc
+            bundles: nsis
+            asset_platform: windows_x64
+          - runner: xcode-27
             target: aarch64-apple-darwin
             bundles: app,dmg
             asset_platform: macos_silicon
-          - runner: macos-15-intel
+          - runner: xcode-27
             target: x86_64-apple-darwin
             bundles: app,dmg
             asset_platform: macos_intel
@@ -77,6 +84,9 @@ jobs:
           ref: refs/tags/${{ needs.prepare.outputs.tag }}
           fetch-depth: 0
           persist-credentials: false
+      - name: Select exact macOS SDK27.0
+        if: runner.os == 'macOS'
+        run: node scripts/macos_sdk_gate.mjs --select-ci
       - uses: actions/setup-node@v5
         with:
           node-version: '24'
@@ -85,6 +95,7 @@ jobs:
         with:
           targets: ${{ matrix.target }}
       - name: Install stable macOS signing identity
+        if: runner.os == 'macOS'
         env:
           VXCLEAN_MACOS_CERTIFICATE: ${{ secrets.VXCLEAN_MACOS_CERTIFICATE }}
           VXCLEAN_MACOS_CERTIFICATE_PASSWORD: ${{ secrets.VXCLEAN_MACOS_CERTIFICATE_PASSWORD }}
@@ -93,11 +104,13 @@ jobs:
         run: npm ci --ignore-scripts
         working-directory: desktop
       - name: Rust safety and journal regression
-        run: cargo test --locked --lib
+        run: cargo test --locked --lib ${{ runner.os == 'Windows' && 'maintenance_bridge::tests' || '' }}
         working-directory: desktop/src_tauri
       - name: Native safety and lifecycle fixtures
+        if: runner.os == 'macOS'
         run: python3 scripts/test_native_maintenance.py
       - name: Manager cleanup fixtures
+        if: runner.os == 'macOS'
         run: python3 scripts/test_manager_cleanup.py
       - name: Frontend state regression
         run: |
@@ -111,6 +124,14 @@ jobs:
         run: node --test scripts/test_release_automation.mjs
       - name: Recent opening regression
         run: node --test scripts/test_recent.mjs
+      - name: Configure platform build overlay
+        shell: bash
+        run: |
+          if [[ "$RUNNER_OS" == "Windows" ]]; then
+            echo 'VXCLEAN_BUILD_CONFIG={}' >> "$GITHUB_ENV"
+          else
+            echo "VXCLEAN_BUILD_CONFIG=$VXCLEAN_SIGNER_CONFIG" >> "$GITHUB_ENV"
+          fi
       - name: Build and upload signed updater packages
         uses: tauri-apps/tauri-action@v1
         env:
@@ -130,14 +151,15 @@ jobs:
           releaseAssetNamePattern: '${{ needs.prepare.outputs.asset_prefix }}_[version]_${{ matrix.asset_platform }}[_setup][ext]'
           projectPath: desktop
           tauriScript: npm run tauri
-          args: --config "${{ env.VXCLEAN_SIGNER_CONFIG }}" --target ${{ matrix.target }} --bundles ${{ matrix.bundles }} -- --locked
+          args: --config "${{ env.VXCLEAN_BUILD_CONFIG }}" --target ${{ matrix.target }} --bundles ${{ matrix.bundles }} -- --locked
       - name: Verify certificate-bound package identity
+        if: runner.os == 'macOS'
         run: |
           APP="desktop/src_tauri/target/${{ matrix.target }}/release/bundle/macos/VXClean.app"
           codesign --verify --deep --strict "$APP"
           codesign -d -r- "$APP" 2>&1 | grep -F 'certificate leaf = H"fe024021592c718a39ad70b76d2edc5da0cd6b70"'
       - name: Remove temporary signing identity
-        if: always()
+        if: always() && runner.os == 'macOS'
         run: python3 scripts/ci_macos_signer.py cleanup
 
   validate:
@@ -153,6 +175,9 @@ jobs:
           ref: refs/tags/${{ needs.prepare.outputs.tag }}
           fetch-depth: 0
           persist-credentials: false
+      - name: Select exact macOS SDK27.0
+        if: runner.os == 'macOS'
+        run: node scripts/macos_sdk_gate.mjs --select-ci
       - uses: actions/setup-node@v5
         with:
           node-version: '24'

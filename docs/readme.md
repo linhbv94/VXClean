@@ -2,6 +2,10 @@
 
 Thư mục này tập trung toàn bộ tài liệu đặc tả, báo cáo kiểm định kỹ thuật, hồ sơ nguồn gốc mã nguồn và lịch sử quy trình phối hợp phát triển dự án **VXClean**.
 
+Scope mới nhất: [Quick ba nhóm và Dọn chi tiết từng nhóm/toàn bộ lựa chọn](spec/14_quick_detailed_scope.md). Đã triển khai Quick3groups và một phần policy/Detail/tray; trạng thái thực và nhánh blocked ở [implementation local](spec/17_local_implementation_status.md). Implementation hiện tại: [truth engine](spec/13_engine_behavior_truth.md). Bằng chứng review: [audit engine](engine_scope_audit_2026_10_10.md) và [fixture rà Quick](quick_scope_recheck_evidence.json). Đọc scope mới trước khi dùng các yêu cầu “giữ nguyên Quick” trong tài liệu/lịch sử cũ.
+
+Contract chuẩn bị release: [policy backend](spec/15_cleanup_protection_policy.md), [JSON bảo vệ](cleanup_protection_contract.json), [menubar/Dock/head bar](spec/16_menubar_release_ui.md), [handoff triển khai](release_preparation_handoff.md). Spec 00–06 đã thay API/defaults/QA/demo cũ mâu thuẫn, giữ nguyên văn bản trước ở [spec history](spec_history/readme.md). Policy/tray local đã có source; build/runtime evidence ở [báo cáo local](local_completion_report.md), còn blockers được ghi rõ. Chưa publish.
+
 ---
 
 ## 1. Quy Trình Vận Hành & Phối Hợp Đa Agent (Dual-Agent Workflow)

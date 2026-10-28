@@ -115,7 +115,7 @@ fn collect_manifests_scope(value:&Value,output:&mut HashMap<String,Value>,uninst
    if map.get("is_cleanable").and_then(Value::as_bool)!=Some(false) && map.get("can_trash").and_then(Value::as_bool)!=Some(false){
     if let Some(path)=map.get("path").and_then(Value::as_str){
      let system=map.get("rule_id").and_then(Value::as_str)==Some("mclean_system_junk") || map.get("deletion_method").and_then(Value::as_str)==Some("pnpm_prune");
-     if let Ok(proof)=manifest_authority(path,system,uninstall){output.insert(path.into(),proof);}
+     if let Ok(proof)=manifest_authority(path,system,uninstall || map.get("execution_mode").and_then(Value::as_str)==Some("live_cache_root")){output.insert(path.into(),proof);}
     }
    }
    for child in map.values(){collect_manifests_scope(child,output,uninstall);}
@@ -604,7 +604,7 @@ mod tests {
         std::fs::write(&data,b"new content").unwrap();std::fs::write(root.join("new"),b"new").unwrap();
         let mut payload=json!({"targets":[{"path":root,"deletion_method":"remove_item"}]});
         assert!(bind_quick_targets(&state,"chrome",&mut payload).unwrap().is_empty());
-        assert_eq!(payload["content_snapshots"][root.to_str().unwrap()].as_array().unwrap().len(),2);
+        assert_eq!(payload["content_snapshots"][root.to_str().unwrap()].as_array().unwrap().len(),1); // Root-only authority, no subtree payload.
         let moved=root.with_extension("old");std::fs::rename(&root,&moved).unwrap();std::fs::create_dir(&root).unwrap();
         let mut changed=json!({"targets":[{"path":root,"deletion_method":"remove_item"}]});assert_eq!(bind_quick_targets(&state,"chrome",&mut changed).unwrap().len(),1);
         std::fs::remove_dir_all(root).unwrap();std::fs::remove_dir_all(moved).unwrap();

@@ -83,3 +83,13 @@ QA GUI1.0.6 dọn69/92mục,1.131.565.337bytes;4target đổi sau scan và19admi
 ### QA độc lập trước publish1.0.15
 
 - Khi Trash từ nhánh Lens cached phải scan parent mới trước confirmation, preview lấy name/size từ item vừa scan. Không dùng metadata snapshot cũ để mô tả grant mới; nếu mục không còn cleanable thì chặn. Native vẫn revalidate identity/content trước mutation.
+
+- 2026-10-27: “Ngoài kết quả dọn” cũng sắp size_bytes giảm dần bằng bản sao mảng; không thay excluded reason, scope hay khả năng chọn/xóa.
+
+## 2026-10-27 — Cache lớn không phụ thuộc manifest toàn cây
+
+Quick live_cache_root (Chrome/Codex đã nhận diện) phải kiểm chứng toàn cây bằng lượt duyệt chỉ đọc, không gom manifest lớn vào ticket. Ticket giữ root identity; native validate lại tree/rule/no-link/hardlink trước mutation, sau đó snapshot và dọn batch tối đa512regular files. Giữ root/parent, không đi theo link; mục nguy hiểm được chặn trước batch đầu. Thay đổi trong khi thực thi vẫn kiểm tra identity từng file, cancellation và journal/per-file outcome. Không nới cap manifest cho các loại dữ liệu khác. Fixture >20.000file và >3MiB proof phải scan chọn được/dọn hết, marker profile ngoài cache giữ nguyên; symlink/hardlink/protected child phải fail closed.
+
+Wording UI không nhắc tên sản phẩm upstream; attribution/license và đường dẫn imported source không thay. Rule IDs lịch sử giữ ổn định để không phá ticket/journal, mô tả hiển thị dùng VXClean/loại dữ liệu cụ thể.
+
+Journal cache lớn: giữ tối đa200success targets trong trạng thái RAM/result.json, giữ nguyên mọi uncertain/error; events.jsonl vẫn ghi durable intent/outcome từng tệp. Event byte budget128MiB, read budget tổng256MiB; không phải quyền xóa rộng hơn. History reducer giữ200success mẫu, không coi số success đã hoàn tất là cap20.000uncertain. Phải test journal lớn qua read/recovery/compact, không chỉ xóa file. Các giới hạn chống dữ liệu lỗi vẫn fail closed và báo partial thật.

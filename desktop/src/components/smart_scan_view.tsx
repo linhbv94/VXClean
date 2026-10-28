@@ -515,7 +515,7 @@ export const SmartScanView: React.FC<SmartScanViewProps> = ({
 
             {!!scanResult.excluded_items?.length && <details className="text-xs text-slate-500 dark:text-slate-400 border border-slate-300 dark:border-white/10 rounded-lg p-3">
               <summary className="cursor-pointer">Ngoài kết quả dọn: {scanResult.excluded_items.length} mục · {formatBytes(scanResult.excluded_items.reduce((sum,item)=>sum+item.size_bytes,0))} — xem lý do giữ lại</summary>
-              <div className="max-h-48 overflow-y-auto mt-2 space-y-2">{scanResult.excluded_items.map(item=><p key={item.path}><span className="font-medium">{item.name} · {formatBytes(item.size_bytes)}</span><br/><span className="font-mono text-[10px]">{item.path}</span><br/>{item.blocked_reason ?? item.consequence_vi}</p>)}</div>
+              <div className="max-h-48 overflow-y-auto mt-2 space-y-2">{[...scanResult.excluded_items].sort((a, b) => b.size_bytes - a.size_bytes).map(item=><p key={item.path}><span className="font-medium">{item.name} · {formatBytes(item.size_bytes)}</span><br/><span className="font-mono text-[10px]">{item.path}</span><br/>{item.blocked_reason ?? item.consequence_vi}</p>)}</div>
             </details>}
           </div>
 

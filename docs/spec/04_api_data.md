@@ -90,3 +90,7 @@ Không cắt cây theo số node hoặc độ sâu. Host giữ metadata phẳng 
 ### Scan access preflight
 
 Trước các read scan thật, bridge gọi coordinator dùng chung theo [spec25](25_full_disk_access_flow.md). Query Lens snapshot và metrics không yêu cầu FDA. `access_confirmed` là evidence truy cập probe, không là deletion grant/boolean TCC chính thức. Cancel/Để sau là `ScanAccessDeferred`, không gán lỗi native; lỗi native thật giữ nguyên. Rescan nội bộ lifecycle dùng noninteractive preflight, thiếu quyền throw để finally phục hồi app.
+
+## Quick live cache lớn — 2026-10-27
+
+Theo [spec24](24_single_admin_pass_quick_live_cache.md), live_cache_root dùng ticket root identity; native duyệt kiểm chứng toàn cây rồi batch512file, không dùng full-subtree manifest hoặc cap20.000entries/3MiB để loại cache lớn. Quyền/rule/link/identity/journal vẫn đối soát độc lập. Strict cleanup và Lens không đổi. Xem [báo cáo/evidence](../large_cache_cleanup_report.md).
