@@ -1,5 +1,5 @@
 {
-  "state": "baseline_verified",
+  "state": "e2e_passed",
   "platform": "macos_silicon",
   "before_version": "1.0.22",
   "identifier": "com.vxclean.desktop",
@@ -10,5 +10,27 @@
   "before_ui_version": "1.0.22",
   "permission_granted_during_test": false,
   "expected_theme": "system",
-  "expected_language": "vi"
+  "expected_language": "vi",
+  "before_pid": 3282,
+  "baseline_manual_update_check": "current while latest public is 1.0.22",
+  "after_version": "1.0.23",
+  "after_pids": [
+    4927,
+    4929
+  ],
+  "after_fda_manual_probe": "access_confirmed",
+  "settings_preserved": {
+    "theme": "system",
+    "language": "vi"
+  },
+  "after_ui_version": "1.0.23",
+  "updated_files_sha256": {
+    "Contents/MacOS/vxclean": "61dca84aab86226488f95bc54b57ae07db991edf72102175704ee17633b583a5",
+    "Contents/Resources/vxclean_engine": "d3f9311f686eca7b3287b77bd55b207eec2135d91d78bb25b94927a9d6fb0a3f"
+  },
+  "byte_exact_ci": true,
+  "strict_codesign": true,
+  "certificate_binding_unchanged": true,
+  "signature_check_note": "Restricted sandbox verification failed; same read-only codesign check under allowed escalation passed valid on disk and DR",
+  "scope_limit": "Mac Silicon only; Windows/Intel runtime updater not tested"
 }

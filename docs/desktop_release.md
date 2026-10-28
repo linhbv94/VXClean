@@ -1,6 +1,9 @@
 # VXClean — vận hành release
 
-Baseline public1.0.22; bản1.0.23 đang QA/release ngày2026-10-28. Nguồn trạng thái: work_log tổng và release_1_0_23_review.md/evidence.json. Không coi các báo cáo spike/handoff cũ là trạng thái release hiện tại.
+> Quyết định chung2026-10-28: chỉ release platform có engine thật; có engine cho cả hai thì release cả hai. Không phát hành Windows dummy nữa trừ khi user yêu cầu lại. Riêng Clean1.0.23 đang chạy giữ nguyên đợt này.
+
+
+Baseline public1.0.23; QA/release hoàn tất ngày2026-10-28. Nguồn trạng thái: work_log tổng và release_1_0_23_review.md/evidence.json. Không coi các báo cáo spike/handoff cũ là trạng thái release hiện tại.
 
 ## Phạm vi
 

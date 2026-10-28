@@ -1,7 +1,7 @@
 # Verify CI packages, SDK/signature/icon/resource seal. Requires macOS and 7-Zip.
 import sys,json,tarfile,plistlib,struct,hashlib,tempfile,subprocess,collections,os,shutil
 from pathlib import Path
-app=Path(sys.argv[1]).resolve();folder=Path(sys.argv[2]).resolve();cfg=json.loads((app/'desktop/src_tauri/tauri.conf.json').read_text());version=cfg['version'];product=cfg['productName'];prefix=product.lower();evidence=json.loads((folder/'icon_evidence.json').read_text()) if (folder/'icon_evidence.json').exists() else [];done={x['platform'] for x in evidence}
+app=Path(sys.argv[1]).resolve();folder=Path(sys.argv[2]).resolve();cfg=json.loads((app/'desktop/src_tauri/tauri.conf.json').read_text());version=cfg['version'];product=cfg['productName'];prefix=product.lower();evidence=[];done={x['platform'] for x in evidence}
 sha=lambda b:hashlib.sha256(b).hexdigest()
 for chip,cpu in [('silicon',0x100000c),('intel',0x1000007)]:
  if 'macos_'+chip in done:continue

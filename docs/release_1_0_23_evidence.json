@@ -1,6 +1,6 @@
 {
   "version": "1.0.23",
-  "state": "local_qa_ci_pending",
+  "state": "public_verified",
   "local_qa": {
     "rust": 51,
     "native": {
@@ -130,5 +130,161 @@
   "build_run_id": 40622337715,
   "pr_checks_run_id": 40621379489,
   "pr_checks": "Mac and Windows success before final text-only copy update",
-  "local_keychain_relocked": true
+  "local_keychain_relocked": true,
+  "publish_run_id": 40625761621,
+  "signature_checks": {
+    "version": "1.0.23",
+    "verified": [
+      {
+        "platform": "windows-x86_64",
+        "name": "vxclean_1.0.23_windows_x64_setup.exe",
+        "size": 3305408,
+        "sha256": "1f37d264bd4d8450258eb483316604bcb4234ccd91876b3ed43cac7e99e22fea",
+        "signature": true,
+        "tamper_rejected": true
+      },
+      {
+        "platform": "windows-x86_64-nsis",
+        "name": "vxclean_1.0.23_windows_x64_setup.exe",
+        "size": 3305408,
+        "sha256": "1f37d264bd4d8450258eb483316604bcb4234ccd91876b3ed43cac7e99e22fea",
+        "signature": true,
+        "tamper_rejected": true
+      },
+      {
+        "platform": "darwin-aarch64",
+        "name": "vxclean_1.0.23_macos_silicon.app.tar.gz",
+        "size": 6064538,
+        "sha256": "555ed0eb573610f653a9fbbbf39b19534014213b701ec27e65acd79d10459e8e",
+        "signature": true,
+        "tamper_rejected": true
+      },
+      {
+        "platform": "darwin-aarch64-app",
+        "name": "vxclean_1.0.23_macos_silicon.app.tar.gz",
+        "size": 6064538,
+        "sha256": "555ed0eb573610f653a9fbbbf39b19534014213b701ec27e65acd79d10459e8e",
+        "signature": true,
+        "tamper_rejected": true
+      },
+      {
+        "platform": "darwin-x86_64",
+        "name": "vxclean_1.0.23_macos_intel.app.tar.gz",
+        "size": 6400489,
+        "sha256": "68a16c79d2b5a000cc0dcb6f118d291044a3674d6c6ebbedfe8f3bf6fc179262",
+        "signature": true,
+        "tamper_rejected": true
+      },
+      {
+        "platform": "darwin-x86_64-app",
+        "name": "vxclean_1.0.23_macos_intel.app.tar.gz",
+        "size": 6400489,
+        "sha256": "68a16c79d2b5a000cc0dcb6f118d291044a3674d6c6ebbedfe8f3bf6fc179262",
+        "signature": true,
+        "tamper_rejected": true
+      }
+    ]
+  },
+  "package_checks": [
+    {
+      "platform": "macos_silicon",
+      "version": "1.0.23",
+      "identifier": "com.vxclean.desktop",
+      "architecture": "0x100000c",
+      "sdk": "27.0",
+      "icns_sha256": "83e0e6f8bab2372201919a812662484d4eb1cd35d03c2303b7db0f6a7f31491a",
+      "icon_matches": true,
+      "strict_codesign": true,
+      "engine_sdk": "27.0",
+      "engine_sha256": "d3f9311f686eca7b3287b77bd55b207eec2135d91d78bb25b94927a9d6fb0a3f",
+      "test_home_hook_absent": true,
+      "helper_tamper_rejected": true
+    },
+    {
+      "platform": "macos_intel",
+      "version": "1.0.23",
+      "identifier": "com.vxclean.desktop",
+      "architecture": "0x1000007",
+      "sdk": "27.0",
+      "icns_sha256": "83e0e6f8bab2372201919a812662484d4eb1cd35d03c2303b7db0f6a7f31491a",
+      "icon_matches": true,
+      "strict_codesign": true,
+      "engine_sdk": "27.0",
+      "engine_sha256": "10be8fa84effad508a7fc74f225a5243e7b1fd9041818987854a3a090a927a56",
+      "test_home_hook_absent": true,
+      "helper_tamper_rejected": true
+    },
+    {
+      "platform": "windows_x64",
+      "executable": "vxclean.exe",
+      "pe_machine": "AMD64",
+      "version_resource_contains": "1.0.23",
+      "icon_payloads": 7,
+      "icon_matches": true,
+      "ico_sha256": "422566ec01194211f3bb0728fdebcc6949b02232a916aefa3233d21dcdc73a33"
+    }
+  ],
+  "dmg_checks": [
+    {
+      "platform": "macos_silicon",
+      "checksum": "VALID",
+      "dmg_icns_matches": true,
+      "identifier": "com.vxclean.desktop",
+      "version": "1.0.23",
+      "strict_codesign": true,
+      "certificate_bound": true,
+      "host_engine_match_verified_updater": true
+    },
+    {
+      "platform": "macos_intel",
+      "checksum": "VALID",
+      "dmg_icns_matches": true,
+      "identifier": "com.vxclean.desktop",
+      "version": "1.0.23",
+      "strict_codesign": true,
+      "certificate_bound": true,
+      "host_engine_match_verified_updater": true
+    }
+  ],
+  "release_id": 426205525,
+  "release_url": "https://github.com/linhbv94/VXClean/releases/tag/v1.0.23",
+  "public_manifest_exact": true,
+  "public_assets": [
+    {
+      "name": "latest.json",
+      "status": 200,
+      "size": 4885,
+      "sha256": "f07d60d07d7417da14b023ab021a86cf2d5c18d8c4579b924dd8aae37966411d"
+    },
+    {
+      "name": "vxclean_1.0.23_macos_intel.app.tar.gz",
+      "status": 200,
+      "size": 6400489,
+      "sha256": "68a16c79d2b5a000cc0dcb6f118d291044a3674d6c6ebbedfe8f3bf6fc179262"
+    },
+    {
+      "name": "vxclean_1.0.23_macos_intel.dmg",
+      "status": 200,
+      "size": 6871737,
+      "sha256": "8cdb8a641a76dfe64499c8f56f91a96e7a51ae36e33bec1945df14bd1f0daa2c"
+    },
+    {
+      "name": "vxclean_1.0.23_macos_silicon.app.tar.gz",
+      "status": 200,
+      "size": 6064538,
+      "sha256": "555ed0eb573610f653a9fbbbf39b19534014213b701ec27e65acd79d10459e8e"
+    },
+    {
+      "name": "vxclean_1.0.23_macos_silicon.dmg",
+      "status": 200,
+      "size": 6481363,
+      "sha256": "d18b8382c5c6e51c430e875ccc18029e633c6fc0da9050f609ca59b6eeac000d"
+    },
+    {
+      "name": "vxclean_1.0.23_windows_x64_setup.exe",
+      "status": 200,
+      "size": 3305408,
+      "sha256": "1f37d264bd4d8450258eb483316604bcb4234ccd91876b3ed43cac7e99e22fea"
+    }
+  ]
 }

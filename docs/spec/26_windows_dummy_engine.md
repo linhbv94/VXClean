@@ -1,4 +1,7 @@
 # Windows dummy engine
+
+> Quyết định chung2026-10-28: chỉ release platform có engine thật; có engine cho cả hai thì release cả hai. Không phát hành Windows dummy nữa trừ khi user yêu cầu lại. Riêng Clean1.0.23 đang chạy giữ nguyên đợt này.
+
 Ngày cập nhật: 2026-10-15
 
 Mục tiêu: đóng gói Windows x64 NSIS `.exe`, giữ shell/UI hiện tại; chưa có tính năng engine. Không phát hành trong task triển khai.

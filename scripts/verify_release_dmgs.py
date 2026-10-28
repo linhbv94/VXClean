@@ -1,7 +1,7 @@
 # Read-only mounts of owned release DMGs; detaches in finally.
 from pathlib import Path
 import subprocess,tempfile,json,plistlib,sys,hashlib,tarfile
-app=Path(sys.argv[1]).resolve();folder=Path(sys.argv[2]).resolve();cfg=json.loads((app/'desktop/src_tauri/tauri.conf.json').read_text());results=json.loads((folder/'dmg_evidence.json').read_text()) if (folder/'dmg_evidence.json').exists() else [];done={x['platform'] for x in results}
+app=Path(sys.argv[1]).resolve();folder=Path(sys.argv[2]).resolve();cfg=json.loads((app/'desktop/src_tauri/tauri.conf.json').read_text());results=[];done={x['platform'] for x in results}
 for chip in ['silicon','intel']:
  if 'macos_'+chip in done:continue
  image=folder/f"{cfg['productName'].lower()}_{cfg['version']}_macos_{chip}.dmg"

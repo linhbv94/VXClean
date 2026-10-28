@@ -18,3 +18,9 @@ Repo public đã xác minh. Standard Windows2022/xcode27 runners, không cache/w
 36 nhóm native và9 manager đạt khi chạy fixture có quyền đoRSS; 25.001file cache dọn hết và profile được giữ. Bundle ký certificate-bound cùng signer hiện tại, mainSDK27.0. Native UI telemetry thực và Quick scan chỉ đọc đạt; kết quả có cảnh báo một vùng SystemJunk chưa đầy đủ do quyền/giới hạn duyệt, không giả scan đầy đủ. UserCache5.56GB chọn được, Googleexcluded0B; ngoài kết quả17mục sắp dung lượng giảm dần. Không bấm Dọn. Settings Hệ thống báo quyền đọc được bảo vệ đã kiểm chứng, manual probe vẫn verified, không cấp lại quyền.
 
 Rút gọn caption Updates dùng chung Windows/Mac; không đổi engine sau QA. PR checks và release CI/package/public đang chờ.
+
+## Kết quả cuối2026-10-28
+
+PR8 merged, tag a9ea43d725e17d41d943e145ac5e52211d91b61b. Build40622337715 và publish40625761621 thành công. Publicstable1.0.23, manifest và6assets HTTP200 không token. Updater signatures/tamper, hai Mac SDK27/architecture/icon/certificate seal và2DMG byte-exact đạt; Windows x64 installer/icon/manifest đạt.
+
+Updater native MacSilicon1.0.22→1.0.23: download/install/restart, UI23, host và engine byte-exact CI, signer giữ nguyên, manual FDA probe vẫn access_confirmed, không cấp lại quyền. ThemeSystem/vi giữ nguyên. Không thay Applications. Windows/Intel GUI/updater chưa kiểm; Windows lần này UI-only. Từ lần sau chỉ Mac theo quyết định mới toàn workspace; dummy chỉ khi user yêu cầu.
