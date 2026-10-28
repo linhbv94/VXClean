@@ -128,7 +128,7 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
           : (res.categories[0]?.category ?? 'system_junk')
       );
 
-      // Giữ lựa chọn mặc định của từng mục từ engine MClean
+      // Giữ lựa chọn mặc định của từng mục từ engine
       const paths = new Set<string>();
       res.categories.forEach((cat) => {
         cat.items

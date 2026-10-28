@@ -1,13 +1,13 @@
 {
   "name": "vxclean",
-  "version": "1.0.22",
-  "description": "VXClean \u2014 Desktop System Monitor & Maintenance Bridge",
+  "version": "1.0.23",
+  "description": "VXClean — Desktop System Monitor & Maintenance Bridge",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tauri": "cd src_tauri && tauri"
+    "tauri": "node ../scripts/tauri_sdk.mjs"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.12.1",

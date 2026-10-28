@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCES = ["desktop/native/app_lifecycle.swift", "desktop/native/operation_journal.swift", "desktop/native/cleanup_policy.swift", "desktop/native/compact_lens_scanner.swift", 'MClean/Services/ScanEngine.swift', 'MClean/Models/Models.swift', 'MClean/Logic/Utilities/Logger.swift', 'MClean/Logic/Utilities/FileSize.swift', "desktop/native/main.swift", "desktop/native/maintenance_cli.swift", "desktop/native/manager_cleanup.swift", "MClean/Services/SystemMonitor.swift", "MClean/Services/SpaceLensEngine.swift", "MClean/Models/SpaceLensNode.swift", "MClean/Logic/Scanning/Conditions.swift", "MClean/Logic/Scanning/StringNormalization.swift", "MClean/Logic/Utilities/OrphanSafetyPolicy.swift"]
 
 def run_tests():
-    with tempfile.TemporaryDirectory(prefix="vxclean_fixture_", dir=ROOT / "desktop/native") as temp:
+    with tempfile.TemporaryDirectory(prefix=".vxclean_fixture_", dir=ROOT / "desktop/native") as temp:
         base = Path(temp).resolve()
         fixture = base / "home"
         fixture.mkdir()
@@ -591,6 +591,20 @@ def run_tests():
         print(f"Chrome 7000-file durable journal: {elapsed:.3f}s", flush=True)
         assert elapsed<180
         checks.append("chrome_7000_cache_files_durable_journal_preserves_profile_under_180s")
+        # Exceed both former 20k-entry and 3MiB full-proof limits. Root ticket stays small.
+        for index in range(25001): make(bulk / f"large_{index:05d}", b"cache-data")
+        large_scan=invoke(["scan", "--scope", "quick_cleanup", "--include-empty"], timeout=120)
+        large_rows=[item for cat in large_scan["categories"] for item in cat["items"] if item["path"]==str(bulk.parent.parent)]
+        assert len(large_rows)==1 and large_rows[0]["is_cleanable"], large_rows
+        small_proof=manifest(bulk.parent.parent,root_only=True)
+        assert len(json.dumps(small_proof))<4096
+        started=time.monotonic()
+        large_result=invoke(["clean","--stdin"], {"operation_scope":"quick_cleanup", "targets":[{"path":str(bulk.parent.parent),"deletion_method":"remove_item"}],"confirm_direct_delete":True,"identities":identities([bulk.parent.parent]),"content_snapshots":{str(bulk.parent.parent):small_proof}},timeout=240,measure_memory=True)
+        assert large_result["success_count"]==1 and large_result["failure_count"]==0,large_result
+        assert not any(p.is_file() for p in bulk.iterdir()) and keep_profile.read_bytes()==marker
+        print(f"Chrome 25001-file root proof + streaming cleanup: {time.monotonic()-started:.3f}s",flush=True)
+        checks.append("chrome_25001_files_scan_selectable_streaming_cleanup_preserves_profile")
+
 
         # Deferred permission failures share exactly one admin invocation.
         for admin_mode in ["success", "cancel"]:

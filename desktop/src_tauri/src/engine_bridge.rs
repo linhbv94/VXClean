@@ -37,8 +37,10 @@ pub fn get_capabilities(app: AppHandle) -> Capabilities {
         },
         engine_status: if is_macos {
             "Swift native engine sẵn sàng (macOS)".to_string()
+        } else if cfg!(target_os="windows") {
+            "Windows UI-only: dummy engine, chưa có chức năng hệ thống".to_string()
         } else {
-            "Chưa hỗ trợ nền tảng này (Windows adapter đang trong lộ trình)".to_string()
+            "Chưa hỗ trợ nền tảng này".to_string()
         },
     }
 }
@@ -84,7 +86,7 @@ async fn sample_system_snapshot(app:AppHandle, stopping:Arc<AtomicBool>, tracked
     #[cfg(not(target_os = "macos"))]
     {
         let _ = app;
-        Err("Chức năng giám sát hệ thống bằng Swift native engine hiện chỉ hỗ trợ macOS. Windows adapter đang trong lộ trình phát triển.".to_string())
+        Err("Chức năng giám sát hệ thống chưa được hỗ trợ trên nền tảng này. Bản Windows hiện chỉ có giao diện.".to_string())
     }
 
     #[cfg(target_os = "macos")]

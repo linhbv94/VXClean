@@ -47,3 +47,7 @@ Codex frontend cache trong Library/Caches dùng cùng cơ chế cache đang mở
 ## Quyền đọc dữ liệu — hiện hành local1.0.17
 
 [Luồng Full Disk Access dùng chung](25_full_disk_access_flow.md) kiểm tra trước read scan, hướng dẫn trong dialog/Settings, kiểm tra lại khi trở về app; không thay cleanup policy. Nền tảng không dùng FDA bỏ qua flow này. Ký ad_hoc không chứng minh quyền giữ qua cập nhật; phải có signer ổn định và test migration/update thật trước khi ghi nhận DoD đó.
+
+## Windows UI-only — 2026-10-15
+
+[Spec26](26_windows_dummy_engine.md): Windows dummy native adapter, giữ UI nhưng chưa có engine. [Handoff release](../windows_dummy_release_handoff.md); Mac không đổi adapter.

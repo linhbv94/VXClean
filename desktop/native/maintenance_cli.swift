@@ -656,7 +656,7 @@ struct MaintenanceCLI {
         }
         guard var manifest = (payload["content_snapshots"] as? [String:[[String:Any]]])?[path] else { throw failure("scope_changed: missing manifest") }
         let liveCache = CleanupPolicy.rule(path, category:scanCategoriesByPath[url(path).path] ?? "unknown", scope:scope).executionMode(category:scanCategoriesByPath[url(path).path] ?? "unknown",scope:scope) == "live_cache_root"
-        let current = try CleanupPolicy.snapshot(path, allowLinks:uninstall || lens, mcleanSystem:method == "pnpm_prune" || (scope == "quick_cleanup" && scanCategoriesByPath[url(path).path] == "system_junk"), rootOnly:uninstall)
+        let current = try CleanupPolicy.snapshot(path, allowLinks:uninstall || lens, mcleanSystem:method == "pnpm_prune" || (scope == "quick_cleanup" && scanCategoriesByPath[url(path).path] == "system_junk"), rootOnly:uninstall || liveCache)
         if liveCache {manifest=current} else {guard CleanupPolicy.sameSnapshot(manifest,current) else {throw failure("scope_changed")}}
         if !uninstall && !lens {
           let safeOrphan = orphan && CleanupPolicy.rule(path, category: "user_caches", scope: "detailed_cleanup").enabled
@@ -696,7 +696,7 @@ struct MaintenanceCLI {
           }
         } else {
           if scope == "quick_cleanup", scanCategoriesByPath[url(path).path] == "system_junk" {
-            // Same item deletion and admin retry as MClean, only after the granted manifest is revalidated.
+            // Item deletion and admin retry only after the granted authority is revalidated.
             systemRemovalStarted = true
             do {
               #if ENGINE_TESTING
@@ -720,7 +720,9 @@ struct MaintenanceCLI {
               adminPending.append(AdminTarget(index,path,bytes,expected[0].stringValue,expected[1].stringValue))
               status = "awaiting_admin"
             }
-          } else { bytes = try CleanupPolicy.removeCacheFiles(manifest, liveCache: liveCache) }
+          } else if liveCache {
+            bytes = try CleanupPolicy.removeLiveCacheTree(path, category:scanCategoriesByPath[url(path).path] ?? "unknown",scope:scope)
+          } else { bytes = try CleanupPolicy.removeCacheFiles(manifest) }
           if status != "awaiting_admin" { freed += bytes }
         }
       } catch {
@@ -811,7 +813,7 @@ struct MaintenanceCLI {
       let expectedParent=String(cString:physical);free(physical)
       let path=quote(item.path)
       // Grant is a selected root. Check its metadata again after authentication.
-      // No descendant snapshot is claimed for MClean recursive System Junk.
+      // No descendant snapshot is claimed for recursive System Junk.
       return "if ! /bin/kill -0 " + String(ProcessInfo.processInfo.processIdentifier)
         + " || test -e " + quote(OperationJournal.cancelPath ?? "/dev/null")
         + "; then " + output(item.index,"admin_not_started")

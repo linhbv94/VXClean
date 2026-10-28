@@ -17,11 +17,11 @@ Dashboard bản thử hiện là **màn chỉ số hệ thống**, chưa phải 
 
 ## 2. Mục tiêu và yêu cầu đã thống nhất với user
 
-- Tên sản phẩm: **VXClean**, tùy biến từ MClean trong repo `cleaner_for_mac`.
+- Tên sản phẩm: **VXClean**, tùy biến từ MClean trong repo `vxclean`.
 - Giữ chức năng dashboard, Smart Scan, dọn dẹp, app uninstaller và Space Lens như bản gốc.
 - Menu bar có tổng quan chi tiết hơn, tham khảo mức độ thông tin của CleanMyMac; đây là yêu cầu về thông tin/UX, chưa chốt việc sao chép bố cục của sản phẩm đó.
 - Đóng cửa sổ chính cuối cùng → app tiếp tục chạy nền/menu bar và biến mất khỏi Dock. Mở lại → hiện cửa sổ và Dock. Quit → thoát hẳn.
-- Đồng bộ stack UI và phong cách với **VXMedia** (`../media_tool`) và **VXPhotos** (`../photo_picker`).
+- Đồng bộ stack UI và phong cách với **VXMedia** (`../vxmedia`) và **VXPhotos** (`../vxphotos`).
 - Chuẩn bị kiến trúc để sau này dùng lại phần lớn UI trên Windows. **Chưa có bản Windows hoặc engine Windows chạy được.**
 - Docs của tác giả nằm trong `docs_upstream/`; docs VXClean nằm trong `docs/`.
 - Codex lập kế hoạch/review; Anti thực thi UI và các task vừa/dài. Codex được sửa nhanh những lỗi nhỏ phát hiện trong review.
@@ -61,7 +61,7 @@ Windows về sau: cùng UI/contract, adapter hệ thống riêng.
 ```
 
 - Stack frontend khớp dependency của VXMedia/VXPhotos: React 19.3, TypeScript 7.0, Vite 8.3, Tailwind 4.3, Tauri 2.12 và Lucide React.
-- Dùng theme navy/slate, accent cyan, mật độ desktop compact, font hệ thống, dark/light theo [master_theme.md](../../master_theme.md).
+- Dùng theme navy/slate, accent cyan, mật độ desktop compact, font hệ thống, dark/light theo [master_theme.md](../../_summary/master_theme.md).
 - Tạo React shell/sidebar/dashboard và trạng thái chức năng chưa chuyển.
 - Tạo Swift entry tại `desktop/native/main.swift`, **compile cùng `MClean/Services/SystemMonitor.swift` thật**, không viết lại thuật toán telemetry.
 - Rust có hai command: `get_capabilities` và `get_system_snapshot`. Snapshot chứa protocol_version `1.0`, platform, timestamp và CPU/RAM/disk/battery.
@@ -109,7 +109,7 @@ Trạng thái "Chưa chuyển" trong bản thử là thông tin tiến độ tri
 
 ## 6. File nên đọc khi tiếp quản
 
-1. Log này và [theme chung](../../master_theme.md).
+1. Log này và [theme chung](../../_summary/master_theme.md).
 2. [Kiểm chứng Tauri/GUI](tauri_bridge_verification.md), [đối soát hành vi xóa](safety_audit.md), [provenance](upstream_provenance.md).
 3. [App React](../desktop/src/app.tsx), [dashboard](../desktop/src/components/dashboard.tsx), [sidebar](../desktop/src/components/sidebar.tsx), [CSS](../desktop/src/index.css), [DTO](../desktop/src/types.ts), [frontend bridge](../desktop/src/services/tauri_bridge.ts).
 4. [Rust bridge](../desktop/src_tauri/src/engine_bridge.rs), [Swift entry](../desktop/native/main.swift), [SystemMonitor dùng chung](../MClean/Services/SystemMonitor.swift).
@@ -119,7 +119,7 @@ Trạng thái "Chưa chuyển" trong bản thử là thông tin tiến độ tri
 
 ## 7. Chạy lại bản thử
 
-Từ root `cleaner_for_mac`:
+Từ root `vxclean`:
 
 ```bash
 DEVELOPER_DIR=/Library/Developer/CommandLineTools python3 scripts/verify_tauri_bridge.py
@@ -137,4 +137,4 @@ Frontend hiện dùng symlink `desktop/node_modules` tới node_modules của VX
 
 ## 8. Prompt chuyển sang Anti
 
-> Đọc `docs/development_log.md` trong repo `cleaner_for_mac` để nắm trạng thái VXClean. Dựng wireframe và user flow cho dashboard, Smart Scan, cleanup, uninstaller, Space Lens, menu bar và settings, giữ chức năng native gốc và đồng bộ theme/stack với VXMedia/VXPhotos. Dashboard React hiện chỉ là bản thử telemetry, không phải thiết kế cuối. Bao phủ idle/loading/progress/results/empty/error/thiếu quyền/xác nhận thao tác và trường hợp Mac không có pin. Đọc `docs/safety_audit.md` trước khi viết copy về xóa file. Lưu output thiết kế trong `docs/wireframes/`, tên snake_case, link tương đối. Ghi rõ phần thiết kế đề xuất và phần đã nối engine; chưa triển khai backend hoặc xóa baseline ở bước wireframe. Không gọi ngược Codex/agent CLI. Tuân thủ AGENTS.md: tiếng Việt, không LaTeX.
+> Đọc `docs/development_log.md` trong repo `vxclean` để nắm trạng thái VXClean. Dựng wireframe và user flow cho dashboard, Smart Scan, cleanup, uninstaller, Space Lens, menu bar và settings, giữ chức năng native gốc và đồng bộ theme/stack với VXMedia/VXPhotos. Dashboard React hiện chỉ là bản thử telemetry, không phải thiết kế cuối. Bao phủ idle/loading/progress/results/empty/error/thiếu quyền/xác nhận thao tác và trường hợp Mac không có pin. Đọc `docs/safety_audit.md` trước khi viết copy về xóa file. Lưu output thiết kế trong `docs/wireframes/`, tên snake_case, link tương đối. Ghi rõ phần thiết kế đề xuất và phần đã nối engine; chưa triển khai backend hoặc xóa baseline ở bước wireframe. Không gọi ngược Codex/agent CLI. Tuân thủ AGENTS.md: tiếng Việt, không LaTeX.

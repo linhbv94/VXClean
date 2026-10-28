@@ -27,7 +27,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentTab, onSelectTab, capab
   <aside className="w-56 border-r border-black/5 dark:border-white/5 bg-slate-100/40 dark:bg-[#141821]/40 flex flex-col justify-between p-2 select-none shrink-0">
     <nav className="flex flex-col gap-1">
       {NAV_ITEMS.map(({ id, label, icon: Icon }) => {
-        const isAvailable = id === 'dashboard' ? true : Boolean(capabilities?.features[id]);
+        const isAvailable = id === 'dashboard' || capabilities?.platform === 'windows' || Boolean(capabilities?.features[id]);
         const isActive = currentTab === id;
         return (
           <button

@@ -38,6 +38,7 @@ export default function App() {
   const [error, setError] = useState<string | null>(null);
 
   const isBrowserPreview = !isTauriEnvironment();
+  const isWindowsDummy = capabilities?.platform === 'windows';
   const isRefreshingRef = useRef<boolean>(false);
 
   useEffect(() => {
@@ -163,10 +164,10 @@ export default function App() {
       if (event.payload === 'settings') setIsSettingsOpen(true);
     })).then(fn => { if (stopped) fn(); else dispose = fn; });
     let timer: ReturnType<typeof setTimeout>;
-    const tick = async () => { if (stopped) return; if (document.hasFocus()) await loadSnapshot(); timer = setTimeout(tick, 5000); };
+    const tick = async () => { if (stopped) return; if (!isWindowsDummy && document.hasFocus()) await loadSnapshot(); timer = setTimeout(tick, 5000); };
     timer = setTimeout(tick, 5000);
     return () => { stopped = true; dispose?.(); clearTimeout(timer); };
-  }, [isBrowserPreview, loadSnapshot]);
+  }, [isBrowserPreview, loadSnapshot, isWindowsDummy]);
 
   const handleStartQuickScan = () => {
     setAutoStartScan(true);
@@ -182,6 +183,7 @@ export default function App() {
         onOpenSettings={() => setIsSettingsOpen(true)}
         onRefresh={loadSnapshot}
       />
+      {capabilities?.platform === 'windows' && <div role="status" className="px-4 py-2 text-xs bg-amber-500/10 text-amber-700 dark:text-amber-300">Windows · Bản giao diện. Quét, dọn rác, gỡ ứng dụng và giám sát hệ thống chưa được hỗ trợ.</div>}
       <OperationHistory />
       {updateVersion && <div role="status" className="px-4 py-2 text-xs bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 flex items-center gap-3">Có VXClean {updateVersion}.<button className="underline" onClick={() => {setUpdateFocusRequest(n => n + 1);setIsSettingsOpen(true);}}>Xem cập nhật</button><button onClick={() => setUpdateVersion(null)}>Để sau</button></div>}
       <div className="flex flex-1 overflow-hidden">

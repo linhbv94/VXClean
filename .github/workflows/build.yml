@@ -12,13 +12,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        runner: [macos-15, macos-15-intel]
+        runner: [xcode-27]
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0
+      - name: Select exact macOS SDK27.0
+        if: runner.os == 'macOS'
+        run: node scripts/macos_sdk_gate.mjs --select-ci
       - uses: actions/setup-node@v5
         with:
           node-version: 24
@@ -43,3 +46,29 @@ jobs:
       - run: node scripts/test_scan_retention.cjs
       - run: node scripts/test_uninstall_selection.cjs
       - run: node scripts/test_circle_packing.cjs
+
+  windows_dummy:
+    if: github.event.repository.private == false
+    runs-on: windows-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+      - name: Select exact macOS SDK27.0
+        if: runner.os == 'macOS'
+        run: node scripts/macos_sdk_gate.mjs --select-ci
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - uses: dtolnay/rust-toolchain@stable
+      - run: npm ci --ignore-scripts
+        working-directory: desktop
+      - run: cargo test --locked --lib maintenance_bridge::tests
+        working-directory: desktop/src_tauri
+      - run: npm run tauri -- build --bundles nsis --config '{"bundle":{"createUpdaterArtifacts":false}}'
+        working-directory: desktop
+      - name: Verify Windows installer exists
+        shell: pwsh
+        run: |
+          $installers = @(Get-ChildItem desktop/src_tauri/target/release/bundle/nsis/*.exe)
+          if ($installers.Count -ne 1 -or $installers[0].Length -le 0) { throw "Expected one NSIS installer" }

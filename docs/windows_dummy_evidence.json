@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-15",
+  "scope": "windows_ui_only",
+  "mac_rust_tests": {
+    "passed": 50,
+    "failed": 0,
+    "dummy_tests": 2
+  },
+  "frontend_build": "passed",
+  "release_tests": 7,
+  "js_regressions": [
+    "scan_access",
+    "operation_history",
+    "folder_scan_cache"
+  ],
+  "windows_cross_check": {
+    "status": "blocked_environment",
+    "reason": "ring needs Windows SDK headers: assert.h missing"
+  },
+  "windows_installer_built": false,
+  "windows_runtime_verified": false,
+  "published": false,
+  "user_data_mutated": false
+}

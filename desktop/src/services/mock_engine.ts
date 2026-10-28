@@ -273,8 +273,8 @@ export async function mockAnalyzeSpaceLens(targetPath: string): Promise<SpaceLen
     is_access_denied: false,
     children: [
       {
-        name: 'cleaner_for_mac',
-        path: `${targetPath}/cleaner_for_mac`,
+        name: 'vxclean',
+        path: `${targetPath}/vxclean`,
         size_bytes: 14200000000,
         is_directory: true,
         is_package: false,
@@ -282,7 +282,7 @@ export async function mockAnalyzeSpaceLens(targetPath: string): Promise<SpaceLen
         children: [
           {
             name: 'target',
-            path: `${targetPath}/cleaner_for_mac/desktop/src_tauri/target`,
+            path: `${targetPath}/vxclean/desktop/src_tauri/target`,
             size_bytes: 9800000000,
             is_directory: true,
             is_package: false,
@@ -290,15 +290,15 @@ export async function mockAnalyzeSpaceLens(targetPath: string): Promise<SpaceLen
           },
           {
             name: 'node_modules',
-            path: `${targetPath}/cleaner_for_mac/desktop/node_modules`,
+            path: `${targetPath}/vxclean/desktop/node_modules`,
             size_bytes: 3200000000,
             is_directory: true,
             is_package: false,
             is_access_denied: false,
           },
           {
-            name: 'MClean.xcodeproj',
-            path: `${targetPath}/cleaner_for_mac/MClean.xcodeproj`,
+            name: 'VXClean.xcodeproj',
+            path: `${targetPath}/vxclean/VXClean.xcodeproj`,
             size_bytes: 1200000000,
             is_directory: true,
             is_package: true,
@@ -307,8 +307,8 @@ export async function mockAnalyzeSpaceLens(targetPath: string): Promise<SpaceLen
         ],
       },
       {
-        name: 'photo_picker',
-        path: `${targetPath}/photo_picker`,
+        name: 'vxphotos',
+        path: `${targetPath}/vxphotos`,
         size_bytes: 8400000000,
         is_directory: true,
         is_package: false,
@@ -316,7 +316,7 @@ export async function mockAnalyzeSpaceLens(targetPath: string): Promise<SpaceLen
         children: [
           {
             name: 'target',
-            path: `${targetPath}/photo_picker/src-tauri/target`,
+            path: `${targetPath}/vxphotos/src-tauri/target`,
             size_bytes: 6200000000,
             is_directory: true,
             is_package: false,
@@ -324,7 +324,7 @@ export async function mockAnalyzeSpaceLens(targetPath: string): Promise<SpaceLen
           },
           {
             name: 'node_modules',
-            path: `${targetPath}/photo_picker/node_modules`,
+            path: `${targetPath}/vxphotos/node_modules`,
             size_bytes: 2200000000,
             is_directory: true,
             is_package: false,
@@ -333,8 +333,8 @@ export async function mockAnalyzeSpaceLens(targetPath: string): Promise<SpaceLen
         ],
       },
       {
-        name: 'media_tool',
-        path: `${targetPath}/media_tool`,
+        name: 'vxmedia',
+        path: `${targetPath}/vxmedia`,
         size_bytes: 5800000000,
         is_directory: true,
         is_package: false,
@@ -342,7 +342,7 @@ export async function mockAnalyzeSpaceLens(targetPath: string): Promise<SpaceLen
         children: [
           {
             name: 'target',
-            path: `${targetPath}/media_tool/src-tauri/target`,
+            path: `${targetPath}/vxmedia/src-tauri/target`,
             size_bytes: 4100000000,
             is_directory: true,
             is_package: false,
@@ -350,7 +350,7 @@ export async function mockAnalyzeSpaceLens(targetPath: string): Promise<SpaceLen
           },
           {
             name: 'node_modules',
-            path: `${targetPath}/media_tool/node_modules`,
+            path: `${targetPath}/vxmedia/node_modules`,
             size_bytes: 1700000000,
             is_directory: true,
             is_package: false,

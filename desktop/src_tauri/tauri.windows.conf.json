@@ -1,0 +1,5 @@
+{
+  "$schema": "https://raw.githubusercontent.com/tauri-apps/tauri/dev/crates/tauri-cli/schema.json",
+  "app": { "windows": [{ "label": "main", "title": "VXClean", "width": 1180, "height": 780, "minWidth": 800, "minHeight": 560, "decorations": false }] },
+  "bundle": { "targets": ["nsis"], "windows": { "nsis": { "installMode": "currentUser" } } }
+}

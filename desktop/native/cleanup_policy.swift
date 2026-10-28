@@ -21,7 +21,7 @@ struct CleanupPolicy {
   static func rebuildable(_ id: String, _ consequence: String, apps: [String] = []) -> CleanupRule {
     CleanupRule(id: id, safety: "rebuildable", consequence: consequence, enabled: true, apps: apps)
   }
-  /// MClean quick roots only. Structural roots themselves never receive a grant.
+  /// Approved quick-cleanup roots only. Structural roots themselves never receive a grant.
   static func maintenanceRoot(_ path: String, category: String) -> String? {
     let h = MaintenanceCLI.home
     #if ENGINE_TESTING
@@ -59,7 +59,7 @@ struct CleanupPolicy {
     let components = parts.map { $0.lowercased() }
     if components.contains(where: { protectedComponent($0, path:p, category:category, scope:scope) || $0.contains("shipit") || $0.contains("updater") || $0.hasPrefix(".vxclean_remove_") }) { return .unknown }
     if category == "user_caches" || root.hasSuffix("/Library/Caches") {
-      return rebuildable("mclean_maintained_cache", "Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.")
+      return rebuildable("mclean_maintained_cache", "Dọn nội dung bộ nhớ đệm ứng dụng; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.")
     }
     if p.hasPrefix(MaintenanceCLI.home + "/Library/Logs/DiagnosticReports/") { return nil }
     if scope == "quick_cleanup" {
@@ -68,7 +68,7 @@ struct CleanupPolicy {
       let ext = MaintenanceCLI.url(p).pathExtension.lowercased()
       // IPC/credentials/live locks are not rebuildable cache. Build tools and libraries are.
       if components.contains("boost_interprocess") || ["lock", "pid", "sock", "socket", "sqlite", "sqlite3", "db", "wal", "shm", "pem", "key"].contains(ext) || leaf.contains("lock") { return .unknown }
-      return rebuildable("mclean_quick_junk", "Dọn log/tệp tạm theo vùng MClean, kể cả cache/build/công cụ kiểm thử. Khi cần có thể phải tải, build hoặc tạo lại; tiến trình đang dùng có thể phải chạy lại.")
+      return rebuildable("mclean_quick_junk", "Dọn log/tệp tạm trong phạm vi quét nhanh, kể cả cache/build/công cụ kiểm thử. Khi cần có thể phải tải, build hoặc tạo lại; tiến trình đang dùng có thể phải chạy lại.")
     }
     guard let attrs = try? fm.attributesOfItem(atPath:p), let modified = attrs[.modificationDate] as? Date,
       modified <= Date().addingTimeInterval(-86400) else { return .unknown }
@@ -83,7 +83,7 @@ struct CleanupPolicy {
     if root.hasSuffix("/Logs") || root.hasSuffix("/log") {
       guard attrs[.type] as? FileAttributeType == .typeDirectory || ["log", "gz", "bz2", "asl", "ips", "crash", "diag", "txt"].contains(ext) else { return .unknown }
     }
-    return rebuildable("mclean_maintained_aged_junk", "Xóa log hoặc tệp tạm MClean đã cũ ≥24 giờ; mất dữ liệu chẩn đoán cũ. Giữ mục mới, lock/socket và state/runtime.")
+    return rebuildable("mclean_maintained_aged_junk", "Xóa log hoặc tệp tạm đã cũ ≥24 giờ; mất dữ liệu chẩn đoán cũ. Giữ mục mới, lock/socket và state/runtime.")
   }
   static func protectedComponent(_ name: String, path: String, category: String, scope: String) -> Bool {
     let rebuildableEnvironment: Set<String> = ["node_modules", ".venv", "venv"]
@@ -113,7 +113,7 @@ struct CleanupPolicy {
       return rebuildable("pnpm_store_prune", "VXClean gọi pnpm store prune; pnpm tự dọn package không còn tham chiếu. Tổng store không phải dung lượng chắc chắn thu hồi; có thể cần tải lại package khi cài sau.")
     }
     if scope == "quick_cleanup", category == "system_junk", maintenanceRoot(p, category:category) != nil, MaintenanceCLI.unchanged(path) {
-      return rebuildable("mclean_system_junk", "Dọn toàn mục trong vùng System Junk theo MClean; gồm log, tệp tạm, cache và bản sao tạm. Dữ liệu chỉ nằm trong vùng tạm có thể mất; tiến trình đang dùng có thể cần chạy lại. Khi thiếu quyền ghi, macOS yêu cầu xác thực quản trị.")
+      return rebuildable("mclean_system_junk", "Dọn toàn mục trong phạm vi System Junk; gồm log, tệp tạm, cache và bản sao tạm. Dữ liệu chỉ nằm trong vùng tạm có thể mất; tiến trình đang dùng có thể cần chạy lại. Khi thiếu quyền ghi, macOS yêu cầu xác thực quản trị.")
     }
     guard MaintenanceCLI.unchanged(path), (p.hasPrefix(h + "/") || maintenanceRoot(p, category:category) != nil),
       !p.contains("/Application Support/com.vxclean.desktop/"), !p.contains("/Caches/com.vxclean.desktop"),
@@ -256,7 +256,11 @@ struct CleanupPolicy {
     // Adobe source association and shared-helper lifecycle need an adapter gate.
     let sourceUnverified = r.id == "adobe_generated_audio"
     let busy = scope == "quick_cleanup" && category == "user_caches" ? false : isAppBusy(r)
-    let content = r.enabled ? (try? snapshot(path, mcleanSystem: ["mclean_system_junk", "pnpm_store_prune"].contains(r.id))) : nil
+    let liveCache = r.executionMode(category:category,scope:scope) == "live_cache_root"
+    let content: [[String:Any]]? = r.enabled ? (try? { () throws -> [[String:Any]] in
+      if liveCache { try validateLiveCacheTree(path, category:category, scope:scope) }
+      return try snapshot(path, mcleanSystem:["mclean_system_junk", "pnpm_store_prune"].contains(r.id), rootOnly:liveCache)
+    }()) : nil
     let proofFits = content.flatMap { try? JSONSerialization.data(withJSONObject:$0) }.map { $0.count <= 3*1024*1024 } ?? false
     let valid = !r.enabled || (proofFits && content != nil && (["mclean_system_junk", "pnpm_store_prune"].contains(r.id) || r.safety != "rebuildable" || content!.allSatisfy { rule($0["path"] as! String, category: category, scope: scope).id == r.id }))
     let needsQuit = busy && !r.apps.isEmpty
@@ -284,7 +288,7 @@ struct CleanupPolicy {
       let directory = (st.st_mode & S_IFMT) == S_IFDIR
       guard mcleanSystem || directory || st.st_nlink == 1 else { throw MaintenanceCLI.failure("protected_target: hardlink") }
       rows.append(["path":p, "device":UInt64(st.st_dev), "inode":UInt64(st.st_ino), "mode":UInt32(st.st_mode), "size":Int64(st.st_size), "modified_s":Int64(st.st_mtimespec.tv_sec), "modified_ns":Int64(st.st_mtimespec.tv_nsec), "changed_s":Int64(st.st_ctimespec.tv_sec), "changed_ns":Int64(st.st_ctimespec.tv_nsec)])
-      // MClean deletes the selected item as a unit. Its System Junk authority
+      // System Junk deletes the selected item as a unit. Its authority
       // must not depend on a bounded full-subtree cache proof or child names.
       if directory && !mcleanSystem && !rootOnly { pending += try MaintenanceCLI.children(p).map(\.path) }
     }
@@ -305,6 +309,50 @@ struct CleanupPolicy {
       }
     }
     return r
+  }
+  /// Enumerate without building a full-tree manifest or following symbolic links.
+  static func walkLiveCache(_ path:String, category:String, scope:String, visit:([[String:Any]]) throws -> Void) throws {
+    let expectedRule = rule(path, category:category, scope:scope)
+    guard expectedRule.enabled, expectedRule.executionMode(category:category,scope:scope) == "live_cache_root" else { throw MaintenanceCLI.failure("protected_target: cache root") }
+    let rootStamp=try snapshot(path,rootOnly:true)
+    if let root=rootStamp.first, ((root["mode"] as! UInt32) & UInt32(S_IFMT)) == S_IFREG {
+      guard fm.isWritableFile(atPath:MaintenanceCLI.url(path).deletingLastPathComponent().path) else {throw MaintenanceCLI.failure("permission_denied")}
+      try visit(rootStamp);return
+    }
+    // FileManager's error handler can stop traversal without throwing; capture it explicitly.
+    var traversalError:Error?
+    guard let entries = fm.enumerator(at:MaintenanceCLI.url(path), includingPropertiesForKeys:nil,
+      options:[], errorHandler:{ _,error in traversalError=error; return false }) else { throw MaintenanceCLI.failure("permission_denied") }
+    var batch=[[String:Any]]()
+    while let child=entries.nextObject() as? URL {
+      guard !OperationJournal.cancelled() else {throw MaintenanceCLI.failure("cancelled")}
+      guard rule(child.path,category:category,scope:scope).id == expectedRule.id else {throw MaintenanceCLI.failure("protected_target: cache child")}
+      let stamp=try snapshot(child.path,rootOnly:true)
+      guard let row=stamp.first else {throw MaintenanceCLI.failure("path_changed")}
+      if ((row["mode"] as! UInt32) & UInt32(S_IFMT)) == S_IFREG {
+        guard fm.isWritableFile(atPath:child.deletingLastPathComponent().path) else {throw MaintenanceCLI.failure("permission_denied")}
+        batch.append(row)
+        if batch.count == 512 {try visit(batch);batch.removeAll(keepingCapacity:true)}
+      }
+    }
+    if let error=traversalError {throw error}
+    if !batch.isEmpty {try visit(batch)}
+  }
+  static func validateLiveCacheTree(_ path:String, category:String, scope:String) throws {
+    try walkLiveCache(path,category:category,scope:scope,visit:{_ in})
+  }
+  static func removeLiveCacheTree(_ path:String, category:String, scope:String) throws -> Int64 {
+    // Reject malicious/protected contents before deleting the first batch.
+    let root=try snapshot(path,rootOnly:true).first!
+    try validateLiveCacheTree(path,category:category,scope:scope)
+    var bytes:Int64=0
+    try walkLiveCache(path,category:category,scope:scope,visit:{batch in
+      let current=try snapshot(path,rootOnly:true).first!
+      guard current["device"] as? UInt64 == root["device"] as? UInt64,
+        current["inode"] as? UInt64 == root["inode"] as? UInt64 else {throw MaintenanceCLI.failure("identity_changed: cache root")}
+      bytes += try removeCacheFiles(batch,liveCache:true)
+    })
+    return bytes
   }
   /// Never rm a cache parent. Only granted regular files are removed; new children are retained.
   static func removeCacheFiles(_ manifest: [[String: Any]], liveCache: Bool = false) throws -> Int64 {

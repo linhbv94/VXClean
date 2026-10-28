@@ -10,7 +10,7 @@ struct OperationJournal {
   static var eventBytes = 0
   static func appendEvent(_ phase: String, _ target: [String:Any]) throws {
     var data = try JSONSerialization.data(withJSONObject: ["phase":phase,"target":target], options: [.sortedKeys]); data.append(10)
-    guard eventFD >= 0, eventBytes + data.count <= 16*1024*1024 else { throw MaintenanceCLI.failure("journal_limit: chưa xác minh đầy đủ") }
+    guard eventFD >= 0, eventBytes + data.count <= 128*1024*1024 else { throw MaintenanceCLI.failure("journal_limit: chưa xác minh đầy đủ") }
     try data.withUnsafeBytes { bytes in
       var offset=0
       while offset < bytes.count {
@@ -61,6 +61,10 @@ struct OperationJournal {
     var targets = state["targets"] as? [[String:Any]] ?? []
     if let i = targets.lastIndex(where: { $0["path"] as? String == result["path"] as? String }) { targets[i] = result }
     else { targets.append(result) }
+    // Every exact event is durable on disk. Bound successful in-memory history;
+    // never discard unresolved/error targets from recovery state.
+    while targets.filter({$0["status"] as? String == "success"}).count > 200,
+      let first=targets.firstIndex(where:{$0["status"] as? String == "success"}) {targets.remove(at:first)}
     state["targets"] = targets
     try appendEvent("outcome",result)
   }

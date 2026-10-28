@@ -90,3 +90,7 @@ Counts phân biệt successful/blocked/failed/unknown. Bytes là logical/allocat
 Fixture phải đi qua producer host và consumer native, không chỉ payload Swift tự viết. Kiểm tra unknown/protected injection, scope/version/method mismatch, ancestor symlink swap, directory same-inode new child, hardlink alias, partial traversal, expired ticket, protected content unchanged, safe exact content removed, repeated request không mutation lặp.
 
 Quick tests chứng minh chỉ ba scanners và không Node/Brew/Docker CLI ở cả scan lẫn revalidation; dedicated roots không chui vào User Cache. Reproduce rồi fix các probes của [audit](../engine_scope_audit_2026_10_10.md) và [Quick recheck](../quick_scope_recheck_evidence.json). App Save/Cancel, active helper, timeout/crash/restart/retry phải có evidence. Chưa pass thì branch disabled/read-only với lý do, không dán nhãn release-ready giả.
+
+## Quick live cache lớn — 2026-10-27
+
+Theo [spec24](24_single_admin_pass_quick_live_cache.md), live_cache_root dùng ticket root identity; native duyệt kiểm chứng toàn cây rồi batch512file, không dùng full-subtree manifest hoặc cap20.000entries/3MiB để loại cache lớn. Quyền/rule/link/identity/journal vẫn đối soát độc lập. Strict cleanup và Lens không đổi. Xem [báo cáo/evidence](../large_cache_cleanup_report.md).

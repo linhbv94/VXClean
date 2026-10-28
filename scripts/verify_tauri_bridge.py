@@ -306,19 +306,19 @@ def step_3_test_frontend():
     log("FRONTEND", "Kiểm tra TypeScript compile và Vite build cho Frontend...")
 
     desktop_node_modules = DESKTOP_DIR / "node_modules"
-    sibling_node_modules = WORKSPACE_ROOT.parent / "media_tool" / "node_modules"
+    sibling_node_modules = WORKSPACE_ROOT.parent / "vxmedia" / "node_modules"
 
     if not desktop_node_modules.exists():
         if sibling_node_modules.exists():
             log("FRONTEND", f"Tạo symlink tạm thời cho spike từ {sibling_node_modules} -> {desktop_node_modules}")
             try:
                 os.symlink(sibling_node_modules, desktop_node_modules)
-                details["frontend_install_note"] = "Sử dụng node_modules liên kết từ media_tool cho spike kiểm chứng. Chưa xác minh clean npm/pnpm install độc lập."
+                details["frontend_install_note"] = "Sử dụng node_modules liên kết từ vxmedia cho spike kiểm chứng. Chưa xác minh clean npm/pnpm install độc lập."
             except OSError as e:
                 log("FRONTEND", f"Không thể tạo symlink node_modules: {e}")
                 details["frontend_install_note"] = f"Lỗi symlink node_modules: {e}"
         else:
-            log("FRONTEND", "Cảnh báo: Không tìm thấy node_modules trong desktop hoặc media_tool.")
+            log("FRONTEND", "Cảnh báo: Không tìm thấy node_modules trong desktop hoặc vxmedia.")
             details["frontend_install_note"] = "Thiếu node_modules. Cần cài đặt phụ thuộc."
 
     bin_dir = desktop_node_modules / ".bin"

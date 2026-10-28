@@ -6,7 +6,8 @@ use std::{
     time::{Duration, SystemTime},
 };
 const MAX_ENTRIES: usize = 5000;
-const MAX_TOTAL_BYTES: u64 = 32 * 1024 * 1024;
+const MAX_TOTAL_BYTES: u64 = 256 * 1024 * 1024;
+const MAX_EVENT_BYTES:u64 = 128 * 1024 * 1024;
 const KEEP_FOR: Duration = Duration::from_secs(180 * 24 * 60 * 60);
 const FILES: [(&str, &str); 4] = [
     ("host.json", "host"),
@@ -282,10 +283,20 @@ fn apply_events(row: &mut Value, data: &[u8]) -> bool {
         {
             return false;
         }
-        if targets.len() >= 20000 && !targets.contains_key(path) {
+        // Bound successful samples while retaining all unresolved/error paths.
+        // The complete ordered record remains in events.jsonl and its archive.
+        if status == "success" && !targets.contains_key(path) && targets.values().filter(|v|v["status"]=="success").count() >= 200 {
+            let oldest=targets.iter().find(|(_,v)|v["status"]=="success").map(|(p,_)|p.clone());
+            if let Some(key)=oldest {targets.remove(&key);}
+        }
+        if targets.len() >= 20200 && !targets.contains_key(path) {
             return false;
         }
         targets.insert(path.to_string(), target.clone());
+        if status == "success" && targets.values().filter(|v|v["status"]=="success").count() > 200 {
+            let oldest=targets.iter().find(|(_,v)|v["status"]=="success").map(|(p,_)|p.clone());
+            if let Some(key)=oldest {targets.remove(&key);}
+        }
     }
     if !row["native"].is_object() {
         return false;
@@ -410,7 +421,7 @@ pub(crate) fn read(root: &Path, now: SystemTime) -> Result<Value, String> {
             } else {
                 latest = latest.max(meta.modified().map_err(|e| e.to_string())?);
                 total += meta.len();
-                if meta.len() > 16 * 1024 * 1024 || total > MAX_TOTAL_BYTES {
+                if meta.len() > MAX_EVENT_BYTES || total > MAX_TOTAL_BYTES {
                     return Err("Journal vượt giới hạn đọc an toàn; chưa cho phép cập nhật.".into());
                 }
                 recognized &= apply_events(
@@ -774,4 +785,36 @@ mod event_tests {
             b"{\"phase\":\"garbage\",\"target\":{\"path\":\"/a\",\"status\":\"success\"}}\n"
         ));
     }
+    #[test]
+    fn large_completed_event_stream_keeps_bounded_samples_and_unresolved_paths() {
+        let mut data=Vec::new();
+        for n in 0..25001 {
+            let path=format!("/cache/{n:05}");
+            for (phase,status) in [("intent","outcome_unknown"),("outcome","success")] {
+                serde_json::to_writer(&mut data,&json!({"phase":phase,"target":{"path":path,"status":status}})).unwrap();
+                data.push(b'\n');
+            }
+        }
+        serde_json::to_writer(&mut data,&json!({"phase":"intent","target":{"path":"/unfinished","status":"outcome_unknown"}})).unwrap();data.push(b'\n');
+        let mut row=json!({"native":{"status":"mutating","targets":[]}});
+        assert!(apply_events(&mut row,&data));
+        let targets=row["native"]["targets"].as_array().unwrap();
+        assert_eq!(targets.iter().filter(|t|t["status"]=="success").count(),200);
+        assert!(targets.iter().any(|t|t["path"]=="/unfinished"&&t["status"]=="outcome_unknown"));
+        assert!(!complete(&row));
+        let root=std::env::temp_dir().join(format!("vxclean_large_history_{}",SystemTime::now().duration_since(SystemTime::UNIX_EPOCH).unwrap().as_nanos()));
+        std::fs::create_dir(&root).unwrap();let root=std::fs::canonicalize(root).unwrap();
+        let dir=root.join("01234567-89ab-cdef-0123-456789abcdef");std::fs::create_dir(&dir).unwrap();
+        std::fs::write(dir.join("result.json"),br#"{"status":"completed","targets":[]}"#).unwrap();
+        std::fs::write(dir.join("host.json"),br#"{"status":"returned"}"#).unwrap();
+        let last=data[..data.len()-1].iter().rposition(|b|*b==b'\n').unwrap();
+        std::fs::write(dir.join("events.jsonl"),&data[..last+1]).unwrap();
+        let history=read(&root,SystemTime::now()).unwrap();
+        assert_eq!(history.as_array().unwrap().len(),1);assert_eq!(history[0]["journal_unverified"],false);
+        assert!(dir.join("evidence.json.gz").exists());
+        let reread=read(&root,SystemTime::now()).unwrap();assert_eq!(reread[0]["journal_unverified"],false);
+        std::fs::remove_dir_all(root).unwrap();
+
+    }
+
 }

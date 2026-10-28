@@ -1,6 +1,12 @@
+#[cfg(all(test,not(target_os="windows")))]
+mod windows_dummy;
 mod journal_history;
 pub mod engine_bridge;
 pub mod models;
+#[cfg(not(target_os="windows"))]
+pub mod maintenance_bridge;
+#[cfg(target_os="windows")]
+#[path="windows_dummy.rs"]
 pub mod maintenance_bridge;
 mod lens_scanner;
 mod scan_access;
@@ -125,6 +131,7 @@ pub fn run() {
 
 /// Internal read-only worker mode, before creating any windows or Tauri services.
 pub fn run_lens_cli()->bool {
+    if cfg!(target_os="windows"){return false;}
     let args:Vec<_>=std::env::args().skip(1).collect();
     if args.first().is_none_or(|a|a!="--lens-scan"){return false}
     if args.len()!=3 || args[1]!="--path"{eprintln!("Invalid lens worker arguments");std::process::exit(2)}

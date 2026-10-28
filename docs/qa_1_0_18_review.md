@@ -1,5 +1,5 @@
 # QA độc lập VXClean 1.0.18
-Ngày: 2026-10-13. Phạm vi: luồng Full Disk Access từ bản public1.0.16; chưa đóng lượt của user.
+Ngày: 2026-10-13. Phạm vi: luồng Full Disk Access từ bản public1.0.16; lượt đã được user xác nhận đóng ngày2026-10-13.
 
 ## Review
 - Đối chiếu spec25, broker frontend, worker Rust và các điểm gọi Quick/Detail/uninstaller/orphan/Lens. Probe chỉ mở read-only rồi đóng; không đọc hoặc sửa TCC database. Timeout4s, trạng thái không xác minh không được coi là granted.
@@ -30,4 +30,4 @@ Dùng1.0.19 để cao hơn bản local18 đã cài; chỉ đổi metadata versio
 - Updater native trên /Applications/VXClean.app: local18 phát hiện21 → download/install → restart → About21. File main/engine/icon app đã cài khớp package public; strict signature và certificate binding đạt. Settings worker báo access_confirmed mà không thêm/bật lại FDA. Quick scan chỉ đọc sau update hoàn tất2.63GB, partial hiển thị đúng, Large Files không chọn mặc định; không quan sát prompt từng app, không dọn dữ liệu user.
 - Intel có native CI/package checks; chưa Intel GUI/FDA updaterE2E. Windows không phát hành. E2E này chứng minh trên máy Apple Silicon hiện tại, không bảo đảm OS/MDM không thu hồi quyền về sau.
 - Bản19/20 không publish, tag bất biến. Lỗi đã khắc phục: PKCS12 legacy để Apple import; noninteractive admin CodeSign trust trên runner disposable; bounded trust-removal timeout không ngăn xóa private keychain/search-list restore. Public certificate trust còn lại trên runner chỉ tồn tại đến khi VM bị GitHub hủy. Không đổi trust/quyền máy user trong release lượt này.
-- [Evidence](release_1_0_21_evidence.json). Lượt vẫn mở đến khi user xác nhận kết thúc.
+- [Evidence](release_1_0_21_evidence.json). User xác nhận đóng lượt ngày2026-10-13; TrackA tiếp theo build VXClean Windows, TrackB QA/test/release VXmp3 Mac độc lập.
