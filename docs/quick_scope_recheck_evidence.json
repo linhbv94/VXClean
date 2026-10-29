@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-10",
+  "scope": "Synthetic fixtures only; ENGINE_TESTING redirects system roots into temporary home. No real OS/user data deletion or admin escalation.",
+  "results": {
+    "open_temp_directory": {
+      "category": "system_junk",
+      "default_selected": true,
+      "deletion_method": "remove_item",
+      "success_count": 1,
+      "source_removed": true
+    },
+    "recent_system_log": {
+      "category": "system_junk",
+      "default_selected": true,
+      "deletion_method": "remove_item",
+      "success_count": 1,
+      "source_removed": true
+    },
+    "open_descriptor_after_unlink": {
+      "descriptor_still_readable": true,
+      "original_path_missing": true
+    },
+    "large_file_discovery": {
+      "default_selected": false,
+      "deletion_method": "trash",
+      "source_preserved": true
+    },
+    "os_component_outside_scan_roots": {
+      "listed": false,
+      "source_preserved": true
+    }
+  },
+  "source_sha256": {
+    "MClean/Services/ScanEngine.swift": "e3d90c71f3ae76f473c8df071b1f2be089ee26d61582e808c7b62fb5c79637b7",
+    "MClean/Services/CleaningEngine.swift": "e619bf4a109e3a0057a53c3c41220e6c8c236a1078296ebcda2a6c7e719cd666",
+    "desktop/native/maintenance_cli.swift": "587750dca625c71bc301d9f9a676023e7d1d8600b46276abfd3e02b2c347323e",
+    "desktop/src_tauri/src/maintenance_bridge.rs": "494d52f7cddb2bf20f7177c943130e477bfb7594110f8e036d3bef9372d0ffc7",
+    "desktop/src/components/cleanup_view.tsx": "e139c0f3ecd212761153d64ef26ced773f5bc05b1632cdb50dfecbb0fe1b5b9e"
+  }
+}

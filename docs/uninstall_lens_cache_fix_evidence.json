@@ -1,0 +1,44 @@
+{
+  "version": "1.0.13",
+  "public_release": false,
+  "real_capcut_uninstall": false,
+  "cause": {
+    "capcut_bundle_entries": 6437,
+    "movies_capcut_entries": 29675,
+    "old_manifest_entry_limit": 20000,
+    "container_internal_symlinks": true
+  },
+  "verification": {
+    "rust_tests": 37,
+    "native_fixture_groups": 35,
+    "host_to_native_uninstall_fixture": "pass",
+    "external_symlink_marker_preserved": true,
+    "capcut_readonly_host_preflight_roots": 5,
+    "folder_cache_unit": "TTL/revision/LRU/refresh/parent-child/alias pass",
+    "scan_retention_groups": 10,
+    "frontend_build": "pass",
+    "codesign": "pass",
+    "updater_signature": "pass"
+  },
+  "native_ui": {
+    "parent_navigation_cached": true,
+    "child_revisit_cached": true,
+    "refresh_displays_new_fixture_file": true,
+    "fixture_removed": true,
+    "capcut_selection_reloaded": "5 roots visible; discovery unselected by default; no old preflight error"
+  },
+  "limits": {
+    "folder_cache_minutes": 5,
+    "folder_cache_keys": 16,
+    "new_folder_first_scan_required": true,
+    "os_auth_and_real_uninstall_this_task": false
+  },
+  "source_sha256": {
+    "desktop/src/components/space_lens_view.tsx": "687cdd38513979f021a3cdca832c991d21ae74f8bd17b33e714837c7c285592e",
+    "desktop/src/services/folder_scan_cache.ts": "91bc223a92a7fe59fe08442144b3cadcc429c62086112ade6b0a7ee85604b31a",
+    "desktop/src/services/scan_retention.ts": "03f435bbd778c96233568a4ab0b72b8b8fe58b90a47723e1cea5723e162c9585",
+    "desktop/src_tauri/src/maintenance_bridge.rs": "085ac280e2988a1ceca7d4e650317b4c4cc8f77fb839d86eb4ea33e1af6da9e6",
+    "desktop/native/maintenance_cli.swift": "1a7f5cd353e98141d742da878f9e28c08c06b4ac0040e245609d4834f23e294a",
+    "desktop/native/cleanup_policy.swift": "3fb34f9b4048afc6b74459a1697fab867da45e39041ead53c4667d15730f255d"
+  }
+}

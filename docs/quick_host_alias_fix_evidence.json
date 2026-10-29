@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-11",
+  "version": "1.0.4",
+  "tests": {
+    "rust_full": {
+      "passed": 23,
+      "log": "/tmp/vxclean_alias_rust_tests.log"
+    },
+    "packaged_native_fixture": {
+      "passed": true,
+      "log": "/tmp/vxclean_alias_packaged_test.log"
+    },
+    "production_scan_host_probe": {
+      "eligible": 318,
+      "alias_targets": 116,
+      "manifest_failures": 0
+    },
+    "codesign": true,
+    "updater_signature": true,
+    "tampered_updater_rejected": true
+  },
+  "gui_cleanup_tested": false,
+  "admin_password_popup_tested": false,
+  "real_user_data_deleted": false,
+  "published": false,
+  "artifacts": [
+    {
+      "path": "desktop/src_tauri/target/release/bundle/dmg/VXClean_1.0.4_aarch64.dmg",
+      "sha256": "99f9fc30c8ba5004d1df06baaf4d97229ba4d1b0a0cf2d43159071427ccf7529"
+    },
+    {
+      "path": "desktop/src_tauri/target/release/bundle/macos/VXClean.app.tar.gz",
+      "sha256": "68a2615396a5d562a6a296baacb969ca567d66fecf3513b20da543dd30c834d2"
+    },
+    {
+      "path": "desktop/src_tauri/target/release/bundle/macos/VXClean.app/Contents/MacOS/vxclean",
+      "sha256": "825947c2b887324e5858565843109194ef31b2827eb09721d7cf42176d2efe8b"
+    },
+    {
+      "path": "desktop/src_tauri/target/release/bundle/macos/VXClean.app/Contents/Resources/vxclean_engine",
+      "sha256": "22cb9e7192b036182d4010517646cfe506f53a0dd75be166cb9826aa865dfaec"
+    }
+  ],
+  "installed": {
+    "path": "/Applications/VXClean.app",
+    "version": "1.0.4",
+    "backup": "/tmp/vxclean_pre_alias_fix_1_0_3.app",
+    "opened": true
+  }
+}

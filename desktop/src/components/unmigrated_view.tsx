@@ -1,3 +1,4 @@
+import {useCleanText} from '../services/ui_language';
 import React from 'react';
 import { TabId } from '../types';
 import { Clock, ArrowLeft, ShieldAlert } from 'lucide-react';
@@ -38,9 +39,11 @@ export const UnmigratedView: React.FC<UnmigratedViewProps> = ({
   tab,
   onBackToDashboard,
 }) => {
+  const ct = useCleanText();
+
   const info = TAB_TITLES[tab] ?? {
-    title: 'Chức năng',
-    desc: 'Mô tả chức năng.',
+    title: ct("Chức năng"),
+    desc: ct("Mô tả chức năng."),
   };
 
   return (
@@ -52,15 +55,11 @@ export const UnmigratedView: React.FC<UnmigratedViewProps> = ({
 
         <div className="flex flex-col gap-1">
           <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-mono bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 mx-auto">
-            <ShieldAlert className="w-3.5 h-3.5" />
-            Chưa chuyển
-          </div>
+            <ShieldAlert className="w-3.5 h-3.5" />{ct("Chưa chuyển")} </div>
           <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100 mt-2">
-            {info.title}
+            {ct(info.title)}
           </h2>
-          <p className="text-xs text-slate-500 dark:text-slate-400">
-            Chức năng chưa có trong bản thử; dùng bản native hiện tại.
-          </p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">{ct("Chức năng chưa có trong bản thử; dùng bản native hiện tại.")} </p>
         </div>
 
         <button
@@ -68,9 +67,7 @@ export const UnmigratedView: React.FC<UnmigratedViewProps> = ({
           onClick={onBackToDashboard}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold bg-cyan-500 hover:bg-cyan-400 text-slate-950 transition-all cursor-pointer"
         >
-          <ArrowLeft className="w-3.5 h-3.5" />
-          Quay lại Tổng quan
-        </button>
+          <ArrowLeft className="w-3.5 h-3.5" />{ct("Quay lại Tổng quan")} </button>
       </div>
     </div>
   );

@@ -18,32 +18,116 @@ use tauri::Emitter;
 #[cfg(target_os = "macos")]
 use tauri::menu::{AboutMetadataBuilder, MenuBuilder, MenuItemBuilder, SubmenuBuilder};
 
-pub fn run() {
-    let builder=tauri::Builder::default();
-    #[cfg(target_os="macos")]
-    let builder=builder.plugin(tauri_plugin_single_instance::init(|app,_,_| { let _=menubar::open_main(app,"open"); }));
-    builder
-        .plugin(tauri_plugin_updater::Builder::new().build())
-        .manage(maintenance_bridge::EngineState::default())
-        .manage(engine_bridge::MetricsService::default())
-        .manage(menubar::MenubarState::default())
-        .setup(|app| {
-            #[cfg(target_os = "macos")]
-            {
-                let about_metadata = AboutMetadataBuilder::new()
-                    .name(Some("VXClean"))
-                    .version(Some(env!("CARGO_PKG_VERSION")))
-                    .copyright(Some("by Viet Linh Bui"))
-                    .authors(Some(vec!["Viet Linh Bui".into()]))
-                    .comments(Some("Tiện ích giám sát tài nguyên CPU, RAM, Disk siêu nhẹ"))
-                    .build();
+#[cfg(target_os = "macos")]
+#[allow(deprecated)]
+pub fn sync_mac_traffic_lights(window: &tauri::WebviewWindow) {
+    let win = window.clone();
+    let win_closure = win.clone();
+    let _ = win.run_on_main_thread(move || {
+        #[allow(deprecated)]
+        use cocoa::base::{id, nil, BOOL, YES};
+        #[allow(deprecated)]
+        use cocoa::foundation::{NSPoint, NSRect};
+        use objc::{class, msg_send, sel, sel_impl};
 
-                let settings_item = MenuItemBuilder::with_id("open_settings", "Cài đặt...")
+        if let Ok(ns_win_ptr) = win_closure.ns_window() {
+            let ns_window = ns_win_ptr as id;
+            if ns_window == nil {
+                return;
+            }
+            unsafe {
+                let style_mask: u64 = msg_send![ns_window, styleMask];
+                if (style_mask & (1 << 14)) != 0 {
+                    return;
+                }
+
+                for (i, btn_id) in [0usize, 1usize, 2usize].iter().enumerate() {
+                    let btn: id = msg_send![ns_window, standardWindowButton: *btn_id];
+                    if btn != nil {
+                        let is_hidden: BOOL = msg_send![btn, isHidden];
+                        if is_hidden == YES {
+                            continue;
+                        }
+                        let reference: id = msg_send![class!(NSWindow),
+                            standardWindowButton: *btn_id forStyleMask: style_mask];
+                        if reference == nil {
+                            continue;
+                        }
+                        let reference_frame: NSRect = msg_send![reference, frame];
+                        let reference_bounds: NSRect = msg_send![reference, bounds];
+                        let control_size: u64 = msg_send![reference, controlSize];
+                        let _: () = msg_send![btn, setControlSize: control_size];
+
+                        let content_view: id = msg_send![ns_window, contentView];
+                        let superview: id = msg_send![btn, superview];
+                        if content_view == nil || superview == nil {
+                            continue;
+                        }
+                        let content_bounds: NSRect = msg_send![content_view, bounds];
+                        let is_flipped: BOOL = msg_send![content_view, isFlipped];
+                        let toolbar_center_from_top = 15.5_f64;
+                        let toolbar_center_y = if is_flipped == YES {
+                            toolbar_center_from_top
+                        } else {
+                            content_bounds.size.height - toolbar_center_from_top
+                        };
+                        let content_center = NSPoint {
+                            x: content_bounds.origin.x + 14.0 + (i as f64) * 20.0,
+                            y: content_bounds.origin.y + toolbar_center_y,
+                        };
+                        let native_center: NSPoint = msg_send![superview,
+                            convertPoint: content_center fromView: content_view];
+                        let target_x = native_center.x - reference_frame.size.width / 2.0;
+                        let target_y = native_center.y - reference_frame.size.height / 2.0;
+                        let target_frame = NSRect {
+                            origin: NSPoint {
+                                x: target_x,
+                                y: target_y,
+                            },
+                            size: reference_frame.size,
+                        };
+                        let _: () = msg_send![btn, setFrame: target_frame];
+                        let _: () = msg_send![btn, setBounds: reference_bounds];
+                    }
+                }
+            }
+        }
+    });
+}
+
+#[cfg(target_os = "macos")]
+fn rebuild_mac_app_menu(app: &tauri::AppHandle, lang: &str) -> tauri::Result<()> {
+    let en = lang == "en";
+    let about_comments = if en {
+        "Monitor resources, inspect storage, and maintain system performance."
+    } else {
+        "Theo dõi tài nguyên, dọn dẹp dung lượng và tối ưu hóa hệ thống."
+    };
+    let about_credits = if en {
+        "Bùi Việt Linh\nMonitor resources, clean system caches, and inspect storage usage.\nGitHub: https://github.com/linhbv94/VXClean"
+    } else {
+        "Bùi Việt Linh\nTheo dõi tài nguyên, dọn dẹp dung lượng và kiểm tra bộ nhớ an toàn.\nGitHub: https://github.com/linhbv94/VXClean"
+    };
+
+    let mut about_builder = AboutMetadataBuilder::new()
+        .name(Some("VXClean"))
+        .version(Some(env!("CARGO_PKG_VERSION")))
+        // Empty AppKit build version prevents fallback to CFBundleVersion.
+        .short_version(Some(""))
+        .copyright(Some("© 2026 Bùi Việt Linh. All rights reserved."))
+        .authors(Some(vec!["Bùi Việt Linh".into()]))
+        .comments(Some(about_comments))
+        .website(Some("https://github.com/linhbv94/VXClean"))
+        .website_label(Some("GitHub — VXClean"))
+        .credits(Some(about_credits));
+    about_builder = about_builder.icon(Some(tauri::include_image!("icons/icon.png")));
+
+                let settings_item = MenuItemBuilder::with_id("open_settings", if en {"Settings…"} else {"Cài đặt..."})
                     .accelerator("CmdOrCtrl+,")
                     .build(app)?;
 
                 let app_submenu = SubmenuBuilder::new(app, "VXClean")
-                    .about(Some(about_metadata))
+                    .about(Some(about_builder.build()))
                     .separator()
                     .item(&settings_item)
                     .separator()
@@ -56,21 +140,21 @@ pub fn run() {
                     .quit()
                     .build()?;
 
-                let refresh_item = MenuItemBuilder::with_id("refresh_data", "Làm mới dữ liệu")
+                let refresh_item = MenuItemBuilder::with_id("refresh_data", if en {"Refresh data"} else {"Làm mới dữ liệu"})
                     .accelerator("CmdOrCtrl+R")
                     .build(app)?;
 
-                let file_submenu = SubmenuBuilder::new(app, "Tệp")
+                let file_submenu = SubmenuBuilder::new(app, if en {"File"} else {"Tệp"})
                     .item(&refresh_item)
                     .separator()
                     .close_window()
                     .build()?;
 
-                let toggle_theme_item = MenuItemBuilder::with_id("toggle_theme", "Chuyển giao diện sáng/tối")
+                let toggle_theme_item = MenuItemBuilder::with_id("toggle_theme", if en {"Toggle light/dark appearance"} else {"Chuyển giao diện sáng/tối"})
                     .build(app)?;
 
-                let resource_panel_item = MenuItemBuilder::with_id("resource_panel", "Bảng tài nguyên (menubar)").build(app)?;
-                let view_submenu = SubmenuBuilder::new(app, "Xem")
+                let resource_panel_item = MenuItemBuilder::with_id("resource_panel", if en {"Resource panel"} else {"Bảng tài nguyên (menubar)"}).build(app)?;
+                let view_submenu = SubmenuBuilder::new(app, if en {"View"} else {"Xem"})
                     .item(&resource_panel_item)
                     .item(&toggle_theme_item)
                     .build()?;
@@ -82,6 +166,32 @@ pub fn run() {
                     .build()?;
 
                 let _ = app.set_menu(menu);
+    Ok(())
+}
+#[tauri::command]
+fn set_app_language(app: tauri::AppHandle, lang: String) -> Result<(), String> {
+    #[cfg(target_os="macos")]
+    return rebuild_mac_app_menu(&app, &lang).map_err(|e| e.to_string());
+    #[cfg(not(target_os="macos"))]
+    {let _ = (app,lang); Ok(())}
+}
+pub fn run() {
+    let builder=tauri::Builder::default();
+    #[cfg(target_os="macos")]
+    let builder=builder.plugin(tauri_plugin_single_instance::init(|app,_,_| { let _=menubar::open_main(app,"open"); }));
+    builder
+        .plugin(tauri_plugin_updater::Builder::new().build())
+        .manage(maintenance_bridge::EngineState::default())
+        .manage(engine_bridge::MetricsService::default())
+        .manage(menubar::MenubarState::default())
+        .setup(|app| {
+            #[cfg(target_os = "macos")]
+            {
+                rebuild_mac_app_menu(app.handle(), "vi")?;
+                use tauri::Manager;
+                if let Some(main_win) = app.get_webview_window("main") {
+                    sync_mac_traffic_lights(&main_win);
+                }
             }
 
             #[cfg(target_os = "windows")]
@@ -100,6 +210,7 @@ pub fn run() {
                 let _ = app_handle.emit("trigger-refresh", ());
             }
             "open_settings" => {
+                let _ = menubar::open_main(app_handle, "open");
                 let _ = app_handle.emit("trigger-open-settings", ());
             }
             "resource_panel" => { menubar::show_panel(app_handle); }
@@ -109,6 +220,7 @@ pub fn run() {
             _ => {}
         })
         .invoke_handler(tauri::generate_handler![
+            set_app_language,
             maintenance_bridge::prepare_for_update, maintenance_bridge::resume_after_update_error, maintenance_bridge::restart_after_update, menubar::menubar_action, maintenance_bridge::prepare_cleanup_apps, maintenance_bridge::finish_cleanup_apps, maintenance_bridge::get_operation_status, maintenance_bridge::get_operation_history, maintenance_bridge::acknowledge_operation,
             engine_bridge::get_capabilities,
             engine_bridge::get_system_snapshot,

@@ -14,7 +14,7 @@ Mac giữ hành vi hiện tại. Windows x64 có giao diện và dummy engine, c
 
 ## Agent release cần làm
 
-1. Đọc spec26, hướng dẫn root `_summary/desktop_system_permissions.md`, trạng thái Git và thay đổi có trước. Chọn version mới theo release request; chưa bump version trong task dummy.
+1. Đọc spec26, hướng dẫn root `_summary/standard_docs/desktop_system_permissions.md`, trạng thái Git và thay đổi có trước. Chọn version mới theo release request; chưa bump version trong task dummy.
 2. Chạy Windows CI đúng commit. Trên Windows: `npm ci --ignore-scripts` tại desktop; `cargo test --locked --lib maintenance_bridge::tests` tại src_tauri (Mac vẫn chạy toàn bộ hồi quy); `npm run tauri -- build --bundles nsis`. Khi chỉ check build không có updater secret, thêm `--config '{"bundle":{"createUpdaterArtifacts":false}}'`. Không dùng cấu hình bỏ updater artifact cho bản release có updater.
 3. `.exe` ở `desktop/src_tauri/target/release/bundle/nsis/`. Kiểm tra cài/mở/chuyển màn/dark mode/minimize/maximize/close; thao tác scan/dọn/gỡ chỉ báo chưa hỗ trợ, không giả success; không yêu cầu quyền admin/FDA để dùng shell.
 4. Nếu publish Windows: bổ sung asset/manifest platform và verifier phù hợp, tái sử dụng updater key đúng app sau khi có quyền; không đổi signer Mac. Note Windows UI-only và cảnh báo Windows unsigned/SmartScreen theo thực tế; không claim chức năng cleaner hoạt động.

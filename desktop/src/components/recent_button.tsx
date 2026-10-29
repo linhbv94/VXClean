@@ -1,3 +1,4 @@
+import {useCleanText} from '../services/ui_language';
 import React, { useState, useRef, useEffect, useLayoutEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { Folder, File, ChevronDown } from 'lucide-react';
@@ -11,7 +12,9 @@ export interface RecentButtonProps {
 }
 export const RecentButton: React.FC<RecentButtonProps> = ({ type, storageKey, label, title, icon,
   disabled = false, onMainClick, onSelectRecent, className = '', buttonClassName,
-  dropdownAlign = 'left', emptyLabel = 'Chưa có mục gần đây', showChevron = true }) => {
+  dropdownAlign = 'left', emptyLabel = "Chưa có mục gần đây", showChevron = true }) => {
+  const ct = useCleanText();
+
   const [open, setOpen] = useState(false);
   const [items, setItems] = useState<string[]>(() => getRecentItems(storageKey));
   const [position, setPosition] = useState({ left: 8, top: 32, width: 256 });
@@ -82,7 +85,7 @@ export const RecentButton: React.FC<RecentButtonProps> = ({ type, storageKey, la
     <button ref={triggerRef} type="button" disabled={disabled} aria-label={label || title} aria-haspopup="menu" aria-expanded={open}
       onClick={(event) => { event.stopPropagation(); cancelClose(); setOpen(false); onMainClick(); }} title={title || label}
       className={buttonClassName || 'flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium whitespace-nowrap transition-colors text-slate-700 dark:text-slate-200 bg-slate-200/60 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/15 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer'}>
-      {icon}{label && <span>{label}</span>}{showChevron && <ChevronDown className="w-3 h-3 shrink-0" />}
+      {icon}{label && <span>{ct(label)}</span>}{showChevron && <ChevronDown className="w-3 h-3 shrink-0" />}
     </button>
     {open && !disabled && createPortal(<div ref={menuRef} data-no-drag role="menu" aria-label={`${label || title} — recent`}
       style={{ position: 'fixed', ...position, WebkitAppRegion: 'no-drag' } as React.CSSProperties}
@@ -90,9 +93,9 @@ export const RecentButton: React.FC<RecentButtonProps> = ({ type, storageKey, la
       onMouseEnter={enter} onMouseLeave={leave} onFocus={cancelClose} onBlur={blur} onKeyDown={menuKeys}
       onMouseDown={(event) => event.stopPropagation()} onClick={(event) => event.stopPropagation()}>
       <div className="px-2.5 py-1 text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase border-b border-slate-200 dark:border-white/10 mb-1">
-        {/Open/i.test(label) ? 'Recent' : 'Gần đây'} ({items.length}/5)
+        {/Open/i.test(label) ? 'Recent' : ct("Gần đây")} ({items.length}/5)
       </div>
-      {!items.length ? <div className="px-3 py-2 text-xs text-slate-500 dark:text-slate-400">{emptyLabel}</div> :
+      {!items.length ? <div className="px-3 py-2 text-xs text-slate-500 dark:text-slate-400">{ct(emptyLabel)}</div> :
         <div className="flex flex-col gap-0.5 max-h-56 overflow-y-auto">
         {items.map((path) => <button key={path} role="menuitem" type="button" title={path}
           onClick={(event) => { event.stopPropagation(); cancelClose(); setOpen(false); onSelectRecent(path); }}

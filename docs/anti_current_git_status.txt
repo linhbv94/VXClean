@@ -1,0 +1,113 @@
+ M MClean/Assets.xcassets/AppIcon.appiconset/icon_128.png
+ M MClean/Assets.xcassets/AppIcon.appiconset/icon_128@2x.png
+ M MClean/Assets.xcassets/AppIcon.appiconset/icon_16.png
+ M MClean/Assets.xcassets/AppIcon.appiconset/icon_16@2x.png
+ M MClean/Assets.xcassets/AppIcon.appiconset/icon_256.png
+ M MClean/Assets.xcassets/AppIcon.appiconset/icon_256@2x.png
+ M MClean/Assets.xcassets/AppIcon.appiconset/icon_32.png
+ M MClean/Assets.xcassets/AppIcon.appiconset/icon_32@2x.png
+ M MClean/Assets.xcassets/AppIcon.appiconset/icon_512.png
+ M MClean/Assets.xcassets/AppIcon.appiconset/icon_512@2x.png
+ M MClean/Logic/Utilities/OrphanSafetyPolicy.swift
+ M MClean/Models/SpaceLensNode.swift
+ M MClean/Services/ScanEngine.swift
+ M desktop/native/main.swift
+ M desktop/src/app.tsx
+ M desktop/src/components/dashboard.tsx
+ M desktop/src/components/sidebar.tsx
+ M desktop/src/components/title_bar.tsx
+ M desktop/src/components/unmigrated_view.tsx
+ M desktop/src/services/tauri_bridge.ts
+ M desktop/src/types.ts
+ M desktop/src_tauri/Cargo.lock
+ M desktop/src_tauri/Cargo.toml
+ M desktop/src_tauri/build.rs
+ M desktop/src_tauri/capabilities/default.json
+ M desktop/src_tauri/gen/schemas/capabilities.json
+ M desktop/src_tauri/icons/128x128.png
+ M desktop/src_tauri/icons/128x128@2x.png
+ M desktop/src_tauri/icons/32x32.png
+ M desktop/src_tauri/icons/icon.png
+ M desktop/src_tauri/src/engine_bridge.rs
+ M desktop/src_tauri/src/lib.rs
+ M desktop/src_tauri/src/models.rs
+ M desktop/src_tauri/tauri.conf.json
+ M docs/development_log.md
+ M docs/readme.md
+ M docs/spec/00_system_overview.md
+ M docs/spec/01_business_process.md
+ M docs/spec/02_feature_flow.md
+ M docs/spec/03_ui_wireframe.md
+ M docs/spec/04_api_data.md
+ M docs/spec/05_qa_acceptance.md
+ M docs/spec/06_demo_presentation.md
+ M docs/tauri_bridge_task.md
+ M docs/wireframes/readme.md
+ M scripts/verify_tauri_bridge.py
+?? desktop/native/cleanup_policy.swift
+?? desktop/native/compact_lens_scanner.swift
+?? desktop/native/maintenance_cli.swift
+?? desktop/src/assets/
+?? desktop/src/components/circle_packing.tsx
+?? desktop/src/components/cleanup_view.tsx
+?? desktop/src/components/confirmation_dialog.tsx
+?? desktop/src/components/orphans_view.tsx
+?? desktop/src/components/page_header.tsx
+?? desktop/src/components/retained_screen.tsx
+?? desktop/src/components/settings_modal.tsx
+?? desktop/src/components/smart_scan_view.tsx
+?? desktop/src/components/space_lens_view.tsx
+?? desktop/src/components/uninstaller_view.tsx
+?? desktop/src/services/mock_engine.ts
+?? desktop/src/services/scan_retention.ts
+?? desktop/src/services/uninstall_selection.ts
+?? desktop/src_tauri/icons/64x64.png
+?? desktop/src_tauri/icons/Square107x107Logo.png
+?? desktop/src_tauri/icons/Square142x142Logo.png
+?? desktop/src_tauri/icons/Square150x150Logo.png
+?? desktop/src_tauri/icons/Square284x284Logo.png
+?? desktop/src_tauri/icons/Square30x30Logo.png
+?? desktop/src_tauri/icons/Square310x310Logo.png
+?? desktop/src_tauri/icons/Square44x44Logo.png
+?? desktop/src_tauri/icons/Square71x71Logo.png
+?? desktop/src_tauri/icons/Square89x89Logo.png
+?? desktop/src_tauri/icons/StoreLogo.png
+?? desktop/src_tauri/icons/icon.icns
+?? desktop/src_tauri/icons/icon.ico
+?? desktop/src_tauri/src/maintenance_bridge.rs
+?? docs/_vxclean_spec_review_task.md
+?? docs/_vxclean_ui_handover_to_codex.md
+?? docs/anti_current_git_status.txt
+?? docs/anti_release_completion_task.md
+?? docs/anti_ui_context.md
+?? docs/anti_ui_handoff.md
+?? docs/anti_ui_polish_handoff.md
+?? docs/anti_ui_polish_task.md
+?? docs/anti_ui_review.md
+?? docs/anti_ui_task.md
+?? docs/capcut_ai_cache_research.md
+?? docs/cleanup_dictionary.json
+?? docs/cleanup_protection_contract.json
+?? docs/engine_scope_audit_2026_10_10.md
+?? docs/engine_scope_audit_evidence.json
+?? docs/library_cleanup_scope_research.md
+?? docs/native_engine_integration.md
+?? docs/quick_scope_recheck_evidence.json
+?? docs/release_preparation_dispatch.json
+?? docs/release_preparation_handoff.md
+?? docs/spec/07_ui_engine_feedback.md
+?? docs/spec/08_scan_retention_ui_polish.md
+?? docs/spec/09_windows_release_strategy.md
+?? docs/spec/10_uninstall_discovery_cache_safety.md
+?? docs/spec/11_detailed_app_cleanup.md
+?? docs/spec/12_cleanup_dictionary.md
+?? docs/spec/13_engine_behavior_truth.md
+?? docs/spec/14_quick_detailed_scope.md
+?? docs/spec/15_cleanup_protection_policy.md
+?? docs/spec/16_menubar_release_ui.md
+?? docs/spec_history/
+?? scripts/test_circle_packing.cjs
+?? scripts/test_native_maintenance.py
+?? scripts/test_scan_retention.cjs
+?? scripts/test_uninstall_selection.cjs
+?? vxclean_icon_menubar.svg

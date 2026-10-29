@@ -1,3 +1,4 @@
+import {useCleanText} from '../services/ui_language';
 import {isScanAccessDeferred} from '../services/scan_access';
 import { useConfirmation } from './confirmation_dialog';
 import React, { useState, useEffect, useMemo, useRef } from 'react';
@@ -54,6 +55,8 @@ function truncateName(name: string, radius: number): string {
 }
 
 export const SpaceLensView: React.FC = () => {
+  const ct = useCleanText();
+
   const { confirm, dialog } = useConfirmation();
   const [lensId, setLensId] = useState('');
   const [isTrashing, setIsTrashing] = useState(false);
@@ -171,7 +174,7 @@ export const SpaceLensView: React.FC = () => {
 
       if (runId !== generation.current || isCancelledRef.current) return false;
 
-      if (revision !== scanRetention.revision) {setActionMessage('Dữ liệu đã thay đổi; hãy quét lại folder.');return false;}
+      if (revision !== scanRetention.revision) {setActionMessage(ct("Dữ liệu đã thay đổi; hãy quét lại folder."));return false;}
       folderCache.current.put([target,res.root_path],res,revision);
       proofRoot.current=res.scan_root_path??res.root_path;navigationTicket.current=res.lens_id??'';
       setLensId(res.lens_id ?? 'mock_lens');
@@ -212,7 +215,7 @@ export const SpaceLensView: React.FC = () => {
     generation.current++;
     isCancelledRef.current = true;
     setLoading(false);
-    setActionMessage('Đã hủy quét phân tích dung lượng.');
+    setActionMessage(ct("Đã hủy quét phân tích dung lượng."));
   };
 
   const openRecentRoot = async (path: string) => {
@@ -297,7 +300,7 @@ export const SpaceLensView: React.FC = () => {
       setIsTrashing(true);
       try {const fresh=await bridge.runAnalyzeSpaceLens(currentPath);
         const refreshedNode=fresh.root_node.children?.find(child=>child.path===node.path && child.can_trash===true);
-        if(!refreshedNode)throw new Error('Mục đã thay đổi hoặc không được phép chuyển vào Thùng rác.');
+        if(!refreshedNode)throw new Error(ct("Mục đã thay đổi hoặc không được phép chuyển vào Thùng rác."));
         confirmedNode=refreshedNode;
         ticket=fresh.lens_id??'';
       } catch(error) {setActionMessage(bridge.errorText(error));setIsTrashing(false);return;}
@@ -306,9 +309,9 @@ export const SpaceLensView: React.FC = () => {
     if (
       isTrashing ||
       !(await confirm(
-        `Chuyển "${confirmedNode.name}" (${formatBytes(
+        (ct("Chuyển \"") + (confirmedNode.name) + ct("\" (") + (formatBytes(
           confirmedNode.size_bytes
-        )}) vào Thùng rác? Dữ liệu sẽ còn trên đĩa cho tới khi làm rỗng Thùng rác.`
+        )) + ct(") vào Thùng rác? Dữ liệu sẽ còn trên đĩa cho tới khi làm rỗng Thùng rác."))
       ))
     )
       return;
@@ -322,7 +325,7 @@ export const SpaceLensView: React.FC = () => {
               .map((d) => d.error_message)
               .filter(Boolean)
               .join('; ')
-          : `Đã chuyển ${formatBytes(result.trashed_bytes)} vào Thùng rác.`
+          : (ct("Đã chuyển ") + (formatBytes(result.trashed_bytes)) + ct(" vào Thùng rác."))
       );
     } catch (e) {
       setActionMessage(bridge.errorText(e));
@@ -365,8 +368,8 @@ export const SpaceLensView: React.FC = () => {
         icon={Compass}
         iconBgClass="bg-cyan-500/10 border-cyan-500/30"
         iconColorClass="text-cyan-600 dark:text-cyan-400"
-        title="Kính Không gian (Space Lens)"
-        subtitle="Trực quan hóa bản đồ dung lượng theo bong bóng packed circles và danh sách thu gọn"
+        title={ct("Kính Không gian (Space Lens)")}
+        subtitle={ct("Trực quan hóa bản đồ dung lượng theo bong bóng packed circles và danh sách thu gọn")}
       />
 
       {/* Lens Toolbar below header */}
@@ -374,20 +377,20 @@ export const SpaceLensView: React.FC = () => {
         <div className="flex items-center gap-2">
           {/* Native Folder Picker Button & Typed Path */}
           <RecentButton type="folder" storageKey="vxclean_recent_lens_folders"
-            label="Chọn thư mục..." title="Chọn thư mục qua hộp thoại hệ điều hành"
+            label={ct("Chọn thư mục...")} title={ct("Chọn thư mục qua hộp thoại hệ điều hành")}
             icon={<FolderOpen size={13} className="text-cyan-600 dark:text-cyan-400" />}
             disabled={loading || isTrashing} onMainClick={handlePickFolder} onSelectRecent={openRecentRoot}
             buttonClassName="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-700 dark:text-cyan-300 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
-            emptyLabel="Chưa có thư mục gần đây" />
+            emptyLabel={ct("Chưa có thư mục gần đây")} />
 
           <input
-            aria-label="Thư mục cần phân tích"
+            aria-label={ct("Thư mục cần phân tích")}
             value={currentPath}
             onChange={(e) => setCurrentPath(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === 'Enter' && !loading) void analyzePath(currentPath,true);
             }}
-            placeholder="~/ hoặc /Applications"
+            placeholder={ct("~/ hoặc /Applications")}
             className="w-56 rounded-lg bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-2.5 py-1.5 text-xs font-mono text-slate-900 dark:text-slate-200 focus:outline-none focus:border-cyan-500 shadow-2xs"
           />
         </div>
@@ -403,7 +406,7 @@ export const SpaceLensView: React.FC = () => {
                   ? 'bg-white dark:bg-slate-800 text-cyan-600 dark:text-cyan-400 shadow-xs font-semibold'
                   : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
-              title="Bong bóng dung lượng (Packed Circles)"
+              title={ct("Bong bóng dung lượng (Packed Circles)")}
             >
               <CircleDot size={14} />
             </button>
@@ -415,7 +418,7 @@ export const SpaceLensView: React.FC = () => {
                   ? 'bg-white dark:bg-slate-800 text-cyan-600 dark:text-cyan-400 shadow-xs font-semibold'
                   : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
-              title="Danh sách thu gọn (Compact List)"
+              title={ct("Danh sách thu gọn (Compact List)")}
             >
               <List size={14} />
             </button>
@@ -428,7 +431,7 @@ export const SpaceLensView: React.FC = () => {
             className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 bg-white/60 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors cursor-pointer disabled:opacity-50"
           >
             <RefreshCw size={13} className={loading ? 'animate-spin' : ''} />
-            <span>Quét lại</span>
+            <span>{ct("Quét lại")}</span>
           </button>
         </div>
       </div>
@@ -438,25 +441,19 @@ export const SpaceLensView: React.FC = () => {
         <div className="px-4 py-2 bg-amber-500/10 border-b border-amber-500/20 flex items-center justify-between text-xs text-amber-600 dark:text-amber-400 shrink-0">
           <div className="flex items-center gap-2">
             <AlertTriangle size={14} className="text-amber-500 dark:text-amber-400 shrink-0" />
-            <span>
-              Một số thư mục không đọc được. Kiểm tra quyền truy cập hoặc quét lại.
-            </span>
+            <span>{ct("Một số thư mục không đọc được. Kiểm tra quyền truy cập hoặc quét lại.")} </span>
           </div>
           <div className="flex items-center gap-2">
             <button
               type="button"
               onClick={handleOpenFDA}
               className="px-2.5 py-0.5 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold text-[11px] transition-colors cursor-pointer"
-            >
-              Mở Cài đặt FDA
-            </button>
+            >{ct("Mở Cài đặt FDA")} </button>
             <button
               type="button"
               onClick={() => analyzePath(currentPath,true)}
               className="px-2.5 py-0.5 rounded border border-amber-500/40 text-amber-700 dark:text-amber-300 text-[11px] hover:bg-amber-500/15 transition-colors cursor-pointer"
-            >
-              Quét lại sau cấp quyền
-            </button>
+            >{ct("Quét lại sau cấp quyền")} </button>
           </div>
         </div>
       )}
@@ -465,8 +462,7 @@ export const SpaceLensView: React.FC = () => {
       <div className="px-4 py-1.5 border-b border-slate-200 dark:border-slate-800/80 bg-slate-100/40 dark:bg-[#121622]/40 flex items-center justify-between text-xs overflow-x-auto shrink-0 select-none">
         <div className="flex items-center gap-1 min-w-0">
           <span className="text-slate-500 shrink-0 mr-1 flex items-center gap-1">
-            <HardDrive size={13} /> Thư mục:
-          </span>
+            <HardDrive size={13} /> {ct("Thư mục:")} </span>
 
           {breadcrumbs.map((crumb, idx) => {
             const isLast = idx === breadcrumbs.length - 1;
@@ -480,7 +476,7 @@ export const SpaceLensView: React.FC = () => {
                       ? 'bg-cyan-500/15 dark:bg-cyan-950/40 text-cyan-700 dark:text-cyan-400 font-semibold border border-cyan-500/30 dark:border-cyan-800/40'
                       : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/60 dark:hover:bg-slate-800/40'
                   }`}
-                  title="Nhấp để chuyển đến thư mục này"
+                  title={ct("Nhấp để chuyển đến thư mục này")}
                 >
                   {crumb.name}
                 </button>
@@ -505,9 +501,7 @@ export const SpaceLensView: React.FC = () => {
             <div className="flex-1 flex flex-col items-center justify-center text-xs text-slate-500 dark:text-slate-400 gap-3">
               <RefreshCw size={24} className="animate-spin text-cyan-500" />
               <div className="text-center space-y-1">
-                <p className="font-semibold text-slate-800 dark:text-slate-200">
-                  Đang phân tích cấu trúc đệ quy thư mục...
-                </p>
+                <p className="font-semibold text-slate-800 dark:text-slate-200">{ct("Đang phân tích cấu trúc đệ quy thư mục...")} </p>
                 {scanProgress && (
                   <p className="text-[11px] font-mono text-slate-500 truncate max-w-md">
                     {scanProgress.current_path ?? ''}{' '}
@@ -519,29 +513,24 @@ export const SpaceLensView: React.FC = () => {
                 type="button"
                 onClick={handleCancelScan}
                 className="mt-2 px-3 py-1 rounded-lg border border-rose-500/40 text-rose-500 hover:bg-rose-500/10 text-xs transition-colors cursor-pointer"
-              >
-                Hủy quét
-              </button>
+              >{ct("Hủy quét")} </button>
             </div>
           ) : !currentNode || sortedChildren.length === 0 ? (
             <div className="flex-1 flex flex-col items-center justify-center text-xs text-slate-400">
               <Folder size={32} className="mb-2 opacity-40" />
-              {currentNode ? 'Không có mục con đọc được trong lượt quét này' : 'Chưa có kết quả phân tích. Chọn thư mục hoặc quét lại.'}
+              {currentNode ? ct("Không có mục con đọc được trong lượt quét này") : ct("Chưa có kết quả phân tích. Chọn thư mục hoặc quét lại.")}
             </div>
           ) : viewMode === 'circles' ? (
             /* Mode 1: Packed Circles SVG (Không trùng lặp, diện tích tương ứng dung lượng) */
             <div className="flex-1 flex flex-col h-full overflow-hidden">
               <div className="text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-between mb-2 shrink-0">
-                <span>Nhấp đơn để chọn kiểm tra • Nhấp đúp vào thư mục để đi sâu</span>
+                <span>{ct("Nhấp đơn để chọn kiểm tra • Nhấp đúp vào thư mục để đi sâu")}</span>
                 <div className="flex items-center gap-2">
                   {sortedChildren.length > 80 && (
-                    <span className="text-[10px] text-amber-600 dark:text-amber-400 font-medium">
-                      Đang vẽ top 80/{sortedChildren.length} mục • Chuyển sang Danh sách để xem đầy đủ
-                    </span>
+                    <span className="text-[10px] text-amber-600 dark:text-amber-400 font-medium">{ct("Đang vẽ top 80/")}{sortedChildren.length} {ct("mục • Chuyển sang Danh sách để xem đầy đủ")} </span>
                   )}
                   <span className="font-mono text-slate-500">
-                    {topCircles.length} mục hiển thị
-                  </span>
+                    {topCircles.length} {ct("mục hiển thị")} </span>
                 </div>
               </div>
 
@@ -653,7 +642,7 @@ export const SpaceLensView: React.FC = () => {
 
                         <title>
                           {c.node.name} • {formatBytes(c.node.size_bytes)} ({c.percentage}%)
-                          {c.node.is_directory ? ' [Thư mục - Nhấp đúp để vào]' : ' [Tệp]'}
+                          {c.node.is_directory ? ct(" [Thư mục - Nhấp đúp để vào]") : ct(" [Tệp]")}
                         </title>
                       </g>
                     );
@@ -665,9 +654,9 @@ export const SpaceLensView: React.FC = () => {
             /* Mode 2: Compact List View (Hàng thấp, không grid) */
             <div className="flex-1 rounded-xl border border-slate-200 dark:border-slate-800/80 bg-white/60 dark:bg-[#121622]/40 overflow-hidden flex flex-col">
               <div className="p-2.5 bg-slate-100 dark:bg-[#161a28]/60 border-b border-slate-200 dark:border-slate-800 text-[11px] font-semibold text-slate-500 dark:text-slate-400 grid grid-cols-12 gap-2 shrink-0 select-none">
-                <span className="col-span-7">TÊN TỆP / THƯ MỤC</span>
-                <span className="col-span-3 text-right">DUNG LƯỢNG</span>
-                <span className="col-span-2 text-right">TỶ LỆ %</span>
+                <span className="col-span-7">{ct("TÊN TỆP / THƯ MỤC")}</span>
+                <span className="col-span-3 text-right">{ct("DUNG LƯỢNG")}</span>
+                <span className="col-span-2 text-right">{ct("TỶ LỆ %")}</span>
               </div>
 
               <div className="flex-1 overflow-y-auto divide-y divide-slate-200 dark:divide-slate-800/40">
@@ -758,9 +747,7 @@ export const SpaceLensView: React.FC = () => {
           {selectedNode ? (
             <div className="space-y-4">
               <div>
-                <span className="text-[10px] font-bold tracking-wider text-slate-400 uppercase">
-                  Chi tiết mục chọn
-                </span>
+                <span className="text-[10px] font-bold tracking-wider text-slate-400 uppercase">{ct("Chi tiết mục chọn")} </span>
                 <h3 className="text-sm font-bold text-slate-900 dark:text-white font-mono break-all mt-1">
                   {selectedNode.name}
                 </h3>
@@ -771,24 +758,24 @@ export const SpaceLensView: React.FC = () => {
 
               <div className="p-3 rounded-lg bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-2 text-xs">
                 <div className="flex justify-between">
-                  <span className="text-slate-500 dark:text-slate-400">Dung lượng:</span>
+                  <span className="text-slate-500 dark:text-slate-400">{ct("Dung lượng:")}</span>
                   <span className="font-mono font-bold text-cyan-600 dark:text-cyan-400">
                     {formatBytes(selectedNode.size_bytes)}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500 dark:text-slate-400">Loại mục:</span>
+                  <span className="text-slate-500 dark:text-slate-400">{ct("Loại mục:")}</span>
                   <span className="text-slate-800 dark:text-slate-200">
                     {selectedNode.is_package
                       ? 'Package Bundle'
                       : selectedNode.is_directory
-                      ? 'Thư mục'
-                      : 'Tệp'}
+                      ? ct("Thư mục")
+                      : ct("Tệp")}
                   </span>
                 </div>
                 {selectedNode.is_directory && !selectedNode.is_package && (
                   <div className="flex justify-between">
-                    <span className="text-slate-500 dark:text-slate-400">Hạng mục con:</span>
+                    <span className="text-slate-500 dark:text-slate-400">{ct("Hạng mục con:")}</span>
                     <span className="font-mono text-slate-700 dark:text-slate-300">
                       {selectedNode.item_count ?? selectedNode.children?.length ?? '—'}
                     </span>
@@ -797,7 +784,7 @@ export const SpaceLensView: React.FC = () => {
                 {selectedNode.is_access_denied && (
                   <div className="text-[11px] text-amber-600 dark:text-amber-400 flex items-center gap-1 mt-1">
                     <Lock size={12} />
-                    <span>Bị giới hạn quyền truy cập</span>
+                    <span>{ct("Bị giới hạn quyền truy cập")}</span>
                   </div>
                 )}
               </div>
@@ -811,18 +798,14 @@ export const SpaceLensView: React.FC = () => {
                       onClick={() => handleDrillDown(selectedNode)}
                       className="w-full py-2 px-3 rounded-lg bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-xs text-slate-800 dark:text-slate-200 font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer"
                     >
-                      <Folder size={14} />
-                      Đi vào thư mục này
-                    </button>
+                      <Folder size={14} />{ct("Đi vào thư mục này")} </button>
                   )}
 
                 <button
                   onClick={() => bridge.revealInFileManager(selectedNode.path)}
                   className="w-full py-2 px-3 rounded-lg border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 bg-white/60 dark:bg-slate-800/40 text-xs text-slate-700 dark:text-slate-300 transition-colors flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <ExternalLink size={14} />
-                  Mở trong Finder
-                </button>
+                  <ExternalLink size={14} />{ct("Mở trong Finder")} </button>
 
                 {canTrashNode(selectedNode) ? (
                   <button
@@ -830,21 +813,15 @@ export const SpaceLensView: React.FC = () => {
                     onClick={() => handleMoveToTrash(selectedNode)}
                     className="w-full py-2 px-3 rounded-lg bg-rose-500/15 hover:bg-rose-500/25 text-rose-600 dark:text-rose-300 border border-rose-500/30 dark:border-rose-800/80 text-xs font-semibold transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                   >
-                    <Trash2 size={14} />
-                    Chuyển vào Thùng rác
-                  </button>
+                    <Trash2 size={14} />{ct("Chuyển vào Thùng rác")} </button>
                 ) : (
-                  <div className="p-2.5 rounded-lg bg-slate-200/50 dark:bg-slate-900 border border-slate-300/60 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed text-center">
-                    Mục này được bảo vệ bởi chính sách an toàn hệ thống (không hỗ trợ chuyển vào Thùng rác).
-                  </div>
+                  <div className="p-2.5 rounded-lg bg-slate-200/50 dark:bg-slate-900 border border-slate-300/60 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed text-center">{ct("Mục này được bảo vệ bởi chính sách an toàn hệ thống (không hỗ trợ chuyển vào Thùng rác).")} </div>
                 )}
               </div>
             </div>
           ) : (
             <div className="h-full flex flex-col items-center justify-center text-center text-slate-400 text-xs">
-              <Compass size={28} className="mb-2 opacity-40" />
-              Chọn một tệp hoặc thư mục bất kỳ để xem thông số chi tiết & thao tác dọn dẹp
-            </div>
+              <Compass size={28} className="mb-2 opacity-40" />{ct("Chọn một tệp hoặc thư mục bất kỳ để xem thông số chi tiết & thao tác dọn dẹp")} </div>
           )}
 
           {actionMessage && (
@@ -870,9 +847,7 @@ export const SpaceLensView: React.FC = () => {
             }}
             className="w-full text-left px-3 py-1.5 hover:bg-cyan-50 dark:hover:bg-cyan-950/60 hover:text-cyan-700 dark:hover:text-cyan-400 flex items-center gap-2 transition-colors cursor-pointer"
           >
-            <ExternalLink size={13} />
-            Mở trong Finder
-          </button>
+            <ExternalLink size={13} />{ct("Mở trong Finder")} </button>
           <button
             onClick={() => {
               void bridge.copyToClipboard(contextMenu.path);
@@ -880,9 +855,7 @@ export const SpaceLensView: React.FC = () => {
             }}
             className="w-full text-left px-3 py-1.5 hover:bg-cyan-50 dark:hover:bg-cyan-950/60 hover:text-cyan-700 dark:hover:text-cyan-400 flex items-center gap-2 transition-colors cursor-pointer"
           >
-            <Copy size={13} />
-            Sao chép đường dẫn
-          </button>
+            <Copy size={13} />{ct("Sao chép đường dẫn")} </button>
           <button
             onClick={() => {
               void bridge.openInTerminal(contextMenu.path).catch((e) => setActionMessage(bridge.errorText(e)));
@@ -890,9 +863,7 @@ export const SpaceLensView: React.FC = () => {
             }}
             className="w-full text-left px-3 py-1.5 hover:bg-cyan-50 dark:hover:bg-cyan-950/60 hover:text-cyan-700 dark:hover:text-cyan-400 flex items-center gap-2 transition-colors cursor-pointer"
           >
-            <Terminal size={13} />
-            Mở trong Terminal
-          </button>
+            <Terminal size={13} />{ct("Mở trong Terminal")} </button>
         </div>
       )}
     </div>

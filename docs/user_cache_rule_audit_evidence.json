@@ -1,0 +1,2651 @@
+{
+  "updated_at": "2026-10-11T11:00:17.908188",
+  "reference_commit": "42cf1f8",
+  "reference_source_sha256": "bca215e383b222e01f58ae4c5b665612c0958953283bd226a5b7cd0d02ace749",
+  "reference_is_installed_mclean_binary": false,
+  "source_modified": false,
+  "user_data_deleted": false,
+  "snapshot_not_simultaneous": true,
+  "reference_user_cache_bytes": 2009136276,
+  "quick_eligible_user_cache_bytes": 1186298291,
+  "quick_user_cache_items": 179,
+  "reference_top_level_items": 45,
+  "source_root_comparison": [
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.appleaccountd",
+      "reference_size_bytes": 246688,
+      "quick_eligible_bytes": 246688,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.appleaccountd",
+          "size_bytes": 246688,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.adobe.acc.AdobeCreativeCloud",
+      "reference_size_bytes": 81920,
+      "quick_eligible_bytes": 81920,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.adobe.acc.AdobeCreativeCloud",
+          "size_bytes": 81920,
+          "is_cleanable": false,
+          "rule_id": "unvalidated",
+          "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.helpd",
+      "reference_size_bytes": 35506419,
+      "quick_eligible_bytes": 35506167,
+      "quick_excluded": [
+        {
+          "app_bundle_ids": [],
+          "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+          "can_delete": false,
+          "category": "user_caches",
+          "conditions": [],
+          "consequence_vi": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+          "deletion_method": "remove_item",
+          "effective_safety": "unknown",
+          "id": "/Users/vic/Library/Caches/com.apple.helpd",
+          "is_cleanable": false,
+          "is_selected_by_default": false,
+          "name": "com.apple.helpd — phần giữ lại",
+          "operation_scope": "quick_cleanup",
+          "path": "/Users/vic/Library/Caches/com.apple.helpd",
+          "requires_admin": false,
+          "requires_app_quit": false,
+          "rule_id": "unvalidated",
+          "safety_level": "unknown",
+          "size_bytes": 252,
+          "size_kind": "logical_estimate",
+          "target_id": "/Users/vic/Library/Caches/com.apple.helpd"
+        }
+      ],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.helpd/CSHelpIndex.plist",
+          "size_bytes": 28194,
+          "is_cleanable": true,
+          "rule_id": "foundation_generated_help",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.helpd/Cache.db",
+          "size_bytes": 700416,
+          "is_cleanable": true,
+          "rule_id": "foundation_http_database",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.helpd/Cache.db-shm",
+          "size_bytes": 32768,
+          "is_cleanable": true,
+          "rule_id": "foundation_http_database",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.helpd/Cache.db-wal",
+          "size_bytes": 3670952,
+          "is_cleanable": true,
+          "rule_id": "foundation_http_database",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.helpd/Generated",
+          "size_bytes": 16769269,
+          "is_cleanable": true,
+          "rule_id": "foundation_generated_help",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.helpd/HelpCache.plist",
+          "size_bytes": 32939,
+          "is_cleanable": true,
+          "rule_id": "foundation_generated_help",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.helpd/fsCachedData",
+          "size_bytes": 14271629,
+          "is_cleanable": true,
+          "rule_id": "foundation_http_payload",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.helpd",
+          "size_bytes": 252,
+          "is_cleanable": false,
+          "rule_id": "unvalidated",
+          "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.google.GoogleUpdater",
+      "reference_size_bytes": 180832,
+      "quick_eligible_bytes": 0,
+      "quick_excluded": [
+        {
+          "app_bundle_ids": [],
+          "blocked_reason": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn.",
+          "can_delete": false,
+          "category": "user_caches",
+          "conditions": [],
+          "consequence_vi": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn.",
+          "deletion_method": "remove_item",
+          "effective_safety": "protected",
+          "id": "/Users/vic/Library/Caches/com.google.GoogleUpdater",
+          "is_cleanable": false,
+          "is_selected_by_default": false,
+          "name": "com.google.GoogleUpdater",
+          "operation_scope": "quick_cleanup",
+          "path": "/Users/vic/Library/Caches/com.google.GoogleUpdater",
+          "requires_admin": false,
+          "requires_app_quit": false,
+          "rule_id": "updater_state",
+          "safety_level": "protected",
+          "size_bytes": 180832,
+          "size_kind": "logical_estimate",
+          "target_id": "/Users/vic/Library/Caches/com.google.GoogleUpdater"
+        }
+      ],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.google.GoogleUpdater",
+          "size_bytes": 180832,
+          "is_cleanable": false,
+          "rule_id": "updater_state",
+          "blocked_reason": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn."
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/GeoServices",
+      "reference_size_bytes": 55877849,
+      "quick_eligible_bytes": 48640243,
+      "quick_excluded": [
+        {
+          "app_bundle_ids": [],
+          "blocked_reason": "Không xác minh được toàn bộ nội dung, symlink hoặc hardlink; giữ lại.",
+          "can_delete": false,
+          "category": "user_caches",
+          "conditions": [],
+          "consequence_vi": "Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.",
+          "deletion_method": "remove_item",
+          "effective_safety": "rebuildable",
+          "id": "/Users/vic/Library/Caches/GeoServices",
+          "is_cleanable": false,
+          "is_selected_by_default": false,
+          "name": "GeoServices — phần giữ lại",
+          "operation_scope": "quick_cleanup",
+          "path": "/Users/vic/Library/Caches/GeoServices",
+          "requires_admin": false,
+          "requires_app_quit": false,
+          "rule_id": "mclean_maintained_cache",
+          "safety_level": "rebuildable",
+          "size_bytes": 7237606,
+          "size_kind": "logical_estimate",
+          "target_id": "/Users/vic/Library/Caches/GeoServices"
+        }
+      ],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/ActiveTileGroup.pbd",
+          "size_bytes": 291060,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/DirectReadConfigStore.plist",
+          "size_bytes": 130,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/ResourceManifest.pbd",
+          "size_bytes": 318295,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Default-34898.iconmappack",
+          "size_bytes": 148815,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Default-42752@2x.iconmappack",
+          "size_bytes": 148813,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Default_Icons-19122@2x.icondatapack",
+          "size_bytes": 3482541,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Default_Icons-19156@2x.iconconfigpack",
+          "size_bytes": 3755992,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Default_Icons-30655.icondatapack",
+          "size_bytes": 1288160,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Default_Icons-30682.iconconfigpack",
+          "size_bytes": 3650275,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Default_Shields-2100.icondatapack",
+          "size_bytes": 301682,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Default_Shields-2102.iconconfigpack",
+          "size_bytes": 98412,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Default_Shields-844@2x.icondatapack",
+          "size_bytes": 796651,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Default_Shields-847@2x.iconconfigpack",
+          "size_bytes": 100200,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/DetailedLandCoverPavedArea-1.png",
+          "size_bytes": 9994,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/DetailedLandCoverPavedArea-1@2x.png",
+          "size_bytes": 72891,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Expert_Partners_Icons-31@2x.iconconfigpack",
+          "size_bytes": 846,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Expert_Partners_Icons-33@2x.icondatapack",
+          "size_bytes": 44975,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Expert_Partners_Icons-34.iconconfigpack",
+          "size_bytes": 847,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Expert_Partners_Icons-35.icondatapack",
+          "size_bytes": 12336,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Guides_Icons_Default-1043.iconconfigpack",
+          "size_bytes": 9147,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Guides_Icons_Default-1044.icondatapack",
+          "size_bytes": 2756104,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Guides_Icons_Default-852@2x.iconconfigpack",
+          "size_bytes": 9135,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Guides_Icons_Default-853@2x.icondatapack",
+          "size_bytes": 6886568,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient1-1.png",
+          "size_bytes": 10070,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient16-1.png",
+          "size_bytes": 10070,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient8-1.png",
+          "size_bytes": 10477,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient8-1@2x.png",
+          "size_bytes": 70755,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient9-1.png",
+          "size_bytes": 9504,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient9-1@2x.png",
+          "size_bytes": 61964,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/LocalizationStyleAttributes-8.plist",
+          "size_bytes": 6390,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/POITypeMapping-9.json",
+          "size_bytes": 4879,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Railroad_Crossing-1.iconconfigpack",
+          "size_bytes": 5196,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Railroad_Crossing-1@2x.iconconfigpack",
+          "size_bytes": 6666,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Railroad_Crossing-5.icondatapack",
+          "size_bytes": 11904,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/Railroad_Crossing-5@2x.icondatapack",
+          "size_bytes": 41485,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/RealisticRoadHighway-1.png",
+          "size_bytes": 13628,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/RealisticRoadHighway-1@2x.png",
+          "size_bytes": 130918,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/RealisticRoadLocalRoad-1.png",
+          "size_bytes": 26321,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/RealisticRoadLocalRoad-1@2x.png",
+          "size_bytes": 153756,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/SFDisplayShields-Bold-1.otf",
+          "size_bytes": 6300,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/SFDisplayShields-CompressedBold-1.otf",
+          "size_bytes": 6380,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/SFShieldsCondensed-Bold-1.otf",
+          "size_bytes": 17796,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/SFShieldsSemicondensed-Bold-1.otf",
+          "size_bytes": 17872,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/altitude-1427.xml",
+          "size_bytes": 415355,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/cemetery-15.png",
+          "size_bytes": 33454,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/cemetery-15@2x.png",
+          "size_bytes": 71213,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/checker-1.png",
+          "size_bytes": 257,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/checker-1@2x.png",
+          "size_bytes": 401,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/clut-night-2.png",
+          "size_bytes": 9270,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/concrete-17.png",
+          "size_bytes": 25039,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/concrete-17@2x.png",
+          "size_bytes": 91355,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/default-57903.styl",
+          "size_bytes": 501071,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/default-64193@2x.styl",
+          "size_bytes": 503318,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/default-iosmac-11838.styl",
+          "size_bytes": 497809,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/default-iosmac-11883@2x.styl",
+          "size_bytes": 500174,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/golf_course-15.png",
+          "size_bytes": 33995,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/golf_course-15@2x.png",
+          "size_bytes": 72851,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/land-18.png",
+          "size_bytes": 390,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/land-19@2x.png",
+          "size_bytes": 761,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/land-carplay-1.png",
+          "size_bytes": 297,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/land-carplay-1@2x.png",
+          "size_bytes": 608,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/localizationRegions-4.plist",
+          "size_bytes": 188,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-DetailedLandCoverPavedArea-2.png",
+          "size_bytes": 20027,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-DetailedLandCoverPavedArea-2@2x.png",
+          "size_bytes": 89842,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-DetailedLandCoverSand-1.png",
+          "size_bytes": 17655,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-DetailedLandCoverSand-1@2x.png",
+          "size_bytes": 62407,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-RealisticRoadHighway-1.png",
+          "size_bytes": 29122,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-RealisticRoadHighway-1@2x.png",
+          "size_bytes": 142327,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-RealisticRoadLocalRoad-1.png",
+          "size_bytes": 29394,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-RealisticRoadLocalRoad-1@2x.png",
+          "size_bytes": 140658,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-cemetery-2.png",
+          "size_bytes": 18613,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-cemetery-2@2x.png",
+          "size_bytes": 53367,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-concrete-1.png",
+          "size_bytes": 21282,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-concrete-1@2x.png",
+          "size_bytes": 86471,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-golf_course-2.png",
+          "size_bytes": 19443,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-golf_course-2@2x.png",
+          "size_bytes": 56214,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-land-2.png",
+          "size_bytes": 392,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-land-2@2x.png",
+          "size_bytes": 763,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-land-carplay-1.png",
+          "size_bytes": 297,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-land-carplay-1@2x.png",
+          "size_bytes": 608,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-park-2.png",
+          "size_bytes": 19171,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-park-2@2x.png",
+          "size_bytes": 61313,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-water-2.png",
+          "size_bytes": 7730,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/night-water-2@2x.png",
+          "size_bytes": 26233,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/northpole-1.c3h",
+          "size_bytes": 7503,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/northpole_0_0_0-1.c3b",
+          "size_bytes": 152889,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/park-16.png",
+          "size_bytes": 31555,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/park-16@2x.png",
+          "size_bytes": 64109,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/publisher_attribution_dot_coms-99.pb",
+          "size_bytes": 24897,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/publisher_attribution_manifest_index-82.pb",
+          "size_bytes": 3253,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/regional_vehicle_info-7.pb",
+          "size_bytes": 5376,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/regions-3.tbz",
+          "size_bytes": 2118586,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/road-noise-1@2x.png",
+          "size_bytes": 48100,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/road-noise-2.png",
+          "size_bytes": 15758,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/road-noise-light-1.png",
+          "size_bytes": 20524,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/road-noise-light-1@2x.png",
+          "size_bytes": 53926,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/routing_features-1391.pb",
+          "size_bytes": 324334,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/sand-1.png",
+          "size_bytes": 21111,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/sand-1@2x.png",
+          "size_bytes": 97441,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/solid-fill-1.png",
+          "size_bytes": 1734,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/solid-fill-1@2x.png",
+          "size_bytes": 1743,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/southpole-1.c3h",
+          "size_bytes": 7565,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/southpole_0_0_0-1.c3b",
+          "size_bytes": 126066,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/supportedCountriesAvoidStairs-3.plist",
+          "size_bytes": 695,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/supportedCountriesCommute-1.plist",
+          "size_bytes": 275,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/supportedCountriesCustomRouteCreation-3.plist",
+          "size_bytes": 303,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/supportedCountriesDirections-29.plist",
+          "size_bytes": 4007,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/supportedCountriesEVDirections-23.plist",
+          "size_bytes": 1318,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/supportedCountriesTraffic-14.plist",
+          "size_bytes": 2403,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/supportedEVInfo-30.json",
+          "size_bytes": 2021,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/territories-3.tbz",
+          "size_bytes": 5047007,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/timezones-4.tbz",
+          "size_bytes": 11824511,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/venues-ceiling-1@2x.png",
+          "size_bytes": 44673,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/venues-ceiling-2.png",
+          "size_bytes": 11460,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/water-16.png",
+          "size_bytes": 10914,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/Resources/water-16@2x.png",
+          "size_bytes": 21142,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/SearchAttribution.pbd",
+          "size_bytes": 68760,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices/networkDefaults.plist",
+          "size_bytes": 6949,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GeoServices",
+          "size_bytes": 7237606,
+          "is_cleanable": false,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": "Không xác minh được toàn bộ nội dung, symlink hoặc hardlink; giữ lại."
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.managedappdistributionagent",
+      "reference_size_bytes": 251777,
+      "quick_eligible_bytes": 251777,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.managedappdistributionagent",
+          "size_bytes": 251777,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.proactive.eventtracker",
+      "reference_size_bytes": 95545,
+      "quick_eligible_bytes": 95545,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.proactive.eventtracker",
+          "size_bytes": 95545,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.adobe.PremierePro.25",
+      "reference_size_bytes": 123152,
+      "quick_eligible_bytes": 123152,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.adobe.PremierePro.25",
+          "size_bytes": 123152,
+          "is_cleanable": false,
+          "rule_id": "unvalidated",
+          "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.FeatureAccessAgent",
+      "reference_size_bytes": 205552,
+      "quick_eligible_bytes": 205552,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.FeatureAccessAgent",
+          "size_bytes": 205552,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/GameKit",
+      "reference_size_bytes": 47499,
+      "quick_eligible_bytes": 47499,
+      "quick_excluded": [
+        {
+          "app_bundle_ids": [],
+          "blocked_reason": "Không xác minh được toàn bộ nội dung, symlink hoặc hardlink; giữ lại.",
+          "can_delete": false,
+          "category": "user_caches",
+          "conditions": [],
+          "consequence_vi": "Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.",
+          "deletion_method": "remove_item",
+          "effective_safety": "rebuildable",
+          "id": "/Users/vic/Library/Caches/GameKit",
+          "is_cleanable": false,
+          "is_selected_by_default": false,
+          "name": "GameKit — phần giữ lại",
+          "operation_scope": "quick_cleanup",
+          "path": "/Users/vic/Library/Caches/GameKit",
+          "requires_admin": false,
+          "requires_app_quit": false,
+          "rule_id": "mclean_maintained_cache",
+          "safety_level": "rebuildable",
+          "size_bytes": 0,
+          "size_kind": "logical_estimate",
+          "target_id": "/Users/vic/Library/Caches/GameKit"
+        }
+      ],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GameKit/StoreBag",
+          "size_bytes": 47499,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/GameKit",
+          "size_bytes": 0,
+          "is_cleanable": false,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": "Không xác minh được toàn bộ nội dung, symlink hoặc hardlink; giữ lại."
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/Google",
+      "reference_size_bytes": 613236802,
+      "quick_eligible_bytes": 641444762,
+      "quick_excluded": [
+        {
+          "app_bundle_ids": [],
+          "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+          "can_delete": false,
+          "category": "user_caches",
+          "conditions": [],
+          "consequence_vi": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+          "deletion_method": "remove_item",
+          "effective_safety": "unknown",
+          "id": "/Users/vic/Library/Caches/Google",
+          "is_cleanable": false,
+          "is_selected_by_default": false,
+          "name": "Google — phần giữ lại",
+          "operation_scope": "quick_cleanup",
+          "path": "/Users/vic/Library/Caches/Google",
+          "requires_admin": false,
+          "requires_app_quit": false,
+          "rule_id": "unvalidated",
+          "safety_level": "unknown",
+          "size_bytes": 0,
+          "size_kind": "logical_estimate",
+          "target_id": "/Users/vic/Library/Caches/Google"
+        }
+      ],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/Google",
+          "size_bytes": 641436527,
+          "is_cleanable": false,
+          "rule_id": "unvalidated",
+          "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+        },
+        {
+          "category": "chrome",
+          "path": "/Users/vic/Library/Caches/Google/Chrome/Profile 1/Cache",
+          "size_bytes": 52315110,
+          "is_cleanable": true,
+          "rule_id": "chrome_http_code_graphics",
+          "blocked_reason": null
+        },
+        {
+          "category": "chrome",
+          "path": "/Users/vic/Library/Caches/Google/Chrome/Profile 1/Code Cache",
+          "size_bytes": 28382018,
+          "is_cleanable": true,
+          "rule_id": "chrome_http_code_graphics",
+          "blocked_reason": null
+        },
+        {
+          "category": "chrome",
+          "path": "/Users/vic/Library/Caches/Google/Chrome/Default/Cache",
+          "size_bytes": 478790729,
+          "is_cleanable": true,
+          "rule_id": "chrome_http_code_graphics",
+          "blocked_reason": null
+        },
+        {
+          "category": "chrome",
+          "path": "/Users/vic/Library/Caches/Google/Chrome/Default/Code Cache",
+          "size_bytes": 74567996,
+          "is_cleanable": true,
+          "rule_id": "chrome_http_code_graphics",
+          "blocked_reason": null
+        },
+        {
+          "category": "chrome",
+          "path": "/Users/vic/Library/Caches/Google/Chrome/Profile 4/Cache",
+          "size_bytes": 4306595,
+          "is_cleanable": true,
+          "rule_id": "chrome_http_code_graphics",
+          "blocked_reason": null
+        },
+        {
+          "category": "chrome",
+          "path": "/Users/vic/Library/Caches/Google/Chrome/Profile 4/Code Cache",
+          "size_bytes": 26491,
+          "is_cleanable": true,
+          "rule_id": "chrome_http_code_graphics",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/Codex",
+      "reference_size_bytes": 2452480,
+      "quick_eligible_bytes": 2452480,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/Codex",
+          "size_bytes": 2452480,
+          "is_cleanable": false,
+          "rule_id": "unvalidated",
+          "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+        },
+        {
+          "category": "ai_apps",
+          "path": "/Users/vic/Library/Caches/Codex/Default/Cache",
+          "size_bytes": 2443468,
+          "is_cleanable": true,
+          "rule_id": "ai_frontend_http_code_graphics",
+          "blocked_reason": null
+        },
+        {
+          "category": "ai_apps",
+          "path": "/Users/vic/Library/Caches/Codex/Default/Code Cache",
+          "size_bytes": 144,
+          "is_cleanable": true,
+          "rule_id": "ai_frontend_http_code_graphics",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.appstoreagent",
+      "reference_size_bytes": 202206,
+      "quick_eligible_bytes": 202206,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.appstoreagent",
+          "size_bytes": 202206,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.adobe.ccd.helper",
+      "reference_size_bytes": 81920,
+      "quick_eligible_bytes": 81920,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.adobe.ccd.helper",
+          "size_bytes": 81920,
+          "is_cleanable": false,
+          "rule_id": "unvalidated",
+          "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.CloudTelemetry",
+      "reference_size_bytes": 1757732,
+      "quick_eligible_bytes": 1757732,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.CloudTelemetry",
+          "size_bytes": 1757732,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.geoanalyticsd",
+      "reference_size_bytes": 156376,
+      "quick_eligible_bytes": 156376,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.geoanalyticsd",
+          "size_bytes": 156376,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.nbagent",
+      "reference_size_bytes": 331473,
+      "quick_eligible_bytes": 331473,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.nbagent",
+          "size_bytes": 331473,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.tipsd",
+      "reference_size_bytes": 1224069,
+      "quick_eligible_bytes": 1224069,
+      "quick_excluded": [
+        {
+          "app_bundle_ids": [],
+          "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+          "can_delete": false,
+          "category": "user_caches",
+          "conditions": [],
+          "consequence_vi": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+          "deletion_method": "remove_item",
+          "effective_safety": "unknown",
+          "id": "/Users/vic/Library/Caches/com.apple.tipsd",
+          "is_cleanable": false,
+          "is_selected_by_default": false,
+          "name": "com.apple.tipsd — phần giữ lại",
+          "operation_scope": "quick_cleanup",
+          "path": "/Users/vic/Library/Caches/com.apple.tipsd",
+          "requires_admin": false,
+          "requires_app_quit": false,
+          "rule_id": "unvalidated",
+          "safety_level": "unknown",
+          "size_bytes": 0,
+          "size_kind": "logical_estimate",
+          "target_id": "/Users/vic/Library/Caches/com.apple.tipsd"
+        }
+      ],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.tipsd/Cache.db",
+          "size_bytes": 49152,
+          "is_cleanable": true,
+          "rule_id": "foundation_http_database",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.tipsd/Cache.db-shm",
+          "size_bytes": 32768,
+          "is_cleanable": true,
+          "rule_id": "foundation_http_database",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.tipsd/Cache.db-wal",
+          "size_bytes": 317272,
+          "is_cleanable": true,
+          "rule_id": "foundation_http_database",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.tipsd/fsCachedData",
+          "size_bytes": 824877,
+          "is_cleanable": true,
+          "rule_id": "foundation_http_payload",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.tipsd",
+          "size_bytes": 0,
+          "is_cleanable": false,
+          "rule_id": "unvalidated",
+          "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.itunescloudd",
+      "reference_size_bytes": 1216836,
+      "quick_eligible_bytes": 1216836,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.itunescloudd",
+          "size_bytes": 1216836,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.sirittsd",
+      "reference_size_bytes": 498129,
+      "quick_eligible_bytes": 498129,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.sirittsd",
+          "size_bytes": 498129,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/io.branch.network.cache",
+      "reference_size_bytes": 267352,
+      "quick_eligible_bytes": 267352,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/io.branch.network.cache",
+          "size_bytes": 267352,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.icloudwebd",
+      "reference_size_bytes": 139568,
+      "quick_eligible_bytes": 139568,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.icloudwebd",
+          "size_bytes": 139568,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.systemsettings.menucache",
+      "reference_size_bytes": 2967,
+      "quick_eligible_bytes": 2967,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.systemsettings.menucache",
+          "size_bytes": 2967,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/Adobe",
+      "reference_size_bytes": 421451269,
+      "quick_eligible_bytes": 422015882,
+      "quick_excluded": [
+        {
+          "app_bundle_ids": [],
+          "blocked_reason": "Không xác minh được toàn bộ nội dung, symlink hoặc hardlink; giữ lại.",
+          "can_delete": false,
+          "category": "user_caches",
+          "conditions": [],
+          "consequence_vi": "Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.",
+          "deletion_method": "remove_item",
+          "effective_safety": "rebuildable",
+          "id": "/Users/vic/Library/Caches/Adobe",
+          "is_cleanable": false,
+          "is_selected_by_default": false,
+          "name": "Adobe — phần giữ lại",
+          "operation_scope": "quick_cleanup",
+          "path": "/Users/vic/Library/Caches/Adobe",
+          "requires_admin": false,
+          "requires_app_quit": false,
+          "rule_id": "mclean_maintained_cache",
+          "safety_level": "rebuildable",
+          "size_bytes": 0,
+          "size_kind": "logical_estimate",
+          "target_id": "/Users/vic/Library/Caches/Adobe"
+        }
+      ],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/Adobe",
+          "size_bytes": 422015882,
+          "is_cleanable": false,
+          "rule_id": "unvalidated",
+          "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.openai.sky.CUAService",
+      "reference_size_bytes": 559872,
+      "quick_eligible_bytes": 559872,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.openai.sky.CUAService",
+          "size_bytes": 559872,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/CSXS",
+      "reference_size_bytes": 691179,
+      "quick_eligible_bytes": 689678,
+      "quick_excluded": [
+        {
+          "app_bundle_ids": [],
+          "blocked_reason": "Không xác minh được toàn bộ nội dung, symlink hoặc hardlink; giữ lại.",
+          "can_delete": false,
+          "category": "user_caches",
+          "conditions": [],
+          "consequence_vi": "Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.",
+          "deletion_method": "remove_item",
+          "effective_safety": "rebuildable",
+          "id": "/Users/vic/Library/Caches/CSXS",
+          "is_cleanable": false,
+          "is_selected_by_default": false,
+          "name": "CSXS — phần giữ lại",
+          "operation_scope": "quick_cleanup",
+          "path": "/Users/vic/Library/Caches/CSXS",
+          "requires_admin": false,
+          "requires_app_quit": false,
+          "rule_id": "mclean_maintained_cache",
+          "safety_level": "rebuildable",
+          "size_bytes": 1501,
+          "size_kind": "logical_estimate",
+          "target_id": "/Users/vic/Library/Caches/CSXS"
+        }
+      ],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/CSXS/cep_cache/PPRO_25.6.6_LogiOptionsPlusAdobe/000003.log",
+          "size_bytes": 0,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/CSXS/cep_cache/PPRO_25.6.6_LogiOptionsPlusAdobe/CURRENT",
+          "size_bytes": 16,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/CSXS/cep_cache/PPRO_25.6.6_LogiOptionsPlusAdobe/Cache",
+          "size_bytes": 0,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/CSXS/cep_cache/PPRO_25.6.6_LogiOptionsPlusAdobe/Code Cache",
+          "size_bytes": 144,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/CSXS/cep_cache/PPRO_25.6.6_LogiOptionsPlusAdobe/GPUCache",
+          "size_bytes": 557424,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/CSXS/cep_cache/PPRO_25.6.6_LogiOptionsPlusAdobe/LOCK",
+          "size_bytes": 0,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/CSXS/cep_cache/PPRO_25.6.6_LogiOptionsPlusAdobe/LOG",
+          "size_bytes": 314,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/CSXS/cep_cache/PPRO_25.6.6_LogiOptionsPlusAdobe/LOG.old",
+          "size_bytes": 273,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/CSXS/cep_cache/PPRO_25.6.6_LogiOptionsPlusAdobe/LocalPrefs.json",
+          "size_bytes": 250,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/CSXS/cep_cache/PPRO_25.6.6_LogiOptionsPlusAdobe/MANIFEST-000001",
+          "size_bytes": 41,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/CSXS/cep_cache/PPRO_25.6.6_LogiOptionsPlusAdobe/Network Persistent State",
+          "size_bytes": 144,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/CSXS/cep_cache/PPRO_25.6.6_LogiOptionsPlusAdobe/Visited Links",
+          "size_bytes": 131072,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/CSXS/cep_cache/PPRO_25.6.6_LogiOptionsPlusAdobe/blob_storage",
+          "size_bytes": 0,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/CSXS",
+          "size_bytes": 1501,
+          "is_cleanable": false,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": "Không xác minh được toàn bộ nội dung, symlink hoặc hardlink; giữ lại."
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.AppleMediaServices",
+      "reference_size_bytes": 3920705,
+      "quick_eligible_bytes": 3920705,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.AppleMediaServices",
+          "size_bytes": 3920705,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.remindd",
+      "reference_size_bytes": 147283,
+      "quick_eligible_bytes": 147283,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.remindd",
+          "size_bytes": 147283,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.dataaccess.dataaccessd",
+      "reference_size_bytes": 144016,
+      "quick_eligible_bytes": 144016,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.dataaccess.dataaccessd",
+          "size_bytes": 144016,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.python",
+      "reference_size_bytes": 1539058,
+      "quick_eligible_bytes": 1539058,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.python",
+          "size_bytes": 1539058,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.parsecd",
+      "reference_size_bytes": 17140003,
+      "quick_eligible_bytes": 17140003,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.parsecd",
+          "size_bytes": 17140003,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.nsservicescache.plist",
+      "reference_size_bytes": 15008,
+      "quick_eligible_bytes": 15008,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.nsservicescache.plist",
+          "size_bytes": 15008,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.openai.codex",
+      "reference_size_bytes": 160436,
+      "quick_eligible_bytes": 160436,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.openai.codex",
+          "size_bytes": 160436,
+          "is_cleanable": false,
+          "rule_id": "unvalidated",
+          "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+        },
+        {
+          "category": "ai_apps",
+          "path": "/Users/vic/Library/Caches/com.openai.codex",
+          "size_bytes": 160436,
+          "is_cleanable": false,
+          "rule_id": "unvalidated",
+          "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.amsaccountsd",
+      "reference_size_bytes": 547142,
+      "quick_eligible_bytes": 547142,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.amsaccountsd",
+          "size_bytes": 547142,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.AMPLibraryAgent",
+      "reference_size_bytes": 694538,
+      "quick_eligible_bytes": 694018,
+      "quick_excluded": [
+        {
+          "app_bundle_ids": [],
+          "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+          "can_delete": false,
+          "category": "user_caches",
+          "conditions": [],
+          "consequence_vi": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+          "deletion_method": "remove_item",
+          "effective_safety": "unknown",
+          "id": "/Users/vic/Library/Caches/com.apple.AMPLibraryAgent",
+          "is_cleanable": false,
+          "is_selected_by_default": false,
+          "name": "com.apple.AMPLibraryAgent — phần giữ lại",
+          "operation_scope": "quick_cleanup",
+          "path": "/Users/vic/Library/Caches/com.apple.AMPLibraryAgent",
+          "requires_admin": false,
+          "requires_app_quit": false,
+          "rule_id": "unvalidated",
+          "safety_level": "unknown",
+          "size_bytes": 520,
+          "size_kind": "logical_estimate",
+          "target_id": "/Users/vic/Library/Caches/com.apple.AMPLibraryAgent"
+        }
+      ],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.AMPLibraryAgent/Cache.db",
+          "size_bytes": 49152,
+          "is_cleanable": true,
+          "rule_id": "foundation_http_database",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.AMPLibraryAgent/Cache.db-shm",
+          "size_bytes": 32768,
+          "is_cleanable": true,
+          "rule_id": "foundation_http_database",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.AMPLibraryAgent/Cache.db-wal",
+          "size_bytes": 362592,
+          "is_cleanable": true,
+          "rule_id": "foundation_http_database",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.AMPLibraryAgent/fsCachedData",
+          "size_bytes": 249506,
+          "is_cleanable": true,
+          "rule_id": "foundation_http_payload",
+          "blocked_reason": null
+        },
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.AMPLibraryAgent",
+          "size_bytes": 520,
+          "is_cleanable": false,
+          "rule_id": "unvalidated",
+          "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.google.antigravity",
+      "reference_size_bytes": 363255137,
+      "quick_eligible_bytes": 0,
+      "quick_excluded": [
+        {
+          "app_bundle_ids": [],
+          "blocked_reason": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn.",
+          "can_delete": false,
+          "category": "user_caches",
+          "conditions": [],
+          "consequence_vi": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn.",
+          "deletion_method": "remove_item",
+          "effective_safety": "protected",
+          "id": "/Users/vic/Library/Caches/com.google.antigravity",
+          "is_cleanable": false,
+          "is_selected_by_default": false,
+          "name": "com.google.antigravity",
+          "operation_scope": "quick_cleanup",
+          "path": "/Users/vic/Library/Caches/com.google.antigravity",
+          "requires_admin": false,
+          "requires_app_quit": false,
+          "rule_id": "updater_state",
+          "safety_level": "protected",
+          "size_bytes": 363255137,
+          "size_kind": "logical_estimate",
+          "target_id": "/Users/vic/Library/Caches/com.google.antigravity"
+        }
+      ],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.google.antigravity",
+          "size_bytes": 363255137,
+          "is_cleanable": false,
+          "rule_id": "updater_state",
+          "blocked_reason": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn."
+        },
+        {
+          "category": "ai_apps",
+          "path": "/Users/vic/Library/Caches/com.google.antigravity",
+          "size_bytes": 363255137,
+          "is_cleanable": false,
+          "rule_id": "unvalidated",
+          "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.feedbacklogger",
+      "reference_size_bytes": 217348,
+      "quick_eligible_bytes": 217348,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.feedbacklogger",
+          "size_bytes": 217348,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.duetexpertd",
+      "reference_size_bytes": 173688,
+      "quick_eligible_bytes": 173688,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.duetexpertd",
+          "size_bytes": 173688,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.translationd",
+      "reference_size_bytes": 186569,
+      "quick_eligible_bytes": 186569,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.translationd",
+          "size_bytes": 186569,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.AuthenticationServicesCore.AuthenticationServicesAgent",
+      "reference_size_bytes": 81920,
+      "quick_eligible_bytes": 81920,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.AuthenticationServicesCore.AuthenticationServicesAgent",
+          "size_bytes": 81920,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.iCloudNotificationAgent",
+      "reference_size_bytes": 253660,
+      "quick_eligible_bytes": 253660,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.iCloudNotificationAgent",
+          "size_bytes": 253660,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.cache_delete",
+      "reference_size_bytes": 22433,
+      "quick_eligible_bytes": 22433,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.cache_delete",
+          "size_bytes": 22433,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.google.antigravity.ShipIt",
+      "reference_size_bytes": 480701475,
+      "quick_eligible_bytes": 0,
+      "quick_excluded": [
+        {
+          "app_bundle_ids": [],
+          "blocked_reason": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn.",
+          "can_delete": false,
+          "category": "user_caches",
+          "conditions": [],
+          "consequence_vi": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn.",
+          "deletion_method": "remove_item",
+          "effective_safety": "protected",
+          "id": "/Users/vic/Library/Caches/com.google.antigravity.ShipIt",
+          "is_cleanable": false,
+          "is_selected_by_default": false,
+          "name": "com.google.antigravity.ShipIt",
+          "operation_scope": "quick_cleanup",
+          "path": "/Users/vic/Library/Caches/com.google.antigravity.ShipIt",
+          "requires_admin": false,
+          "requires_app_quit": false,
+          "rule_id": "updater_state",
+          "safety_level": "protected",
+          "size_bytes": 480701475,
+          "size_kind": "logical_estimate",
+          "target_id": "/Users/vic/Library/Caches/com.google.antigravity.ShipIt"
+        }
+      ],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.google.antigravity.ShipIt",
+          "size_bytes": 480701475,
+          "is_cleanable": false,
+          "rule_id": "updater_state",
+          "blocked_reason": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn."
+        },
+        {
+          "category": "ai_apps",
+          "path": "/Users/vic/Library/Caches/com.google.antigravity.ShipIt",
+          "size_bytes": 480701475,
+          "is_cleanable": false,
+          "rule_id": "unvalidated",
+          "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.apple.amsengagementd",
+      "reference_size_bytes": 2815159,
+      "quick_eligible_bytes": 2815159,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "user_caches",
+          "path": "/Users/vic/Library/Caches/com.apple.amsengagementd",
+          "size_bytes": 2815159,
+          "is_cleanable": true,
+          "rule_id": "mclean_maintained_cache",
+          "blocked_reason": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/vic/.npm/_cacache",
+      "reference_size_bytes": 233235,
+      "quick_eligible_bytes": 0,
+      "quick_excluded": [],
+      "detailed_matches": [
+        {
+          "category": "node_cache",
+          "path": "/Users/vic/.npm/_cacache",
+          "size_bytes": 233235,
+          "is_cleanable": false,
+          "rule_id": "npm_download_cache",
+          "blocked_reason": "Ứng dụng đang mở; hãy đóng và quét lại. Tự phục hồi phiên chưa được kiểm chứng."
+        }
+      ]
+    }
+  ],
+  "quick_excluded_items": [
+    {
+      "app_bundle_ids": [],
+      "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+      "can_delete": false,
+      "category": "user_caches",
+      "conditions": [],
+      "consequence_vi": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+      "deletion_method": "remove_item",
+      "effective_safety": "unknown",
+      "id": "/Users/vic/Library/Caches/com.apple.helpd",
+      "is_cleanable": false,
+      "is_selected_by_default": false,
+      "name": "com.apple.helpd — phần giữ lại",
+      "operation_scope": "quick_cleanup",
+      "path": "/Users/vic/Library/Caches/com.apple.helpd",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "unvalidated",
+      "safety_level": "unknown",
+      "size_bytes": 252,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/Library/Caches/com.apple.helpd"
+    },
+    {
+      "app_bundle_ids": [],
+      "blocked_reason": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn.",
+      "can_delete": false,
+      "category": "user_caches",
+      "conditions": [],
+      "consequence_vi": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn.",
+      "deletion_method": "remove_item",
+      "effective_safety": "protected",
+      "id": "/Users/vic/Library/Caches/com.google.GoogleUpdater",
+      "is_cleanable": false,
+      "is_selected_by_default": false,
+      "name": "com.google.GoogleUpdater",
+      "operation_scope": "quick_cleanup",
+      "path": "/Users/vic/Library/Caches/com.google.GoogleUpdater",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "updater_state",
+      "safety_level": "protected",
+      "size_bytes": 180832,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/Library/Caches/com.google.GoogleUpdater"
+    },
+    {
+      "app_bundle_ids": [],
+      "blocked_reason": "Không xác minh được toàn bộ nội dung, symlink hoặc hardlink; giữ lại.",
+      "can_delete": false,
+      "category": "user_caches",
+      "conditions": [],
+      "consequence_vi": "Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.",
+      "deletion_method": "remove_item",
+      "effective_safety": "rebuildable",
+      "id": "/Users/vic/Library/Caches/GeoServices",
+      "is_cleanable": false,
+      "is_selected_by_default": false,
+      "name": "GeoServices — phần giữ lại",
+      "operation_scope": "quick_cleanup",
+      "path": "/Users/vic/Library/Caches/GeoServices",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "mclean_maintained_cache",
+      "safety_level": "rebuildable",
+      "size_bytes": 7237606,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/Library/Caches/GeoServices"
+    },
+    {
+      "app_bundle_ids": [],
+      "blocked_reason": "Không xác minh được toàn bộ nội dung, symlink hoặc hardlink; giữ lại.",
+      "can_delete": false,
+      "category": "user_caches",
+      "conditions": [],
+      "consequence_vi": "Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.",
+      "deletion_method": "remove_item",
+      "effective_safety": "rebuildable",
+      "id": "/Users/vic/Library/Caches/GameKit",
+      "is_cleanable": false,
+      "is_selected_by_default": false,
+      "name": "GameKit — phần giữ lại",
+      "operation_scope": "quick_cleanup",
+      "path": "/Users/vic/Library/Caches/GameKit",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "mclean_maintained_cache",
+      "safety_level": "rebuildable",
+      "size_bytes": 0,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/Library/Caches/GameKit"
+    },
+    {
+      "app_bundle_ids": [],
+      "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+      "can_delete": false,
+      "category": "user_caches",
+      "conditions": [],
+      "consequence_vi": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+      "deletion_method": "remove_item",
+      "effective_safety": "unknown",
+      "id": "/Users/vic/Library/Caches/Google",
+      "is_cleanable": false,
+      "is_selected_by_default": false,
+      "name": "Google — phần giữ lại",
+      "operation_scope": "quick_cleanup",
+      "path": "/Users/vic/Library/Caches/Google",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "unvalidated",
+      "safety_level": "unknown",
+      "size_bytes": 0,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/Library/Caches/Google"
+    },
+    {
+      "app_bundle_ids": [],
+      "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+      "can_delete": false,
+      "category": "user_caches",
+      "conditions": [],
+      "consequence_vi": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+      "deletion_method": "remove_item",
+      "effective_safety": "unknown",
+      "id": "/Users/vic/Library/Caches/com.apple.tipsd",
+      "is_cleanable": false,
+      "is_selected_by_default": false,
+      "name": "com.apple.tipsd — phần giữ lại",
+      "operation_scope": "quick_cleanup",
+      "path": "/Users/vic/Library/Caches/com.apple.tipsd",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "unvalidated",
+      "safety_level": "unknown",
+      "size_bytes": 0,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/Library/Caches/com.apple.tipsd"
+    },
+    {
+      "app_bundle_ids": [],
+      "blocked_reason": "Không xác minh được toàn bộ nội dung, symlink hoặc hardlink; giữ lại.",
+      "can_delete": false,
+      "category": "user_caches",
+      "conditions": [],
+      "consequence_vi": "Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.",
+      "deletion_method": "remove_item",
+      "effective_safety": "rebuildable",
+      "id": "/Users/vic/Library/Caches/Adobe",
+      "is_cleanable": false,
+      "is_selected_by_default": false,
+      "name": "Adobe — phần giữ lại",
+      "operation_scope": "quick_cleanup",
+      "path": "/Users/vic/Library/Caches/Adobe",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "mclean_maintained_cache",
+      "safety_level": "rebuildable",
+      "size_bytes": 0,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/Library/Caches/Adobe"
+    },
+    {
+      "app_bundle_ids": [],
+      "blocked_reason": "Không xác minh được toàn bộ nội dung, symlink hoặc hardlink; giữ lại.",
+      "can_delete": false,
+      "category": "user_caches",
+      "conditions": [],
+      "consequence_vi": "Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.",
+      "deletion_method": "remove_item",
+      "effective_safety": "rebuildable",
+      "id": "/Users/vic/Library/Caches/CSXS",
+      "is_cleanable": false,
+      "is_selected_by_default": false,
+      "name": "CSXS — phần giữ lại",
+      "operation_scope": "quick_cleanup",
+      "path": "/Users/vic/Library/Caches/CSXS",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "mclean_maintained_cache",
+      "safety_level": "rebuildable",
+      "size_bytes": 1501,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/Library/Caches/CSXS"
+    },
+    {
+      "app_bundle_ids": [],
+      "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+      "can_delete": false,
+      "category": "user_caches",
+      "conditions": [],
+      "consequence_vi": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+      "deletion_method": "remove_item",
+      "effective_safety": "unknown",
+      "id": "/Users/vic/Library/Caches/com.apple.AMPLibraryAgent",
+      "is_cleanable": false,
+      "is_selected_by_default": false,
+      "name": "com.apple.AMPLibraryAgent — phần giữ lại",
+      "operation_scope": "quick_cleanup",
+      "path": "/Users/vic/Library/Caches/com.apple.AMPLibraryAgent",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "unvalidated",
+      "safety_level": "unknown",
+      "size_bytes": 520,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/Library/Caches/com.apple.AMPLibraryAgent"
+    },
+    {
+      "app_bundle_ids": [],
+      "blocked_reason": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn.",
+      "can_delete": false,
+      "category": "user_caches",
+      "conditions": [],
+      "consequence_vi": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn.",
+      "deletion_method": "remove_item",
+      "effective_safety": "protected",
+      "id": "/Users/vic/Library/Caches/com.google.antigravity",
+      "is_cleanable": false,
+      "is_selected_by_default": false,
+      "name": "com.google.antigravity",
+      "operation_scope": "quick_cleanup",
+      "path": "/Users/vic/Library/Caches/com.google.antigravity",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "updater_state",
+      "safety_level": "protected",
+      "size_bytes": 363255137,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/Library/Caches/com.google.antigravity"
+    },
+    {
+      "app_bundle_ids": [],
+      "blocked_reason": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn.",
+      "can_delete": false,
+      "category": "user_caches",
+      "conditions": [],
+      "consequence_vi": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn.",
+      "deletion_method": "remove_item",
+      "effective_safety": "protected",
+      "id": "/Users/vic/Library/Caches/com.google.antigravity.ShipIt",
+      "is_cleanable": false,
+      "is_selected_by_default": false,
+      "name": "com.google.antigravity.ShipIt",
+      "operation_scope": "quick_cleanup",
+      "path": "/Users/vic/Library/Caches/com.google.antigravity.ShipIt",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "updater_state",
+      "safety_level": "protected",
+      "size_bytes": 480701475,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/Library/Caches/com.google.antigravity.ShipIt"
+    }
+  ],
+  "detailed_branch_summary": [
+    {
+      "category": "large_files",
+      "found_bytes": 0,
+      "eligible_bytes": 0
+    },
+    {
+      "category": "mail_downloads",
+      "found_bytes": 0,
+      "eligible_bytes": 0
+    },
+    {
+      "category": "trash_bin",
+      "found_bytes": 0,
+      "eligible_bytes": 0
+    },
+    {
+      "category": "brew_cache",
+      "found_bytes": 0,
+      "eligible_bytes": 0
+    },
+    {
+      "category": "node_cache",
+      "found_bytes": 866523663,
+      "eligible_bytes": 0
+    },
+    {
+      "category": "docker_cache",
+      "found_bytes": 0,
+      "eligible_bytes": 0
+    },
+    {
+      "category": "system_junk",
+      "found_bytes": 1201941036,
+      "eligible_bytes": 254467635
+    },
+    {
+      "category": "xcode_junk",
+      "found_bytes": 0,
+      "eligible_bytes": 0
+    },
+    {
+      "category": "user_caches",
+      "found_bytes": 2037667379,
+      "eligible_bytes": 119937739
+    },
+    {
+      "category": "chrome",
+      "found_bytes": 644808816,
+      "eligible_bytes": 644808816
+    },
+    {
+      "category": "media_apps",
+      "found_bytes": 420631118,
+      "eligible_bytes": 101071108
+    },
+    {
+      "category": "ai_apps",
+      "found_bytes": 1613794103,
+      "eligible_bytes": 66467949
+    }
+  ],
+  "node_items": [
+    {
+      "app_bundle_ids": [],
+      "blocked_reason": "Ứng dụng đang mở; hãy đóng và quét lại. Tự phục hồi phiên chưa được kiểm chứng.",
+      "can_delete": false,
+      "category": "node_cache",
+      "conditions": [],
+      "consequence_vi": "npm tải lại gói khi cần; giữ _npx, runtime MCP và project.",
+      "deletion_method": "remove_item",
+      "effective_safety": "rebuildable",
+      "id": "/Users/vic/.npm/_cacache",
+      "is_cleanable": false,
+      "is_selected_by_default": false,
+      "name": "npm cache",
+      "operation_scope": "detailed_cleanup",
+      "path": "/Users/vic/.npm/_cacache",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "npm_download_cache",
+      "safety_level": "rebuildable",
+      "size_bytes": 233235,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/.npm/_cacache"
+    },
+    {
+      "app_bundle_ids": [],
+      "blocked_reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+      "can_delete": false,
+      "category": "node_cache",
+      "conditions": [],
+      "consequence_vi": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+      "deletion_method": "remove_item",
+      "effective_safety": "unknown",
+      "id": "/Users/vic/Library/pnpm/store",
+      "is_cleanable": false,
+      "is_selected_by_default": false,
+      "name": "pnpm content-addressable store",
+      "operation_scope": "detailed_cleanup",
+      "path": "/Users/vic/Library/pnpm/store",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "unvalidated",
+      "safety_level": "unknown",
+      "size_bytes": 866290428,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/Library/pnpm/store"
+    }
+  ],
+  "unsupported_cache_paths": [],
+  "filesystem_checks": {
+    "com.google.antigravity": [
+      "update.zip",
+      "pending"
+    ],
+    "com.google.antigravity.ShipIt": [
+      "ShipIt_stdout.log",
+      "ShipItState.plist",
+      "update.Qgy4B7n",
+      "ShipIt_stderr.log"
+    ],
+    "com.google.GoogleUpdater": [
+      "fsCachedData",
+      "Cache.db-shm",
+      "Cache.db-wal",
+      "Cache.db"
+    ],
+    "GeoServices": "hardlinks in Resources; e.g sky20Grey3-5.png",
+    "GameKit": "protected component staging",
+    "Adobe": "protected component Premiere Pro/25.0/SentryIO-db/pending",
+    "CSXS": "protected components Local Storage and Session Storage"
+  }
+}

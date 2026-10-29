@@ -1,0 +1,69 @@
+{
+  "captured_at": "2026-10-28T13:48:57.521241+07:00",
+  "phase": "after_user_restart",
+  "installed": {
+    "version": "2.6.0",
+    "bundle_id": "com.google.antigravity-ide",
+    "commit": "9e3a5da5d6731effd57d47d88bbe5df14ac6ccdd",
+    "date": "2026-10-26T18:06:23.613Z",
+    "info_sha256": "10977d04e783467496a651db0a21936aad649cc2cd5986f0aa8de8e2d0a9a67b",
+    "main_sha256": "d9868442a6ed82f49f012db6c5c38d60634c3afa1c962670d66d1d9a5d7381f8"
+  },
+  "shipit_entries": [
+    {
+      "path": "/Users/vic/Library/Caches/com.google.antigravity-ide.ShipIt/ShipItState.plist",
+      "logical_bytes": 312,
+      "files": 1
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.google.antigravity-ide.ShipIt/ShipIt_stderr.log",
+      "logical_bytes": 3421,
+      "files": 1
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.google.antigravity-ide.ShipIt/ShipIt_stdout.log",
+      "logical_bytes": 0,
+      "files": 1
+    }
+  ],
+  "shipit_state": {
+    "launchAfterInstallation": true,
+    "updateBundleURL": "file:///Users/vic/Library/Caches/com.google.antigravity-ide.ShipIt/update.og1Mqjc/Antigravity%20IDE.app/",
+    "useUpdateBundleName": false,
+    "bundleIdentifier": "com.google.antigravity-ide",
+    "targetBundleURL": "file:///Applications/Antigravity%20IDE.app/"
+  },
+  "shipit_stderr": "2026-10-28 12:58:09.880 ShipIt[23164:18545826] Detected this as an install request\n2026-10-28 13:47:16.370 ShipIt[23164:18545828] Beginning installation\n2026-10-28 13:47:46.339 ShipIt[23164:18605125] Moving bundle from file:///Applications/Antigravity%20IDE.app/ to file:///var/folders/zb/hp1727994p39j_spyh0crq_00000gn/T/com.google.antigravity-ide.ShipIt.808Bt2tX/Antigravity%20IDE.app\n2026-10-28 13:47:46.339 ShipIt[23164:18605125] Moving bundles directly as SquirrelMacEnableDirectContentsWrite is disabled for app: com.google.antigravity-ide.ShipIt\n2026-10-28 13:47:46.340 ShipIt[23164:18605125] Moved bundle contents from file:///Applications/Antigravity%20IDE.app/ to file:///var/folders/zb/hp1727994p39j_spyh0crq_00000gn/T/com.google.antigravity-ide.ShipIt.808Bt2tX/Antigravity%20IDE.app\n2026-10-28 13:47:46.340 ShipIt[23164:18605125] Moving bundle from file:///var/folders/zb/hp1727994p39j_spyh0crq_00000gn/T/com.google.antigravity-ide.ShipIt.zB2tRmut/Antigravity%20IDE.app to file:///Applications/Antigravity%20IDE.app/\n2026-10-28 13:47:46.341 ShipIt[23164:18605125] Moving bundles directly as SquirrelMacEnableDirectContentsWrite is disabled for app: com.google.antigravity-ide.ShipIt\n2026-10-28 13:47:46.345 ShipIt[23164:18605125] Moved bundle contents from file:///var/folders/zb/hp1727994p39j_spyh0crq_00000gn/T/com.google.antigravity-ide.ShipIt.zB2tRmut/Antigravity%20IDE.app to file:///Applications/Antigravity%20IDE.app/\n2026-10-28 13:47:47.976 ShipIt[23164:18605125] Couldn't remove owned bundle at location file:///var/folders/zb/hp1727994p39j_spyh0crq_00000gn/T/com.google.antigravity-ide.ShipIt.zB2tRmut/Antigravity%20IDE.app, error NSError { domain: NSCocoaErrorDomain, code: 4, description: \"“Antigravity IDE.app” couldn’t be removed.\", failureReason: \"The file doesn’t exist.\", underlying error: NSError { domain: NSPOSIXErrorDomain, code: 2, description: \"The operation couldn’t be completed. No such file or directory\" }, userInfo: {\n    NSFilePath = \"/var/folders/zb/hp1727994p39j_spyh0crq_00000gn/T/com.google.antigravity-ide.ShipIt.zB2tRmut/Antigravity IDE.app\";\n    NSURL = \"file:///var/folders/zb/hp1727994p39j_spyh0crq_00000gn/T/com.google.antigravity-ide.ShipIt.zB2tRmut/Antigravity%20IDE.app\";\n    NSUserStringVariant =     (\n        Remove\n    );\n} }\n2026-10-28 13:47:49.871 ShipIt[23164:18606311] On main thread and launching: file:///Applications/Antigravity%20IDE.app/\n2026-10-28 13:47:49.871 ShipIt[23164:18606311] Bundle URL is valid\n2026-10-28 13:47:49.871 ShipIt[23164:18606311] Attempting to launch app on 11.0 or higher\n2026-10-28 13:47:49.871 ShipIt[23164:18606311] Launching new ShipIt at /Applications/Antigravity IDE.app/Contents/Frameworks/Squirrel.framework/Resources/ShipIt with instructions to launch file:///Applications/Antigravity%20IDE.app/\n2026-10-28 13:47:49.871 ShipIt[23164:18605125] Installation completed successfully\n2026-10-28 13:47:49.881 ShipIt[23164:18606311] New ShipIt pid: 26462\n2026-10-28 13:47:52.625 ShipIt[26462:18606877] Detected this as a launch request\n2026-10-28 13:47:52.715 ShipIt[26462:18606877] Successfully launched application at file:///Applications/Antigravity%20IDE.app/\n2026-10-28 13:47:52.715 ShipIt[26462:18606877] ShipIt quitting\n2026-10-28 13:47:52.716 ShipIt[23164:18606311] ShipIt status 0\n2026-10-28 13:47:52.717 ShipIt[23164:18606311] New ShipIt exited\n2026-10-28 13:47:52.717 ShipIt[23164:18606311] ShipIt quitting\n",
+  "update_log": [
+    "2026-10-28 13:47:55.944 [info] update#setState idle",
+    "2026-10-28 13:48:25.949 [info] update#setState checking for updates",
+    "2026-10-28 13:48:26.422 [info] update#setState idle",
+    "2026-10-28 10:57:09.649 [info] update#setState idle",
+    "2026-10-28 10:57:39.651 [info] update#setState checking for updates",
+    "2026-10-28 10:57:40.049 [info] update#setState idle",
+    "2026-10-28 11:57:39.618 [info] update#setState checking for updates",
+    "2026-10-28 11:57:40.149 [info] update#setState idle",
+    "2026-10-28 12:57:39.681 [info] update#setState checking for updates",
+    "2026-10-28 12:57:40.123 [info] update#setState downloading",
+    "2026-10-28 12:58:09.779 [info] update#setState downloaded",
+    "2026-10-28 12:58:09.786 [info] update#setState ready"
+  ],
+  "read_only": true,
+  "matches_preupdate_staging_main": true,
+  "matches_preupdate_staging_info": true,
+  "signature_verification": {
+    "first_attempt": "failed immediately after update: invalid signature",
+    "subsequent_verbose_verification": "passed",
+    "final_repeat_passed": false,
+    "initial_failure_cause": "not established; not treated as a persistent signature failure"
+  },
+  "running_main_pid": 26470,
+  "shipit_process_observed_after_restart": false,
+  "temp_shipit_remaining": [
+    {
+      "path": "T/com.google.antigravity-ide.ShipIt.zB2tRmut",
+      "files": 0,
+      "logical_bytes": 0
+    }
+  ]
+}

@@ -17,7 +17,7 @@
 Thời lượng tổng cộng ước tính: **3 - 5 phút**.
 
 ### Màn 1: Giới thiệu Hệ thống & Trực quan Telemetry (Thời lượng: 45 giây)
-* **Mục tiêu:** Thể hiện sự mượt mà, chính xác và đồng bộ của giao diện theo phong cách zTools Master Theme.
+* **Mục tiêu:** Thể hiện sự mượt mà, chính xác và đồng bộ của giao diện theo phong cách VXUtilities Master Theme.
 * **Thao tác thực hiện:**
   1. Mở ứng dụng VXClean.
   2. Chỉ vào 4 khối thông số phần cứng trên Dashboard: CPU (có sparkline lịch sử dao động), RAM (phân rã Active/Wired/Compressed), Ổ đĩa (phân biệt Used vs Purgeable), và Pin/Nguồn điện.
@@ -81,4 +81,4 @@ Thời lượng tổng cộng ước tính: **3 - 5 phút**.
 - [ ] **Môi trường:** Đảm bảo máy tính chạy macOS 13+ (Ventura trở lên), khuyến nghị Apple Silicon.
 - [ ] **Quyền hạn:** Kiểm tra quyền Full Disk Access đã được cấp trong System Settings để có thể demo quét sâu toàn diện.
 - [ ] **Dữ liệu mẫu:** Có sẵn một vài project có thư mục build hoặc cache để kết quả quét Smart Scan và Space Lens hiển thị dữ liệu sinh động.
-- [ ] **Giao diện:** Đặt chế độ màn hình Dark Mode chuẩn của hệ điều hành để tôn vinh tối đa thiết kế Navy/Slate và Electric Cyan của zTools Master Theme.
+- [ ] **Giao diện:** Đặt chế độ màn hình Dark Mode chuẩn của hệ điều hành để tôn vinh tối đa thiết kế Navy/Slate và Electric Cyan của VXUtilities Master Theme.

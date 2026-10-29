@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-11",
+  "mclean_ui": {
+    "action": "Clicked Dashboard Scan Again, opened System Junk after refreshed category results",
+    "system_junk_display": "1.2 GB",
+    "system_junk_items": 100,
+    "overall_scan_still_busy_in_observation": true,
+    "screenshot": "mclean_system_junk_comparison.png"
+  },
+  "vxclean_read_only_snapshot": {
+    "system_junk_eligible_bytes": 1123836764,
+    "system_junk_excluded_bytes": 76029711,
+    "combined_bytes": 1199866475,
+    "source_evidence": "quick_mclean_adapt_evidence.json"
+  },
+  "excluded_breakdown_bytes": {
+    "ipc_boost_interprocess": 29474816,
+    "chrome_qa_profile_copies": 28573871,
+    "missing_write_permission": 15395789,
+    "hardlinked_build_objects": 1946117,
+    "other_guards": 639118
+  },
+  "chrome_qa_probe": {
+    "symlinks": 0,
+    "hardlinks": 0,
+    "special_files": 0,
+    "protected_contents": [
+      "Cookies",
+      "Bookmarks",
+      "Sessions",
+      "Local State"
+    ],
+    "is_original_chrome_profile": false,
+    "note": "Copies from prior QA; generic profile guards do not establish that these backups are essential to installed apps."
+  },
+  "decimal_display": {
+    "base": 1000,
+    "main_formatter": "desktop/src/services/byte_format.ts",
+    "dashboard_shared_formatter": true,
+    "menu_panel_decimal": true,
+    "boundary_cross_check_passed": true
+  },
+  "limitations": [
+    "MClean overall scan was still busy; refreshed System Junk category visible100items. No cleanup in MClean.",
+    "Comparisons use snapshots taken at different times; current writes can change exact byte totals.",
+    "Existing generic UI blocked_reason conflates rule-protected children with snapshot/link failures; actual Chrome QA reason clarified here."
+  ],
+  "system_junk_superseded_by": "system_junk_clone_evidence.json",
+  "system_junk_current_rule_audit": "system_junk_rule_audit.md"
+}

@@ -1,0 +1,168 @@
+{
+  "title": "AI Apps — Codex / Antigravity / ChatGPT",
+  "found_bytes": 1570520162,
+  "eligible_bytes": 65944718,
+  "items": [
+    {
+      "path": "/Users/vic/Library/Caches/Codex/Default/Cache",
+      "bytes": 1920237,
+      "rule_id": "ai_frontend_http_code_graphics",
+      "eligible": true,
+      "requires_app_quit": true
+    },
+    {
+      "path": "/Users/vic/Library/Caches/Codex/Default/Code Cache",
+      "bytes": 144,
+      "rule_id": "ai_frontend_http_code_graphics",
+      "eligible": true,
+      "requires_app_quit": true
+    },
+    {
+      "path": "/Users/vic/Library/Application Support/Codex/GraphiteDawnCache",
+      "bytes": 12708430,
+      "rule_id": "unvalidated",
+      "eligible": false,
+      "requires_app_quit": false
+    },
+    {
+      "path": "/Users/vic/Library/Application Support/Antigravity/Cache",
+      "bytes": 12666165,
+      "rule_id": "ai_frontend_http_code_graphics",
+      "eligible": true,
+      "requires_app_quit": true
+    },
+    {
+      "path": "/Users/vic/Library/Application Support/Antigravity/Code Cache",
+      "bytes": 15910212,
+      "rule_id": "ai_frontend_http_code_graphics",
+      "eligible": true,
+      "requires_app_quit": true
+    },
+    {
+      "path": "/Users/vic/Library/Application Support/Antigravity/GPUCache",
+      "bytes": 557424,
+      "rule_id": "ai_frontend_http_code_graphics",
+      "eligible": true,
+      "requires_app_quit": true
+    },
+    {
+      "path": "/Users/vic/Library/Application Support/Antigravity/DawnGraphiteCache",
+      "bytes": 557424,
+      "rule_id": "ai_frontend_http_code_graphics",
+      "eligible": true,
+      "requires_app_quit": true
+    },
+    {
+      "path": "/Users/vic/Library/Application Support/Antigravity/DawnWebGPUCache",
+      "bytes": 557424,
+      "rule_id": "ai_frontend_http_code_graphics",
+      "eligible": true,
+      "requires_app_quit": true
+    },
+    {
+      "path": "/Users/vic/Library/Application Support/Antigravity IDE/Cache",
+      "bytes": 26817380,
+      "rule_id": "ai_frontend_http_code_graphics",
+      "eligible": true,
+      "requires_app_quit": true
+    },
+    {
+      "path": "/Users/vic/Library/Application Support/Antigravity IDE/Code Cache",
+      "bytes": 6292,
+      "rule_id": "ai_frontend_http_code_graphics",
+      "eligible": true,
+      "requires_app_quit": true
+    },
+    {
+      "path": "/Users/vic/Library/Application Support/Antigravity IDE/GPUCache",
+      "bytes": 5837168,
+      "rule_id": "ai_frontend_http_code_graphics",
+      "eligible": true,
+      "requires_app_quit": true
+    },
+    {
+      "path": "/Users/vic/Library/Application Support/Antigravity IDE/DawnGraphiteCache",
+      "bytes": 557424,
+      "rule_id": "ai_frontend_http_code_graphics",
+      "eligible": true,
+      "requires_app_quit": true
+    },
+    {
+      "path": "/Users/vic/Library/Application Support/Antigravity IDE/DawnWebGPUCache",
+      "bytes": 557424,
+      "rule_id": "ai_frontend_http_code_graphics",
+      "eligible": true,
+      "requires_app_quit": true
+    },
+    {
+      "path": "/Users/vic/Library/Application Support/Antigravity IDE/CachedData",
+      "bytes": 52176599,
+      "rule_id": "unvalidated",
+      "eligible": false,
+      "requires_app_quit": false
+    },
+    {
+      "path": "/Users/vic/Library/Application Support/Antigravity IDE/logs",
+      "bytes": 65030595,
+      "rule_id": "unvalidated",
+      "eligible": false,
+      "requires_app_quit": false
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.openai.codex",
+      "bytes": 160436,
+      "rule_id": "unvalidated",
+      "eligible": false,
+      "requires_app_quit": false
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.google.antigravity",
+      "bytes": 363255137,
+      "rule_id": "unvalidated",
+      "eligible": false,
+      "requires_app_quit": false
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.google.antigravity.ShipIt",
+      "bytes": 480697054,
+      "rule_id": "unvalidated",
+      "eligible": false,
+      "requires_app_quit": false
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.google.antigravity-ide.ShipIt",
+      "bytes": 0,
+      "rule_id": "unvalidated",
+      "eligible": false,
+      "requires_app_quit": false
+    },
+    {
+      "path": "/Users/vic/.codex/sessions",
+      "bytes": 320675064,
+      "rule_id": "protected_state",
+      "eligible": false,
+      "requires_app_quit": false
+    },
+    {
+      "path": "/Users/vic/.codex/archived_sessions",
+      "bytes": 130099191,
+      "rule_id": "protected_state",
+      "eligible": false,
+      "requires_app_quit": false
+    },
+    {
+      "path": "/Users/vic/.codex/plugins/cache",
+      "bytes": 79755569,
+      "rule_id": "protected_state",
+      "eligible": false,
+      "requires_app_quit": false
+    },
+    {
+      "path": "/Users/vic/.gemini/antigravity/brain",
+      "bytes": 17369,
+      "rule_id": "protected_state",
+      "eligible": false,
+      "requires_app_quit": false
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "version": "1.0.6",
+  "date": "2026-10-11",
+  "installed": "/Applications/VXClean.app",
+  "backup": "desktop/src_tauri/target/local_backups/vxclean_1_0_5.app",
+  "checks": {
+    "rust": 24,
+    "build": true,
+    "codesign": true,
+    "updater_signature": true,
+    "tamper_rejected": true,
+    "native_matches_tested_1_0_5": true,
+    "native_fixture_groups": 28
+  },
+  "gui_cleanup": {
+    "operation_id": "71a7b3a0-a2f7-4de3-8dcc-bc4fb46d1755",
+    "confirmed_targets": 92,
+    "success_count": 69,
+    "failure_count": 23,
+    "permanently_freed_bytes": 1131565337,
+    "duration_ms": 58672,
+    "admin_failures": 19,
+    "changed_targets_skipped": 4,
+    "apps_still_running": [
+      "Chrome",
+      "ChatGPT",
+      "Antigravity IDE"
+    ],
+    "status": "partial_admin_guard_under_investigation"
+  },
+  "published": false,
+  "artifacts": [
+    {
+      "path": "desktop/src_tauri/target/release/bundle/dmg/VXClean_1.0.6_aarch64.dmg",
+      "sha256": "bbb222cec1e4e00a1bfd5b9b0798596e697cc681fdc87b528be4d0e21d798c11"
+    },
+    {
+      "path": "desktop/src_tauri/target/release/bundle/macos/VXClean.app.tar.gz",
+      "sha256": "53fd2f4172629f5fe090580bf344e94a9fa64381286b73863e3c1b3d14d85e22"
+    },
+    {
+      "path": "desktop/src_tauri/target/release/bundle/macos/VXClean.app/Contents/MacOS/vxclean",
+      "sha256": "026008d4e3dd666658add1e3241c7fef51fe5a284eae42e2f8071c49dde24523"
+    },
+    {
+      "path": "desktop/src_tauri/target/release/bundle/macos/VXClean.app/Contents/Resources/vxclean_engine",
+      "sha256": "e9c294fef3a1d139a0af21013a79c245782ddc8815218d1af0313b4640fd3b20"
+    }
+  ]
+}

@@ -9,7 +9,7 @@
 > **Ngày cập nhật:** 2026-10-07
 > **Nền tảng mục tiêu:** macOS (Apple Silicon arm64 & Intel x86_64, tối thiểu macOS 13.0 Ventura) + Định hướng kiến trúc mở rộng Windows Adapter
 > **Mô hình Kiến trúc:** Kiến trúc 3 tầng phân định (Hybrid Core with Native Subprocess Engine):
-> - **Tầng 1 (UI Shell — định hướng tái sử dụng đa nền tảng):** Tauri v2 WebView (React 19.3 + TypeScript 7.0 + Vite 8.3 + Tailwind CSS 4.3 + Lucide Icons) tuân thủ nghiêm ngặt [master_theme.md](../../../_summary/master_theme.md).
+> - **Tầng 1 (UI Shell — định hướng tái sử dụng đa nền tảng):** Tauri v2 WebView (React 19.3 + TypeScript 7.0 + Vite 8.3 + Tailwind CSS 4.3 + Lucide Icons) tuân thủ nghiêm ngặt [master_theme.md](../../../../_summary/standard_docs/master_theme.md).
 > - **Tầng 2 (Host Bridge & Process Supervisor):** Rust Native Core (Tauri 2 IPC, Non-blocking Process Spawner, Child Process Lifecycle Monitor, Protocol Contract Validator v1.0).
 > - **Tầng 3 (Platform Native Engines):**
 >   - *Trên macOS:* `vxclean_engine` (Swift Native Executable compiled via Command Line Tools), kế thừa và đóng gói các logic lõi từ `MClean/Services/` (`SystemMonitor.swift`, `ScanEngine.swift`, `CleaningEngine.swift`, `SpaceLensEngine.swift`).
@@ -26,8 +26,8 @@ Hệ điều hành macOS nổi tiếng với sự ổn định, nhưng qua thờ
 - **Sự thiếu minh bạch của các công cụ bên thứ ba:** Nhiều công cụ dọn dẹp thương mại tính phí bản quyền đắt đỏ, chạy daemon chạy ngầm nặng nề, hoặc quảng cáo sai lệch ("tất cả đều vào Thùng rác") trong khi thực tế âm thầm xóa vĩnh viễn bằng quyền root.
 
 ### 1.2. Mục tiêu của VXClean
-VXClean được kế thừa từ dự án mã nguồn mở `MClean`, sau đó tái cấu trúc theo bộ tiêu chuẩn **zTools** để trở thành công cụ dọn dẹp hệ thống chuyên nghiệp, hiện đại và minh bạch:
-1. **Kiến trúc Hiện đại & Đồng bộ (Unified zTools Ecosystem):** Đồng bộ hoàn toàn giao diện với `VXMedia` và `VXPhotos` (`photo_picker`), sử dụng theme Slate/Navy cao cấp với điểm nhấn Electric Cyan.
+VXClean được kế thừa từ dự án mã nguồn mở `MClean`, sau đó tái cấu trúc theo bộ tiêu chuẩn **VXUtilities** để trở thành công cụ dọn dẹp hệ thống chuyên nghiệp, hiện đại và minh bạch:
+1. **Kiến trúc Hiện đại & Đồng bộ (Unified VXUtilities Ecosystem):** Đồng bộ hoàn toàn giao diện với `VXMedia` và `VXPhotos` (`photo_picker`), sử dụng theme Slate/Navy cao cấp với điểm nhấn Electric Cyan.
 2. **Minh bạch Tuyệt đối về An toàn Tệp (Transparent Safety Policy):** Tuân thủ [Báo cáo Đối soát An toàn](../../docs/safety_audit.md). Phân định rõ ràng: cái gì đưa vào Thùng rác (`Trash`), cái gì xóa trực tiếp (`removeItem` / `rm -rf`), và khi nào cần quyền quản trị (`Admin Privileges`). Tuyệt đối không che giấu hành vi xóa.
 3. **Hiệu năng & Tối ưu Tài nguyên (Resource Efficiency):** App chính mở nhanh, UI mượt mà với React + Tailwind. Menu Bar giám sát hệ thống với tần suất lấy mẫu thông minh (tiết chế khi ẩn popover, không gây hao pin).
 4. **Quy tắc Vận hành Cửa sổ macOS (True macOS Window Lifecycle):** Đóng cửa sổ chính (Cmd+W hoặc click nút đỏ) → Ẩn cửa sổ và ẩn khỏi Dock, app tiếp tục giám sát nhẹ trên Menu Bar. Click icon Menu Bar hoặc mở lại app → Hiển thị lại cửa sổ và Dock. Thoát ứng dụng (Cmd+Q hoặc menu Quit) → Chấm dứt toàn bộ tiến trình.
@@ -131,7 +131,7 @@ Mọi phản hồi từ `vxclean_engine` trả về Rust Core và đẩy lên Fr
 
 ## 4. Hệ thống Tài liệu Đặc tả Chi tiết (Specification Roadmap)
 
-Bộ tài liệu đặc tả được cấu trúc đồng bộ theo 7 tài liệu chuẩn mực zTools:
+Bộ tài liệu đặc tả được cấu trúc đồng bộ theo 7 tài liệu chuẩn mực VXUtilities:
 
 | Thứ tự | Mã tài liệu | Tên file | Trọng tâm nội dung |
 | :--- | :--- | :--- | :--- |

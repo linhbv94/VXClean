@@ -13,7 +13,7 @@
 > **Mã tài liệu:** `_spec3_ui_wireframe`
 > **Phiên bản:** 1.0.0
 > **Ngày cập nhật:** 2026-10-07
-> **Hệ quy chiếu Thiết kế:** Tuân thủ 100% [master_theme.md](../../_summary/master_theme.md) của hệ sinh thái zTools (Dark Navy/Slate, Electric Cyan Accent, Glassmorphism, Desktop Compact Density).
+> **Hệ quy chiếu Thiết kế:** Tuân thủ 100% [master_theme.md](../../../../_summary/standard_docs/master_theme.md) của hệ sinh thái VXUtilities (Dark Navy/Slate, Electric Cyan Accent, Glassmorphism, Desktop Compact Density).
 
 ---
 
@@ -327,7 +327,7 @@ Quét và phát hiện các tệp cấu hình còn sót lại của các ứng d
 
 ---
 
-## 10. Màn hình Cài Đặt (Settings Modal — 3 Tab Đồng Bộ zTools)
+## 10. Màn hình Cài Đặt (Settings Modal — 3 Tab Đồng Bộ VXUtilities)
 
 Modal kích thước chuẩn `max-w-xl`, phân tách 3 tab: Cập nhật (Updates), Giới thiệu (About), Ủng hộ tác giả (Support):
 

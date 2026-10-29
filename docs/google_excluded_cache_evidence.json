@@ -1,0 +1,166 @@
+{
+  "measured_seconds": 1.579,
+  "errors": 0,
+  "groups": {
+    "Chrome/Profile 1/Cache": {
+      "files": 29828,
+      "dirs": 4,
+      "logical": 1227082562,
+      "allocated": 1286946816,
+      "links": 0,
+      "hardlinks": 0,
+      "special": 0,
+      "manifest_estimate": 7493559
+    },
+    "Chrome/Default/Cache": {
+      "files": 22554,
+      "dirs": 4,
+      "logical": 1197712397,
+      "allocated": 1237299200,
+      "links": 0,
+      "hardlinks": 0,
+      "special": 0,
+      "manifest_estimate": 5618084
+    },
+    "Chrome/Profile 1/Code Cache": {
+      "files": 5888,
+      "dirs": 5,
+      "logical": 346570138,
+      "allocated": 363937792,
+      "links": 0,
+      "hardlinks": 0,
+      "special": 0,
+      "manifest_estimate": 1459358
+    },
+    "Chrome/Default/Code Cache": {
+      "files": 3971,
+      "dirs": 5,
+      "logical": 209621497,
+      "allocated": 221134848,
+      "links": 0,
+      "hardlinks": 0,
+      "special": 0,
+      "manifest_estimate": 977164
+    },
+    "Chrome/Profile 7/Cache": {
+      "files": 395,
+      "dirs": 4,
+      "logical": 50016410,
+      "allocated": 50728960,
+      "links": 0,
+      "hardlinks": 0,
+      "special": 0,
+      "manifest_estimate": 100230
+    },
+    "Chrome/Profile 4/Cache": {
+      "files": 468,
+      "dirs": 4,
+      "logical": 46373621,
+      "allocated": 47288320,
+      "links": 0,
+      "hardlinks": 0,
+      "special": 0,
+      "manifest_estimate": 118674
+    },
+    "Chrome/Profile 4/Code Cache": {
+      "files": 339,
+      "dirs": 5,
+      "logical": 17475568,
+      "allocated": 18542592,
+      "links": 0,
+      "hardlinks": 0,
+      "special": 0,
+      "manifest_estimate": 85099
+    },
+    "Chrome/Profile 7/Code Cache": {
+      "files": 148,
+      "dirs": 5,
+      "logical": 12399868,
+      "allocated": 12861440,
+      "links": 0,
+      "hardlinks": 0,
+      "special": 0,
+      "manifest_estimate": 37778
+    },
+    ".": {
+      "files": 0,
+      "dirs": 1,
+      "logical": 0,
+      "allocated": 0,
+      "links": 0,
+      "hardlinks": 0,
+      "special": 0,
+      "manifest_estimate": 196
+    },
+    "Chrome": {
+      "files": 0,
+      "dirs": 1,
+      "logical": 0,
+      "allocated": 0,
+      "links": 0,
+      "hardlinks": 0,
+      "special": 0,
+      "manifest_estimate": 204
+    },
+    "Chrome/Profile 7": {
+      "files": 0,
+      "dirs": 1,
+      "logical": 0,
+      "allocated": 0,
+      "links": 0,
+      "hardlinks": 0,
+      "special": 0,
+      "manifest_estimate": 214
+    },
+    "Chrome/Profile 1": {
+      "files": 0,
+      "dirs": 1,
+      "logical": 0,
+      "allocated": 0,
+      "links": 0,
+      "hardlinks": 0,
+      "special": 0,
+      "manifest_estimate": 214
+    },
+    "Chrome/Profile 1/image_cache": {
+      "files": 3,
+      "dirs": 3,
+      "logical": 0,
+      "allocated": 0,
+      "links": 0,
+      "hardlinks": 0,
+      "special": 0,
+      "manifest_estimate": 1497
+    },
+    "Chrome/Profile 1/Storage": {
+      "files": 0,
+      "dirs": 10,
+      "logical": 0,
+      "allocated": 0,
+      "links": 0,
+      "hardlinks": 0,
+      "special": 0,
+      "manifest_estimate": 2469
+    },
+    "Chrome/Default": {
+      "files": 0,
+      "dirs": 1,
+      "logical": 0,
+      "allocated": 0,
+      "links": 0,
+      "hardlinks": 0,
+      "special": 0,
+      "manifest_estimate": 212
+    },
+    "Chrome/Profile 4": {
+      "files": 0,
+      "dirs": 1,
+      "logical": 0,
+      "allocated": 0,
+      "links": 0,
+      "hardlinks": 0,
+      "special": 0,
+      "manifest_estimate": 214
+    }
+  }
+}

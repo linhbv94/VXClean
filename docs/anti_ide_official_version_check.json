@@ -1,0 +1,13 @@
+{
+  "download_page": "https://antigravity.google/download",
+  "download_url": "https://edgedl.me.gvt1.com/edgedl/release2/j0qc3/antigravity/stable/2.5.5-4923483625488384/darwin-arm/Antigravity%20IDE.dmg",
+  "dmg_path": "/tmp/antigravity_ide_official.dmg",
+  "sha256": "cad67d6d30a537fcb3bb9a6100330040ec6bcb686e38069f1ff16fe42306a33e",
+  "downloaded_version": "2.5.5",
+  "installed_version": "2.5.5",
+  "same_product_commit": "ecfbad74d93962fc8ca485d93ab9b4f3d4cb6cf8",
+  "both_update_url": "https://example.com",
+  "installed": false,
+  "app_launched": false,
+  "note": "Trang chính thức mở bằng Chrome; browser download timeout nên tải cùng URL bằng curl. Mount chỉ đọc để đọc plist/product.json."
+}

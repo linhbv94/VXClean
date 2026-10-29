@@ -1,0 +1,150 @@
+{
+  "date": "2026-10-11",
+  "scope": "quick_cleanup",
+  "contract": "spec/21_quick_scan_clean_parity.md",
+  "accepted_local": true,
+  "published": false,
+  "rule_change": {
+    "removed_general_24h_threshold": true,
+    "removed_build_executable_library_qa_exclusions": true,
+    "temp_node_modules_venv_rebuildable": true,
+    "known_var_log_var_tmp_aliases_normalized": true,
+    "detailed_age_type_policy_preserved": true
+  },
+  "native_fixture_groups_passed": 25,
+  "native_passed": [
+    "detailed_scan_has_twelve_categories_with_policy_metadata",
+    "foundation_http_payload_cold_miss_regeneration_database_and_state_preserved",
+    "old_user_diagnostics_only_regular_direct_leaf_age_and_type_guards",
+    "scope_groups_ai_history_protected_large_files_opt_in_symlink_exclusion",
+    "reject_missing_confirmation_outside_roots_wrong_method_symlinks_identity",
+    "maintained_system_cache_removed_fresh_logs_trash_and_mixed_npm_blocked",
+    "mclean_quick_cache_logs_temp_positive_and_mixed_state_runtime_critical_preservation",
+    "quick_all_advertised_google_adobe_ai_cache_targets_cleaned_exact_bytes_rescan_zero_excluded_preserved",
+    "quick_scan_and_revalidation_no_specialized_cli",
+    "capcut_exact_http_only_preserves_profile_project_new_child_and_hardlinks",
+    "durable_journal_no_automatic_replay",
+    "node_cli_custom_allowlist_and_rejection_preserves_documents",
+    "lens_root_external_read_only_partial_progress_allocated_hardlinks_symlinks",
+    "lens_package_and_real_trash_or_permission_failure",
+    "orphan_policy_protects_apple_and_personal_data",
+    "cleanup_cannot_delete_uninstall_project_root_or_borrow_operation_scope",
+    "uninstall_broad_discovery_exact_names_unselected_no_symlinks",
+    "apps_exact_residual_matching_sip_rejection_and_uninstall",
+    "invalid_commands_fail_closed",
+    "rust_quick_and_orphan_producers_to_native_consumers_identity_manifest_scope",
+    "ai_frontend_exact_cache_preserves_history_state_plugins_runtime",
+    "chrome_7000_cache_files_durable_linear_journal_preserves_profile_under_30s",
+    "blocked_large_file_worker_timeout_preserves_other_scan_categories",
+    "appkit_fixture_quit_cancel_rescan_cleanup_reopen_no_duplicate",
+    "quick_appkit_quit_cancel_rescan_clean_reopen_preserves_quick_authority"
+  ],
+  "fixture_proof": {
+    "new_and_old_build_tools_libraries_npm_swift_source_config_cleanable": true,
+    "all_advertised_targets_deleted": true,
+    "deleted_bytes_equal_scanned_bytes": true,
+    "rescan_cleanable_bytes": 0,
+    "project_profile_credentials_locks_preserved": true
+  },
+  "machine_read_only": {
+    "total_cleanable_bytes": 3007952169,
+    "categories": [
+      {
+        "category": "system_junk",
+        "bytes": 1123836764,
+        "items": 515,
+        "all_cleanable": true
+      },
+      {
+        "category": "user_caches",
+        "bytes": 1183512913,
+        "items": 179,
+        "all_cleanable": true
+      },
+      {
+        "category": "large_files",
+        "bytes": 700602492,
+        "items": 5,
+        "all_cleanable": true
+      }
+    ],
+    "system_exclusions": [
+      {
+        "path": "/tmp/boost_interprocess",
+        "bytes": 29474816,
+        "reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+      },
+      {
+        "path": "/tmp/vxclean_chrome_qa_w32kc6p1",
+        "bytes": 28573871,
+        "reason": "Không xác minh được toàn bộ nội dung, symlink hoặc hardlink; giữ lại."
+      },
+      {
+        "path": "/Library/Logs/CrashReporter",
+        "bytes": 7067820,
+        "reason": "Không có quyền ghi trong thư mục chứa tệp; không tự nâng quyền admin."
+      },
+      {
+        "path": "/var/log/powermanagement",
+        "bytes": 4683440,
+        "reason": "Không có quyền ghi trong thư mục chứa tệp; không tự nâng quyền admin."
+      },
+      {
+        "path": "/var/log/DiagnosticMessages",
+        "bytes": 1473714,
+        "reason": "Không có quyền ghi trong thư mục chứa tệp; không tự nâng quyền admin."
+      },
+      {
+        "path": "/tmp/vxclean_signature_check",
+        "bytes": 1168082,
+        "reason": "Không xác minh được toàn bộ nội dung, symlink hoặc hardlink; giữ lại."
+      },
+      {
+        "path": "/tmp/vx_release_setup",
+        "bytes": 778035,
+        "reason": "Không xác minh được toàn bộ nội dung, symlink hoặc hardlink; giữ lại."
+      },
+      {
+        "path": "/var/log/wifi.log",
+        "bytes": 775624,
+        "reason": "Không có quyền ghi trong thư mục chứa tệp; không tự nâng quyền admin."
+      },
+      {
+        "path": "/Users/vic/Library/Logs/DiagnosticReports",
+        "bytes": 449998,
+        "reason": "Không xác minh được toàn bộ nội dung, symlink hoặc hardlink; giữ lại."
+      },
+      {
+        "path": "/var/log/com.apple.wifi.analytics",
+        "bytes": 385453,
+        "reason": "Không có quyền ghi trong thư mục chứa tệp; không tự nâng quyền admin."
+      }
+    ]
+  },
+  "checks": {
+    "frontend_build": true,
+    "native25": true,
+    "codesign": true,
+    "rust_node_signature_tamper": true
+  },
+  "limits": [
+    "Real user data not deleted this turn; mutation uses disposable fixtures.",
+    "IPC/locks, project/profile/credentials, symlink/hardlink, permissions and identity/content changes remain guarded.",
+    "Other platforms/Intel/macOS13, physical tray click, updater install/restart not verified; ad-hoc not notarized.",
+    "Detailed follow-up deferred by user."
+  ],
+  "packaged_ui": {
+    "relaunched_final_package": true,
+    "system_junk_display": "1.12 GB",
+    "system_junk_items": 516,
+    "user_cache_display": "1.18 GB",
+    "selected_equals_found": "2.31 GB",
+    "selected_items": 695,
+    "excluded_after_categories": true,
+    "confirmation_cancel_verified": true,
+    "large_files_timed_out_with_warning": true,
+    "screenshot": "quick_mclean_adapt_ui.png"
+  },
+  "system_junk_superseded_by": "system_junk_clone_evidence.json",
+  "system_junk_current_rule_audit": "system_junk_rule_audit.md"
+}

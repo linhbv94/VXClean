@@ -1,0 +1,142 @@
+{
+  "date": "2026-10-11",
+  "scope": "quick_cleanup",
+  "accepted_local": false,
+  "published": false,
+  "contract": "spec/21_quick_scan_clean_parity.md",
+  "native_fixture_groups_passed": 25,
+  "native_passed": [
+    "detailed_scan_has_twelve_categories_with_policy_metadata",
+    "foundation_http_payload_cold_miss_regeneration_database_and_state_preserved",
+    "old_user_diagnostics_only_regular_direct_leaf_age_and_type_guards",
+    "scope_groups_ai_history_protected_large_files_opt_in_symlink_exclusion",
+    "reject_missing_confirmation_outside_roots_wrong_method_symlinks_identity",
+    "maintained_system_cache_removed_fresh_logs_trash_and_mixed_npm_blocked",
+    "mclean_quick_cache_logs_temp_positive_and_mixed_state_runtime_critical_preservation",
+    "quick_all_advertised_google_adobe_ai_cache_targets_cleaned_exact_bytes_rescan_zero_excluded_preserved",
+    "quick_scan_and_revalidation_no_specialized_cli",
+    "capcut_exact_http_only_preserves_profile_project_new_child_and_hardlinks",
+    "durable_journal_no_automatic_replay",
+    "node_cli_custom_allowlist_and_rejection_preserves_documents",
+    "lens_root_external_read_only_partial_progress_allocated_hardlinks_symlinks",
+    "lens_package_and_real_trash_or_permission_failure",
+    "orphan_policy_protects_apple_and_personal_data",
+    "cleanup_cannot_delete_uninstall_project_root_or_borrow_operation_scope",
+    "uninstall_broad_discovery_exact_names_unselected_no_symlinks",
+    "apps_exact_residual_matching_sip_rejection_and_uninstall",
+    "invalid_commands_fail_closed",
+    "rust_quick_and_orphan_producers_to_native_consumers_identity_manifest_scope",
+    "ai_frontend_exact_cache_preserves_history_state_plugins_runtime",
+    "chrome_7000_cache_files_durable_linear_journal_preserves_profile_under_30s",
+    "blocked_large_file_worker_timeout_preserves_other_scan_categories",
+    "appkit_fixture_quit_cancel_rescan_cleanup_reopen_no_duplicate",
+    "quick_appkit_quit_cancel_rescan_clean_reopen_preserves_quick_authority"
+  ],
+  "parity_fixture": {
+    "all_advertised_targets_cleaned": true,
+    "scan_bytes_equal_clean_bytes": true,
+    "rescan_cleanable_bytes": 0,
+    "protected_project_updater_profile_state_unchanged": true,
+    "foundation_http_cache_regenerated": true,
+    "quick_appkit_cancel_quit_rescan_clean_reopen": true
+  },
+  "read_only_machine_scan": {
+    "total_cleanable_bytes": 2091632471,
+    "categories": [
+      {
+        "id": "system_junk",
+        "total_bytes": 224010324,
+        "item_count": 93,
+        "all_items_cleanable": true
+      },
+      {
+        "id": "user_caches",
+        "total_bytes": 1167019655,
+        "item_count": 180,
+        "all_items_cleanable": true
+      },
+      {
+        "id": "large_files",
+        "total_bytes": 700602492,
+        "item_count": 5,
+        "all_items_cleanable": true
+      }
+    ],
+    "partial": true,
+    "user_cache_inventory_bytes": 2016948267,
+    "antigravity_updater_staging_bytes": 843955980,
+    "shipit_running_observed": true
+  },
+  "packaged_ui": {
+    "all_selected_bytes_equal_header": "2.09 GB",
+    "all_selected_items": 278,
+    "default_selection": "1.39 GB; large files opt-in",
+    "confirmation_cancel_preserved_data": true,
+    "banner_x_dismisses_without_removing_journal": true,
+    "screenshot": "quick_parity_ui.png",
+    "final_package_relaunched": true,
+    "excluded_inventory_items_final_ui": 91
+  },
+  "checks": {
+    "rust_tests": 21,
+    "scan_retention_tests": 10,
+    "frontend_build": true,
+    "codesign_deep_strict": true,
+    "rust_and_node_signature_tamper": true,
+    "diff_check": true
+  },
+  "limitations": [
+    "Real user data not deleted in this turn; mutation proof uses disposable native/host fixtures.",
+    "Live updater/state excluded with reason, not counted as junk.",
+    "Read failures, changed identity/content and app Quit cancellation can produce partial failure; never report those as fully cleaned.",
+    "Intel/macOS13, physical tray click, updater install/restart not verified; local ad-hoc signing, not notarized.",
+    "Detailed cleanup follow-up deferred by user."
+  ],
+  "system_junk_excluded_largest": [
+    {
+      "path": "/tmp/vx_release_setup",
+      "bytes": 294289200,
+      "reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+    },
+    {
+      "path": "/tmp/vxclean_npm_cache",
+      "bytes": 266373185,
+      "reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+    },
+    {
+      "path": "/tmp/vx_video_playback_qa",
+      "bytes": 221194822,
+      "reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+    },
+    {
+      "path": "/tmp/vxclean_swift_module_cache",
+      "bytes": 66139776,
+      "reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+    },
+    {
+      "path": "/tmp/vxclean_signature_check",
+      "bytes": 32090531,
+      "reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+    },
+    {
+      "path": "/tmp/boost_interprocess",
+      "bytes": 29474816,
+      "reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+    },
+    {
+      "path": "/tmp/vxclean_chrome_qa_w32kc6p1",
+      "bytes": 28821816,
+      "reason": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime."
+    },
+    {
+      "path": "/Library/Logs/CrashReporter",
+      "bytes": 7067820,
+      "reason": "Không xác minh được toàn bộ nội dung, symlink hoặc hardlink; giữ lại."
+    }
+  ],
+  "no_category_transfer": true,
+  "artifact_evidence": "local_artifact_evidence.json",
+  "coverage_gate_reopened": "User reviewed ~975MB System Junk exclusions: regenerable build/npm caches overprotected; all-granted-target parity passes but MClean coverage not accepted.",
+  "superseded_by": "quick_mclean_adapt_evidence.json",
+  "historical_only": true
+}

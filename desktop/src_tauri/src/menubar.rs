@@ -11,6 +11,7 @@ pub fn open_main(app:&AppHandle, action:&str) -> Result<(),String> {
     if let Some(panel)=app.get_webview_window("menubar") {let _=panel.hide();}
     let main=app.get_webview_window("main").ok_or("Không tìm thấy cửa sổ chính")?;
     main.show().map_err(|e|e.to_string())?; let _=main.unminimize(); main.set_focus().map_err(|e|e.to_string())?;
+    #[cfg(target_os="macos")] crate::sync_mac_traffic_lights(&main);
     if action!="open" {main.emit("menubar-action",action).map_err(|e|e.to_string())?;}
     Ok(())
 }
@@ -61,11 +62,17 @@ pub fn window_event(window:&tauri::Window,event:&WindowEvent) {
         }
     }
     if window.label()=="menubar" && matches!(event,WindowEvent::Focused(false)) {let _=window.hide();}
+    #[cfg(target_os="macos")]
+    if window.label()=="main" && matches!(event, WindowEvent::Resized(_) | WindowEvent::Focused(true) | WindowEvent::ScaleFactorChanged { .. }) {
+        if let Some(main) = app.get_webview_window("main") {
+            crate::sync_mac_traffic_lights(&main);
+        }
+    }
 }
 pub fn setup(app:&mut tauri::App)->Result<(),Box<dyn std::error::Error>> {
     #[cfg(target_os="macos")] {
         let panel=WebviewWindowBuilder::new(app,"menubar",WebviewUrl::App("menubar.html".into()))
-            .title("VXClean — Tài nguyên hệ thống").inner_size(340.,430.).resizable(false).decorations(false).always_on_top(true).skip_taskbar(true).visible(false).build()?;
+            .title("VXClean — Tài nguyên hệ thống").inner_size(340.,430.).resizable(false).decorations(false).transparent(true).shadow(true).always_on_top(true).skip_taskbar(true).visible(false).build()?;
         let open=MenuItemBuilder::with_id("tray_open","Mở VXClean").build(app)?;
         let settings=MenuItemBuilder::with_id("tray_settings","Cài đặt…").build(app)?;
         let exit=MenuItemBuilder::with_id("tray_quit","Thoát VXClean").build(app)?;

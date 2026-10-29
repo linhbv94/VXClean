@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-10",
+  "user_authorized_real_chrome_cleanup": true,
+  "lifecycle_operation_id": "329ef722-f740-4eed-8ef4-59a9367ab0c8",
+  "successful_batch_operation_ids": [
+    "83f2d62d-ef02-4f55-a309-2506542798f8",
+    "08cf295d-b8fd-4484-b194-fecaba8b28e5",
+    "eb8c0734-11dc-4016-8819-d402df29d5c3",
+    "49eacb1a-b870-4abf-aa93-a6dd90d37da6",
+    "d46bab63-0b65-4c93-9804-29ad6e030351",
+    "c038edb0-9379-485c-9a74-1ff34208ed69",
+    "f90aae06-ded6-4289-844b-7a8e5cf72f96",
+    "65feb58a-c937-4224-a2a4-4afaaa905e1e",
+    "a7a1023e-1fca-46fe-8d8c-1dbb3e6fb6af"
+  ],
+  "success_count": 9,
+  "failure_count": 0,
+  "deleted_logical_bytes_last_successful_attempt": 804438535,
+  "protected_profile_files_checked_while_chrome_closed": 50,
+  "protected_profile_files_hash_changed": 0,
+  "protected_check_after_all_batches_before_reopen": true,
+  "chrome_native_reopened": true,
+  "windows": {
+    "AI Chat": {
+      "before_tabs": 11,
+      "after_tabs": 11,
+      "tab_order_and_selected_preserved": true
+    },
+    "Ents": {
+      "before_tabs": 1,
+      "after_tabs": 1,
+      "tab_order_and_selected_preserved": true
+    },
+    "Product": {
+      "before_tabs": 11,
+      "after_tabs": 11,
+      "tab_order_and_selected_preserved": true
+    },
+    "Proton": {
+      "before_tabs": 18,
+      "after_tabs": 18,
+      "tab_order_and_selected_preserved": true
+    },
+    "Social": {
+      "before_tabs": 12,
+      "after_tabs": 12,
+      "tab_order_and_selected_preserved": true
+    },
+    "VL": {
+      "before_tabs": 3,
+      "after_tabs": 3,
+      "tab_order_and_selected_preserved": true
+    },
+    "VX": {
+      "before_tabs": 17,
+      "after_tabs": 17,
+      "tab_order_and_selected_preserved": true
+    },
+    "YouTube": {
+      "before_tabs": 17,
+      "after_tabs": 17,
+      "tab_order_and_selected_preserved": true
+    }
+  },
+  "comparison_method": "Native Chrome tab-strip boolean AX rows; exclude integer tabs within web pages. Compare titles/order/selected; Social notification counts changed, Zalo account title restored after page finished loading.",
+  "qa_blank_tab_closed_after_comparison": true,
+  "social_user_tabs_after_qa_cleanup": 11,
+  "site_urls_or_credentials_stored": false,
+  "real_reboot_tested": false,
+  "full_os_or_every_chrome_layout_safety_certified": false,
+  "qa_app_sha256": "864ff4e12f0f82a4af02609334acbc4c17f2eac76780e634a6995f551c6658f7",
+  "final_package_followup": "Response protocol metadata aggregation and bounded packing of small targets added after this UI run; filesystem mutation and lifecycle unchanged. Rust20 tests passed; final package rebuilt separately.",
+  "failed_attempts": [
+    {
+      "operation_id": "6c5e8086-0dbf-4c27-ab4c-42a6f402fa4a",
+      "native_deletion_executed": false,
+      "failure": "combined manifests exceeded 4MiB"
+    },
+    {
+      "operation_id": "f478245e-19db-471b-a517-d6e44113f8eb",
+      "failure": "old quadratic journal timed out at120s",
+      "known_successful_files": 6276,
+      "known_deleted_logical_bytes": 385094063,
+      "unknown_journal_targets_retained": 2
+    }
+  ],
+  "menubar_icon": {
+    "old_raw36_bytes": 5760,
+    "corrected_raw36_bytes": 5184,
+    "packed_alpha_matches_png": true,
+    "physical_status_icon_click_verified": false,
+    "limitation": "CUA captures application window; SystemUIServer has no supported window. Panel via app menu was verified earlier; tray click/multi-monitor still pending."
+  },
+  "qa_saved_group_closed_not_deleted": true,
+  "native_total_duration_ms": 221555,
+  "private_profile_backup_retained_in_local_tmp": true
+}

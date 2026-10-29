@@ -1,0 +1,239 @@
+{
+  "date": "2026-10-11",
+  "version": "0.1.0",
+  "native_regression": {
+    "passed": [
+      "detailed_scan_has_twelve_categories_with_policy_metadata",
+      "foundation_http_payload_cold_miss_regeneration_database_and_state_preserved",
+      "quick_owns_diagnostics_detailed_cannot_borrow_child_authority",
+      "scope_groups_ai_history_protected_large_files_opt_in_symlink_exclusion",
+      "reject_missing_confirmation_outside_roots_wrong_method_symlinks_identity",
+      "maintained_system_cache_removed_fresh_logs_trash_and_mixed_npm_blocked",
+      "mclean_system_junk_full_temp_rules_user_cache_protection_unchanged",
+      "system_junk_exact_path_size_default_selection_parity_with_independent_original_mclean_42cf1f8_reference",
+      "quick_all_advertised_targets_cleaned_exact_bytes_profile_copy_lock_ipc_hardlink_external_alias_preserved",
+      "quick_scan_and_revalidation_no_specialized_cli",
+      "capcut_exact_http_only_preserves_profile_project_new_child_and_hardlinks",
+      "durable_journal_no_automatic_replay",
+      "node_cli_custom_allowlist_and_rejection_preserves_documents",
+      "lens_root_external_read_only_partial_progress_allocated_hardlinks_symlinks",
+      "lens_package_and_real_trash_or_permission_failure",
+      "orphan_policy_protects_apple_and_personal_data",
+      "cleanup_cannot_delete_uninstall_project_root_or_borrow_operation_scope",
+      "uninstall_broad_discovery_exact_names_unselected_no_symlinks",
+      "apps_exact_residual_matching_sip_rejection_and_uninstall",
+      "invalid_commands_fail_closed",
+      "rust_quick_and_orphan_producers_to_native_consumers_identity_manifest_scope",
+      "ai_frontend_exact_cache_preserves_history_state_plugins_runtime",
+      "chrome_7000_cache_files_durable_linear_journal_preserves_profile_under_30s",
+      "blocked_large_file_worker_timeout_preserves_other_scan_categories",
+      "appkit_fixture_quit_cancel_rescan_cleanup_reopen_no_duplicate",
+      "quick_appkit_quit_cancel_rescan_clean_reopen_preserves_quick_authority"
+    ],
+    "count": 26,
+    "trash_outcomes": [
+      {
+        "success_count": 1,
+        "failure_count": 0,
+        "details": [
+          {
+            "affected_bytes": 48,
+            "method_used": "trash",
+            "path": "/Users/vic/_Work/zTools/cleaner_for_mac/desktop/native/vxclean_fixture_ebj_2wwr/home/Documents/vxclean_fixture_8bd0cd32be5248dea9470bedece81abc.txt",
+            "status": "success",
+            "test_trash_path": "/Users/vic/.Trash/vxclean_fixture_8bd0cd32be5248dea9470bedece81abc.txt"
+          }
+        ]
+      },
+      {
+        "success_count": 1,
+        "failure_count": 0,
+        "details": [
+          {
+            "affected_bytes": 461,
+            "method_used": "trash",
+            "path": "/Users/vic/_Work/zTools/cleaner_for_mac/desktop/native/vxclean_fixture_ebj_2wwr/home/Applications/Vendor/vxclean_fixture_8bd0cd32be5248dea9470bedece81abc.app",
+            "status": "success",
+            "test_trash_path": "/Users/vic/.Trash/vxclean_fixture_8bd0cd32be5248dea9470bedece81abc.app"
+          }
+        ]
+      }
+    ]
+  },
+  "manager_fixture": {
+    "count": 9,
+    "passed": [
+      "pnpm_cli_only_prune_no_scan_mutation_preserves_referenced_hardlink_and_project_inventory_not_reclaimable",
+      "pnpm_nonzero_exit_is_failure_not_success",
+      "pnpm_partial_failure_keeps_durable_unknown_no_replay",
+      "pnpm_timeout_no_replay_truthful_partial_unknown",
+      "pnpm_outside_store_and_changed_plan_rejected",
+      "pnpm_confirmation_and_cancel_no_mutation",
+      "anti_exact_installer_version_match_shipit_advice_mismatch_no_grant",
+      "anti_deletes_only_selected_archive_keeps_pending_state_shipit_app",
+      "detailed_quick_path_child_parent_no_overlap_external_media_preserved"
+    ],
+    "real_user_data_deleted": false
+  },
+  "rust_tests_passed": 21,
+  "codesign_deep_strict_exit": 0,
+  "rust_and_node_updater_signature_tamper_pass": true,
+  "canonical_cleanable_quick_detail_overlap": [],
+  "quick_installer_items": [
+    {
+      "app_bundle_ids": [
+        "com.google.antigravity"
+      ],
+      "can_delete": true,
+      "category": "user_caches",
+      "conditions": [
+        "quit_app_and_helpers",
+        "rescan_selected_targets"
+      ],
+      "consequence_vi": "Có thư mục ShipIt: khuyến nghị mở Antigravity (khác Anti IDE), hoàn tất update rồi quét lại trước khi dọn bộ cài. Xóa riêng ZIP bộ cài cùng phiên bản đã cài; không xóa app, project hay state updater. Có thể cần tải lại bộ cài.",
+      "deletion_method": "remove_item",
+      "effective_safety": "rebuildable",
+      "id": "/Users/vic/Library/Caches/com.google.antigravity/pending/Antigravity.zip",
+      "is_cleanable": true,
+      "is_selected_by_default": true,
+      "name": "Antigravity.zip",
+      "operation_scope": "quick_cleanup",
+      "path": "/Users/vic/Library/Caches/com.google.antigravity/pending/Antigravity.zip",
+      "quit_reason": "Đóng ứng dụng bình thường, quét lại vùng đã chọn, dọn rồi mở lại; không force quit.",
+      "requires_admin": false,
+      "requires_app_quit": true,
+      "rule_id": "anti_installer_archive",
+      "safety_level": "rebuildable",
+      "size_bytes": 181627488,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/Library/Caches/com.google.antigravity/pending/Antigravity.zip"
+    },
+    {
+      "app_bundle_ids": [
+        "com.google.antigravity"
+      ],
+      "can_delete": true,
+      "category": "user_caches",
+      "conditions": [
+        "quit_app_and_helpers",
+        "rescan_selected_targets"
+      ],
+      "consequence_vi": "Có thư mục ShipIt: khuyến nghị mở Antigravity (khác Anti IDE), hoàn tất update rồi quét lại trước khi dọn bộ cài. Xóa riêng ZIP bộ cài cùng phiên bản đã cài; không xóa app, project hay state updater. Có thể cần tải lại bộ cài.",
+      "deletion_method": "remove_item",
+      "effective_safety": "rebuildable",
+      "id": "/Users/vic/Library/Caches/com.google.antigravity/update.zip",
+      "is_cleanable": true,
+      "is_selected_by_default": true,
+      "name": "update.zip",
+      "operation_scope": "quick_cleanup",
+      "path": "/Users/vic/Library/Caches/com.google.antigravity/update.zip",
+      "quit_reason": "Đóng ứng dụng bình thường, quét lại vùng đã chọn, dọn rồi mở lại; không force quit.",
+      "requires_admin": false,
+      "requires_app_quit": true,
+      "rule_id": "anti_installer_archive",
+      "safety_level": "rebuildable",
+      "size_bytes": 181627488,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/Library/Caches/com.google.antigravity/update.zip"
+    }
+  ],
+  "node_items": [
+    {
+      "app_bundle_ids": [],
+      "blocked_reason": "Ứng dụng đang mở; hãy đóng và quét lại. Tự phục hồi phiên chưa được kiểm chứng.",
+      "can_delete": false,
+      "category": "node_cache",
+      "conditions": [],
+      "consequence_vi": "npm tải lại gói khi cần; giữ _npx, runtime MCP và project.",
+      "deletion_method": "remove_item",
+      "effective_safety": "rebuildable",
+      "id": "/Users/vic/.npm/_cacache",
+      "is_cleanable": false,
+      "is_selected_by_default": false,
+      "name": "npm cache",
+      "operation_scope": "detailed_cleanup",
+      "path": "/Users/vic/.npm/_cacache",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "npm_download_cache",
+      "safety_level": "rebuildable",
+      "size_bytes": 234006,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/.npm/_cacache"
+    },
+    {
+      "app_bundle_ids": [],
+      "can_delete": true,
+      "category": "node_cache",
+      "conditions": [],
+      "consequence_vi": "VXClean gọi pnpm store prune; pnpm tự dọn package không còn tham chiếu. Tổng store không phải dung lượng chắc chắn thu hồi; có thể cần tải lại package khi cài sau.",
+      "deletion_method": "pnpm_prune",
+      "effective_safety": "rebuildable",
+      "id": "/Users/vic/Library/pnpm/store/v11",
+      "is_cleanable": true,
+      "is_selected_by_default": false,
+      "name": "pnpm — dọn package không còn tham chiếu",
+      "operation_scope": "detailed_cleanup",
+      "path": "/Users/vic/Library/pnpm/store/v11",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "pnpm_store_prune",
+      "safety_level": "rebuildable",
+      "size_bytes": 0,
+      "size_kind": "logical_estimate",
+      "store_size_bytes": 12288,
+      "target_id": "/Users/vic/Library/pnpm/store/v11"
+    },
+    {
+      "app_bundle_ids": [],
+      "blocked_reason": "CLI hiện tại quản lý v11; store cũ cần pnpm tương thích để prune. VXClean không xóa hộ.",
+      "can_delete": false,
+      "category": "node_cache",
+      "conditions": [],
+      "consequence_vi": "Chưa xác minh cấu trúc dữ liệu; giữ lại để tránh mất project, cấu hình hoặc runtime.",
+      "deletion_method": "remove_item",
+      "effective_safety": "unknown",
+      "id": "/Users/vic/Library/pnpm/store/v10",
+      "is_cleanable": false,
+      "is_selected_by_default": false,
+      "name": "pnpm — store phiên bản cũ (v10)",
+      "operation_scope": "detailed_cleanup",
+      "path": "/Users/vic/Library/pnpm/store/v10",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "unvalidated",
+      "safety_level": "unknown",
+      "size_bytes": 866278140,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/Library/pnpm/store/v10"
+    }
+  ],
+  "admin_helper_fixture": {
+    "actual_engine_adminRemove": "completed successfully, only disposable /tmp/vxclean_admin_cancel_fixture removed",
+    "cancel_verified": false,
+    "security_agent_interaction": "CUA does not allow SecurityAgent; no password supplied by agent"
+  },
+  "runtime_limits": [
+    "Large Files partial timeout; app truthfully reports incomplete",
+    "Physical tray click unverified: SystemUIServer CUA timeout",
+    "Admin OS dialog Cancel unverified",
+    "Intel/macOS13 and updater install/restart unverified"
+  ],
+  "published": false,
+  "real_user_data_cleanup": false,
+  "artifact_evidence": "local_artifact_evidence.json",
+  "packaged_ui": {
+    "pnpm_default_unselected": true,
+    "active_store_size_visible": 12288,
+    "legacy_v10_disabled_reason_visible": true,
+    "confirmation_one_manager_action_zero_delete_zero_trash": true,
+    "confirmation_cancel_no_real_prune": true,
+    "detailed_system_junk_zero_after_canonical_dedup": true,
+    "quick_installer_native_runtime_match": true,
+    "screenshots": [
+      "manager_cleanup_ui.png",
+      "manager_prune_confirmation_ui.png"
+    ]
+  },
+  "ready_for_independent_review": true
+}

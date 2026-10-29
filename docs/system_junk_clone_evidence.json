@@ -1,0 +1,145 @@
+{
+  "updated_at": "2026-10-11",
+  "scope": "System Junk Quick clone MClean; detailed deferred",
+  "source_roots": [
+    "/Library/Caches",
+    "/Library/Logs",
+    "/private/var/log",
+    "~/Library/Logs",
+    "/tmp",
+    "/private/var/tmp"
+  ],
+  "source_threshold_bytes": 1024,
+  "source_size": "ScanEngine directorySize skips hidden file sizes; deletion removes full selected item as MClean",
+  "excluded_system_junk_bytes": 0,
+  "private_filters_removed": [
+    "profile/project/updater names",
+    "database/credential/lock extensions",
+    "IPC",
+    "age",
+    "hardlinks",
+    "full-tree eligibility proof limits",
+    "Xcode path busy guard"
+  ],
+  "original_chrome_profile": "~/Library/Application Support/Google/Chrome remains outside roots",
+  "native_fixture": {
+    "passed": [
+      "detailed_scan_has_twelve_categories_with_policy_metadata",
+      "foundation_http_payload_cold_miss_regeneration_database_and_state_preserved",
+      "old_user_diagnostics_only_regular_direct_leaf_age_and_type_guards",
+      "scope_groups_ai_history_protected_large_files_opt_in_symlink_exclusion",
+      "reject_missing_confirmation_outside_roots_wrong_method_symlinks_identity",
+      "maintained_system_cache_removed_fresh_logs_trash_and_mixed_npm_blocked",
+      "mclean_system_junk_full_temp_rules_user_cache_protection_unchanged",
+      "system_junk_exact_path_size_default_selection_parity_with_independent_original_mclean_42cf1f8_reference",
+      "quick_all_advertised_targets_cleaned_exact_bytes_profile_copy_lock_ipc_hardlink_external_alias_preserved",
+      "quick_scan_and_revalidation_no_specialized_cli",
+      "capcut_exact_http_only_preserves_profile_project_new_child_and_hardlinks",
+      "durable_journal_no_automatic_replay",
+      "node_cli_custom_allowlist_and_rejection_preserves_documents",
+      "lens_root_external_read_only_partial_progress_allocated_hardlinks_symlinks",
+      "lens_package_and_real_trash_or_permission_failure",
+      "orphan_policy_protects_apple_and_personal_data",
+      "cleanup_cannot_delete_uninstall_project_root_or_borrow_operation_scope",
+      "uninstall_broad_discovery_exact_names_unselected_no_symlinks",
+      "apps_exact_residual_matching_sip_rejection_and_uninstall",
+      "invalid_commands_fail_closed",
+      "rust_quick_and_orphan_producers_to_native_consumers_identity_manifest_scope",
+      "ai_frontend_exact_cache_preserves_history_state_plugins_runtime",
+      "chrome_7000_cache_files_durable_linear_journal_preserves_profile_under_30s",
+      "blocked_large_file_worker_timeout_preserves_other_scan_categories",
+      "appkit_fixture_quit_cancel_rescan_cleanup_reopen_no_duplicate",
+      "quick_appkit_quit_cancel_rescan_clean_reopen_preserves_quick_authority"
+    ],
+    "count": 26,
+    "trash_outcomes": [
+      {
+        "success_count": 1,
+        "failure_count": 0,
+        "details": [
+          {
+            "affected_bytes": 48,
+            "method_used": "trash",
+            "path": "/Users/vic/_Work/zTools/cleaner_for_mac/desktop/native/vxclean_fixture_nifteue8/home/Documents/vxclean_fixture_46b1e7a696224bcabf11f40d871f17bd.txt",
+            "status": "success",
+            "test_trash_path": "/Users/vic/.Trash/vxclean_fixture_46b1e7a696224bcabf11f40d871f17bd.txt"
+          }
+        ]
+      },
+      {
+        "success_count": 1,
+        "failure_count": 0,
+        "details": [
+          {
+            "affected_bytes": 461,
+            "method_used": "trash",
+            "path": "/Users/vic/_Work/zTools/cleaner_for_mac/desktop/native/vxclean_fixture_nifteue8/home/Applications/Vendor/vxclean_fixture_46b1e7a696224bcabf11f40d871f17bd.app",
+            "status": "success",
+            "test_trash_path": "/Users/vic/.Trash/vxclean_fixture_46b1e7a696224bcabf11f40d871f17bd.app"
+          }
+        ]
+      }
+    ]
+  },
+  "rust_tests_passed": 21,
+  "performance": {
+    "before_quick_seconds": 24.926,
+    "after_quick_seconds": 9.943,
+    "parallel_roots": [
+      "Downloads",
+      "Documents",
+      "Desktop"
+    ],
+    "root_budget_seconds": 5,
+    "downloads_permission": "User confirmed away from Mac and has not allowed Downloads access",
+    "partial": true,
+    "timeout_categories": [
+      "large_files"
+    ],
+    "final_packaged_read_only_scan_seconds": 9.182
+  },
+  "packaged_app": "desktop/src_tauri/target/release/bundle/macos/VXClean.app",
+  "codesign_deep_strict": true,
+  "updater_node_and_rust_signature_tamper_checks": true,
+  "real_user_data_deleted_this_turn": false,
+  "admin_real_os_runtime_verified": false,
+  "published": false,
+  "artifact_evidence": "local_artifact_evidence.json",
+  "packaged_ui": {
+    "system_junk_display": "1.2 GB",
+    "selected_system_items": 110,
+    "user_cache_display": "1.19 GB",
+    "selected_user_items": 179,
+    "selected_total_display": "2.39 GB",
+    "system_group_off_total": "1.19 GB",
+    "group_selection_confirm_cancel_verified": true,
+    "screenshot": "system_junk_clone_ui.png",
+    "app_left_open": "Quick results",
+    "selected_permanent_items": 289
+  },
+  "reference_commit": "42cf1f8",
+  "reference_scan_engine_sha256": "bca215e383b222e01f58ae4c5b665612c0958953283bd226a5b7cd0d02ace749",
+  "exact_path_size_default_selection_reference_parity": true,
+  "system_directory_size_entry_limit": 10000,
+  "system_proof": "root_only_identity_metadata; no child content race guarantee",
+  "audit": "system_junk_rule_audit.md",
+  "previous_live_scan_snapshot": {
+    "system_junk_bytes": 1200874425,
+    "system_junk_item_count": 106
+  },
+  "system_junk_bytes": 1201416876,
+  "system_junk_item_count": 110,
+  "system_junk_disabled_count": 0,
+  "excluded_items_categories": [
+    "user_caches"
+  ],
+  "final_scan_is_partial": true,
+  "final_fda_limited_categories": [
+    "system_junk",
+    "user_caches",
+    "large_files"
+  ],
+  "final_timed_out_categories": [
+    "large_files"
+  ]
+}

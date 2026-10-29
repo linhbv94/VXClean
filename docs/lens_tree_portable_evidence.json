@@ -1,0 +1,62 @@
+{
+  "version": "1.0.14",
+  "scanner": "desktop/src_tauri/src/lens_scanner.rs",
+  "swift_navigation_dependency": false,
+  "rust_tests": 40,
+  "native_fixture_groups": 35,
+  "windows_scanner_check": "PASS x86_64-pc-windows-msvc standalone same module",
+  "windows_full_app_check": "NOT VERIFIED: ring requires Windows C toolchain on macOS",
+  "windows_runtime": "NOT TESTED",
+  "home_probe": {
+    "duration_ms": 21084,
+    "retained_nodes": 50000,
+    "json_bytes": 16730149,
+    "total_allocated_bytes": 40952233984,
+    "is_partial": true,
+    "note": "Initial probe before root-sibling reservation; scanner only, not IPC/UI/RAM benchmark"
+  },
+  "limits": {
+    "nodes": 50000,
+    "depth": 48,
+    "ttl_ms": 300000
+  },
+  "public_release": false,
+  "real_data_mutation": false,
+  "installed_local_version": "1.0.14",
+  "package_codesign": "PASS",
+  "updater_signature": "PASS",
+  "native_ui_fixture": {
+    "first_child_and_deep_navigation": "PASS: retained old 8192-byte marker; newly created 16384-byte file absent",
+    "explicit_refresh": "PASS: new file visible; total24576 bytes",
+    "home_tilde_initial_scan": "PASS: started native Rust scan from ~/",
+    "fixture_removed": true
+  },
+  "runtime_windows": false,
+  "worker_process": {
+    "executable": "same VXClean executable --lens-scan --path",
+    "ui_started": false,
+    "cancellation_native_ui": "PASS: Home worker stopped; ps showed only main app",
+    "timeout_seconds": 120,
+    "progress_heartbeat_ms": 250
+  },
+  "worker_home_cli_probe": {
+    "wall_seconds": 13.17,
+    "maximum_resident_bytes": 119406592,
+    "peak_memory_footprint_bytes": 79267200,
+    "json_bytes": 16726047,
+    "retained_nodes": 50000,
+    "total_allocated_bytes": 42283835392,
+    "is_partial": true,
+    "note": "CLI inherits Codex permissions; does not prove full app Home scan or total WebView RAM"
+  },
+  "installed_home_permission_issue": {
+    "blocked_path": "~/Music/Music",
+    "evidence": "tccd: Failed to match existing code requirement for com.vxclean.desktop, SystemPolicyAllFiles and MediaLibrary",
+    "state": "Canceled; permission refresh not performed"
+  },
+  "final_native_ui": "Source root scan returns; first navigation into services uses retained subtree",
+  "app_left_at": "desktop/src/services",
+  "all_checks_on_final_logic": "40 Rust,35 native fixtures, tree cache/retention, Windows module type-check, app build/codesign/updater signature",
+  "superseded_by": "1.0.15; see lens_full_tree_fix_evidence.json",
+  "limitation_confirmed_by_user": "50,000-node cutoff causes large folder navigation to rescan"
+}

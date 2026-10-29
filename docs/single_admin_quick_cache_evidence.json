@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-11",
+  "version": "1.0.5",
+  "status": "installed_local",
+  "published": false,
+  "checks": {
+    "native_fixture_groups": 28,
+    "native_log": "/tmp/vxclean_single_admin_native_tests.log",
+    "rust_tests": 23,
+    "rust_log": "/tmp/vxclean_single_admin_rust_tests.log",
+    "large_payload_host_native": {
+      "passed": true,
+      "input_over_5_mib": true,
+      "complete_fixture_proof": true,
+      "bulk_proof_size_test": "two 2.3 MB proofs preserved in same request",
+      "log": "/tmp/vxclean_single_admin_large_payload_test.log"
+    },
+    "admin_fixture": "actual helper invocation counter; 3 permission-failure targets, success, Cancel, shell quoting, identity swap; simulated authorization runner executes same guarded shell",
+    "quick_live_cache": "AppKit fixture still running during Quick cleanup; Detailed lifecycle preserved",
+    "build": true,
+    "codesign": true,
+    "updater_signature": true,
+    "tampered_updater_rejected": true,
+    "packaged_large_payload_fixture": {
+      "passed": true,
+      "log": "/tmp/vxclean_single_admin_packaged_test.log"
+    }
+  },
+  "limits": [
+    "OS password dialog has not been authorized in this turn",
+    "No GUI cleanup of user data",
+    "No Intel build on this host"
+  ],
+  "artifacts": [
+    {
+      "path": "desktop/src_tauri/target/release/bundle/dmg/VXClean_1.0.5_aarch64.dmg",
+      "sha256": "cae22c605c7f83c1bed26e0f7d8ee0502829cacc92c2679635834e6f819baa41"
+    },
+    {
+      "path": "desktop/src_tauri/target/release/bundle/macos/VXClean.app.tar.gz",
+      "sha256": "44601cdc29af6bfecbed0ff155f320d329d7e3101565f17bbf7ad303a3efc58b"
+    },
+    {
+      "path": "desktop/src_tauri/target/release/bundle/macos/VXClean.app/Contents/MacOS/vxclean",
+      "sha256": "db17b9e7c5223116d404840c2d27fc5fcb23abb2561595d59dfe861080484c6d"
+    },
+    {
+      "path": "desktop/src_tauri/target/release/bundle/macos/VXClean.app/Contents/Resources/vxclean_engine",
+      "sha256": "e9c294fef3a1d139a0af21013a79c245782ddc8815218d1af0313b4640fd3b20"
+    }
+  ],
+  "installed": {
+    "path": "/Applications/VXClean.app",
+    "version": "1.0.5",
+    "backup": "/tmp/vxclean_pre_single_admin_1_0_4.app",
+    "host_matches_packaged": true,
+    "opened": true
+  }
+}

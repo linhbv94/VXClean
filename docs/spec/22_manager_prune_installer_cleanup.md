@@ -29,3 +29,13 @@ App IDE bundle com.google.antigravity-ide/version2.5.5; product.json có updateU
 - Đối chiếu ZIP với app đã cài là logic native chạy độc lập trong ứng dụng, không cần agent, model hay dịch vụ AI. Khi scan, engine đọc Info.plist trong từng ZIP và app; trước khi dọn, engine chạy lại rule và kiểm tra manifest/identity. Không khớp, app không còn tồn tại hoặc không đọc được => không cấp quyền dọn theo rule installer. Không chỉ dựa vào tên ZIP hay kết quả agent từng kiểm tra.
 - Tạm chưa cấp rule dọn bộ cập nhật **Anti IDE** chưa xác minh. Không thêm lệnh tự update hay filter vendor mới. Các cache frontend đã có adapter cụ thể (Cache, Code Cache, GPU/Dawn cache trong Application Support/Antigravity IDE) vẫn thuộc AI Apps; chưa biết nội dung vùng updater không đồng nghĩa toàn bộ cache IDE phải giữ.
 - Câu hỏi chờ quan sát: khi user thấy IDE báo **Restart to update**, yêu cầu agent kiểm tra chỉ đọc cache, pending/ShipIt nếu có và log updater **trước restart**, rồi so sánh sau restart. Xác định chính xác bundle, đường dẫn, phiên bản installer/app, file nào đã dùng xong và file nào là state; từ bằng chứng đó chốt rule. Không tự dọn hoặc suy luận từ luồng Antigravity app cũ.
+
+## Quan sát thật trước restart — 2026-10-28
+
+User thấy Restart to update và yêu cầu chỉ đọc trước khi tự restart. Installed IDE2.5.5/commit ecfbad74d93962fc8ca485d93ab9b4f3d4cb6cf8; ShipIt của đúng bundle `com.google.antigravity-ide` chứa `update.og1Mqjc/Antigravity IDE.app`2.6.0/commit9e3a5da5d6731effd57d47d88bbe5df14ac6ccdd, signature strict/deep đạt. Staging587.77MB logical/633.70MB allocated. Main log12:57:40 downloading→12:58:09 downloaded→ready; ShipIt process đang chạy và state trỏ staging→Applications. State file tên.plist nhưng nội dungJSON, `launchAfterInstallation=false`.
+
+Đây là pending payload đang dùng, không dọn trước restart. Chưa cho phép dọn hậu-update chỉ vì version khớp: cần so sánh installed hash/version/commit, staging còn/mất, state và ShipIt process/log sau user update. Cache `com.google.antigravity`/ShipIt không có hậu tố IDE thuộc bundle khác; không suy ruleIDE từ haiZIP app cũ. Không sửa engine/rule hoặc tự restart trong lượt quan sát. [Snapshot](../anti_ide_pending_update_2026_10_28.json).
+
+### Đối chiếu sau restart 2026-10-28
+
+Installed2.6.0 khớp main/Info hashstaging; ShipIt completed/launch succeeded rồi thoát. Payload staging tự mất, temp cũ mất, còn1tempdir rỗng và~3.73KBstate/log. State vẫn trỏ payload đã mất: không dùng riêng sự tồn tại state/log làm bằng chứng updatepending. Luồng đã quan sát không cần rulexóaShipIt mới; giữ pending trước update, ưu tiên để updater tự quản lý. Không mở rộng rule sang bundleAntigravity khác/lầnupdate lỗi. [Evidence sau](../anti_ide_after_update_2026_10_28.json).

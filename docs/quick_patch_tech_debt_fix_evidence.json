@@ -1,0 +1,89 @@
+{
+  "version": "1.0.11",
+  "date": "2026-10-12",
+  "public_release": false,
+  "real_cache_cleanup_this_task": false,
+  "tests": {
+    "rust": 34,
+    "native_groups": 34,
+    "history_policy": "pass",
+    "scan_retention_groups": 10,
+    "uninstall_selection_cases": 5,
+    "circle_geometry_cases": 18,
+    "frontend_build": "pass",
+    "ci_workflow_lint": "pass",
+    "remote_ci": "not_run"
+  },
+  "package": {
+    "codesign_deep_strict": "pass",
+    "updater_signature": "pass",
+    "tamper_rejected": true,
+    "installed_version": "1.0.11",
+    "notarized": false
+  },
+  "memory": {
+    "native_7000_cache_files_peak_rss_bytes": 159629312,
+    "host_oversize_request_fixture_peak_rss_bytes": 144572416,
+    "whole_app_memory_limit_proven": false
+  },
+  "journal": {
+    "operations": 29,
+    "archives": 21,
+    "before_bytes": 27604159,
+    "after_bytes": 3670666,
+    "exact_original_files": 72,
+    "changed_original_files": [
+      {
+        "id": "9e668f61-94d3-4334-ab81-6df86ea2bca9",
+        "file": "lifecycle.json"
+      }
+    ],
+    "pending_reopen_after": [],
+    "acknowledgements": 4
+  },
+  "runtime": {
+    "settings_history_visible": true,
+    "about_version": "1.0.11",
+    "four_acknowledgements_persisted": true,
+    "cold_launch_acknowledged_banner_absent": true,
+    "history_evidence_survives_dismiss": true,
+    "old_app_reopen_obligation_reconciled": "same_bundle_path_already_running",
+    "chronology_after_compaction": "pass",
+    "quick_scan": "completed_partial_readonly",
+    "new_os_authentication_cancel": "not_tested",
+    "public_updater_install_restart": "not_tested",
+    "quick_scan_system_junk_items": 29,
+    "quick_scan_system_junk_display": "265.95 MB",
+    "quick_scan_user_cache_items": 173,
+    "quick_scan_user_cache_display": "782.7 MB",
+    "quick_scan_large_file_items_unselected": 4,
+    "quick_scan_partial_categories": [
+      "system_junk",
+      "user_caches"
+    ],
+    "card_toggle_expand": "pass",
+    "menu_retention": "pass",
+    "final_host_cold_start_history_ack": "pass",
+    "installed_host_engine_match_package": true,
+    "app_left_open": "dashboard"
+  },
+  "source_sha256": {
+    "desktop/native/app_lifecycle.swift": "3b17164436673ef2afa54200b762c294185bc2104894e0223adc9cb44ce56c52",
+    "desktop/native/cleanup_policy.swift": "ba187768d831af8b10f6c8cc8cd03171ac8a988aa0cf3417f706446977ce11c6",
+    "desktop/native/maintenance_cli.swift": "417a3ad2f2b6fe36e0f03911a1a0d3ef2fcc40a2d1be08682f1bccee19b37553",
+    "desktop/src_tauri/src/journal_history.rs": "2d9442a3c4796a965f84800841bd9c5e95b9068e4e80eba059ae14a6c5298ade",
+    "desktop/src_tauri/src/maintenance_bridge.rs": "34a815ee420659589f3c05ac11395b1861c2f7f1a0301a75e28a05e30b86226e",
+    "desktop/src/components/operation_history.tsx": "3c70a65f3a84a8066b59f700bad9e53d5a1c3f9c1696ac145927cb6eb15bbd81",
+    "desktop/src/services/operation_history_policy.ts": "bbf7bb0f24ed7b967c7f215d9b31510c9cff672807c6d60aec4939736fb202eb",
+    "desktop/src/components/settings_modal.tsx": "4381f768d4106594a3446b2b9429e09974e7cb87afad4ce53404b32f925c269f",
+    "scripts/test_native_maintenance.py": "514f268054438f26a1b6af1a8d89bec21b6f9c36730646df95b7a4853073b62c",
+    "scripts/test_operation_history.mjs": "bebbf748f0f84c5dafd45598fd7b3d0d0688593d56319283b70367d4ecddc092",
+    ".github/workflows/build.yml": "735e145ef46af22fb70e74909a888d3829d6ce48e7b37bb4ef94c6dc14916ac3"
+  },
+  "artifact_sha256": {
+    "desktop/src_tauri/target/release/bundle/macos/VXClean.app/Contents/MacOS/vxclean": "c84365e7cf29688ab767c92801dbec17ed05f1ffa144a9b63f53a995d86d6ab4",
+    "desktop/src_tauri/target/release/bundle/macos/VXClean.app/Contents/Resources/vxclean_engine": "1e2435f3ab550d544f252dbf2362fb197c13f7293ca3893066a907d7d47d1b92",
+    "desktop/src_tauri/target/release/bundle/macos/VXClean.app.tar.gz": "53582e3d1bdfafcf14c19007235fc9c3230d507eb38453737a9f0ab105d9455d",
+    "desktop/src_tauri/target/release/bundle/dmg/VXClean_1.0.11_aarch64.dmg": "0236a52dea5bd8d7d8d288c1a154b8fd6e8c6d2f3f3c3462eab8009918adb15a"
+  }
+}

@@ -1,3 +1,4 @@
+import {useCleanText} from '../services/ui_language';
 import {isScanAccessDeferred} from '../services/scan_access';
 import { defaultUninstallPaths } from '../services/uninstall_selection';
 import { useConfirmation } from './confirmation_dialog';
@@ -19,6 +20,8 @@ import { fetchInstalledApps, runUninstallApp, formatBytes, revealInFileManager, 
 import { PageHeader } from './page_header';
 
 export const UninstallerView: React.FC = () => {
+  const ct = useCleanText();
+
   const { confirm, dialog } = useConfirmation();
   const [apps, setApps] = useState<InstalledApp[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -39,7 +42,7 @@ export const UninstallerView: React.FC = () => {
       const res = await fetchInstalledApps();
       if (!isMountedRef.current || generation !== loadGeneration.current) return;
       setApps(res.apps);
-      setResultMessage(res.discovery_incomplete ? "Một số vùng chưa quét hết do thiếu quyền hoặc giới hạn tìm kiếm; danh sách có thể chưa đầy đủ." : null);
+      setResultMessage(res.discovery_incomplete ? ct("Một số vùng chưa quét hết do thiếu quyền hoặc giới hạn tìm kiếm; danh sách có thể chưa đầy đủ.") : null);
       const visible = res.apps.filter((a) => !a.is_system_protected);
       setSelectedAppId((prevId) => {
         if (prevId && visible.some((a) => a.id === prevId)) {
@@ -155,7 +158,7 @@ export const UninstallerView: React.FC = () => {
 
   const handleStartUninstall = async () => {
     if (!selectedApp || selectedPaths.size === 0 || isUninstalling) return;
-    if (!await confirm(`Chuyển ${selectedPaths.size} mục của ${selectedApp.name} vào Thùng rác?`)) return;
+    if (!await confirm((ct("Chuyển ") + (selectedPaths.size) + ct(" mục của ") + (selectedApp.name) + ct(" vào Thùng rác?")))) return;
 
     // Nếu có file yêu cầu admin shell hoặc cần fallback -> mở modal xác nhận
     if (hasProtectedFilesSelected) {
@@ -183,16 +186,14 @@ export const UninstallerView: React.FC = () => {
         setShowAdminModal(true);
       }
       setResultMessage(
-        `Đã xử lý ${res.success_count} mục, ${res.failure_count} mục thất bại. Đã chuyển ${formatBytes(res.trashed_bytes)} vào Thùng rác${
-          res.permanently_freed_bytes > 0
+        (ct("Đã xử lý ") + (res.success_count) + ct(" mục, ") + (res.failure_count) + ct(" mục thất bại. Đã chuyển ") + (formatBytes(res.trashed_bytes)) + ct(" vào Thùng rác") + (res.permanently_freed_bytes > 0
             ? ` và xóa vĩnh viễn ${formatBytes(res.permanently_freed_bytes)} (Admin).`
-            : '.'
-        }`
+            : '.') + ct(""))
       );
       // Refresh list
       if (allowAdmin || !res.details.some(d => d.status === 'permission_denied')) await loadApps();
     } catch (err: any) {
-      setResultMessage(`Lỗi khi gỡ bỏ: ${errorText(err)}`);
+      setResultMessage((ct("Lỗi khi gỡ bỏ: ") + (errorText(err)) + ct("")));
     } finally {
       setIsUninstalling(false);
     }
@@ -201,7 +202,7 @@ export const UninstallerView: React.FC = () => {
   const getFileTypeBadge = (type: AssociatedFile['file_type']) => {
     switch (type) {
       case 'discovered':
-        return <span className="text-[10px] text-amber-600 dark:text-amber-400">Có thể liên quan</span>;
+        return <span className="text-[10px] text-amber-600 dark:text-amber-400">{ct("Có thể liên quan")}</span>;
       case 'bundle':
         return <span className="px-1.5 py-0.5 text-[10px] rounded bg-cyan-50/80 dark:bg-cyan-950/80 text-cyan-700 dark:text-cyan-400 border border-cyan-200/60 dark:border-cyan-800/60 font-mono">Bundle (.app)</span>;
       case 'app_support':
@@ -229,8 +230,8 @@ export const UninstallerView: React.FC = () => {
         icon={Package}
         iconBgClass="bg-indigo-500/10 border-indigo-500/30"
         iconColorClass="text-indigo-600 dark:text-indigo-400"
-        title="Trình gỡ Cài đặt Ứng dụng"
-        subtitle="Quét sạch tận gốc ứng dụng cùng toàn bộ tệp Caches, App Support và Preferences còn sót lại"
+        title={ct("Trình gỡ Cài đặt Ứng dụng")}
+        subtitle={ct("Quét sạch tận gốc ứng dụng cùng toàn bộ tệp Caches, App Support và Preferences còn sót lại")}
         actions={
           <button
             type="button"
@@ -239,7 +240,7 @@ export const UninstallerView: React.FC = () => {
             className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 bg-slate-100/50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors cursor-pointer disabled:opacity-50"
           >
             <RefreshCw size={13} className={loading ? 'animate-spin' : ''} />
-            <span>Làm mới</span>
+            <span>{ct("Làm mới")}</span>
           </button>
         }
       />
@@ -254,7 +255,7 @@ export const UninstallerView: React.FC = () => {
               <Search size={14} className="absolute left-3 top-2.5 text-slate-500" />
               <input
                 type="text"
-                placeholder="Tìm ứng dụng hoặc Bundle ID..."
+                placeholder={ct("Tìm ứng dụng hoặc Bundle ID...")}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-white dark:bg-[#141822] border border-slate-200 dark:border-slate-800 rounded-lg pl-9 pr-3 py-1.5 text-xs text-slate-800 dark:text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500/60 transition-colors"
@@ -271,9 +272,9 @@ export const UninstallerView: React.FC = () => {
                       ? 'bg-cyan-500/15 text-cyan-700 dark:text-cyan-400 font-semibold border border-cyan-500/30'
                       : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/60 text-slate-500 dark:text-slate-400'
                   }`}
-                  title="Sắp xếp theo tên ứng dụng"
+                  title={ct("Sắp xếp theo tên ứng dụng")}
                 >
-                  <span>Tên</span>
+                  <span>{ct("Tên")}</span>
                   {sortKey === 'name' && (
                     sortOrder === 'asc' ? <ArrowUp size={10} /> : <ArrowDown size={10} />
                   )}
@@ -286,9 +287,9 @@ export const UninstallerView: React.FC = () => {
                       ? 'bg-cyan-500/15 text-cyan-700 dark:text-cyan-400 font-semibold border border-cyan-500/30'
                       : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/60 text-slate-500 dark:text-slate-400'
                   }`}
-                  title="Sắp xếp theo dung lượng tệp"
+                  title={ct("Sắp xếp theo dung lượng tệp")}
                 >
-                  <span>Dung lượng</span>
+                  <span>{ct("Dung lượng")}</span>
                   {sortKey === 'size' && (
                     sortOrder === 'asc' ? <ArrowUp size={10} /> : <ArrowDown size={10} />
                   )}
@@ -304,13 +305,9 @@ export const UninstallerView: React.FC = () => {
           <div className="flex-1 overflow-y-auto divide-y divide-slate-800/40">
             {loading ? (
               <div className="p-8 text-center text-xs text-slate-500 flex flex-col items-center gap-2">
-                <RefreshCw size={16} className="animate-spin text-cyan-700 dark:text-cyan-400" />
-                Đang nạp danh sách ứng dụng...
-              </div>
+                <RefreshCw size={16} className="animate-spin text-cyan-700 dark:text-cyan-400" />{ct("Đang nạp danh sách ứng dụng...")} </div>
             ) : filteredAndSortedApps.length === 0 ? (
-              <div className="p-8 text-center text-xs text-slate-500">
-                Không tìm thấy ứng dụng phù hợp
-              </div>
+              <div className="p-8 text-center text-xs text-slate-500">{ct("Không tìm thấy ứng dụng phù hợp")} </div>
             ) : (
               filteredAndSortedApps.map((app) => {
                 const isSelected = app.id === selectedAppId;
@@ -347,9 +344,7 @@ export const UninstallerView: React.FC = () => {
                           </span>
                         )}
                         {app.is_self_app && (
-                          <span className="text-[8px] px-1 py-0.2 rounded bg-amber-50/60 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 border border-amber-200/60 dark:border-amber-900/60 shrink-0 font-medium">
-                            Tự thân
-                          </span>
+                          <span className="text-[8px] px-1 py-0.2 rounded bg-amber-50/60 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 border border-amber-200/60 dark:border-amber-900/60 shrink-0 font-medium">{ct("Tự thân")} </span>
                         )}
                       </div>
                     </div>
@@ -385,8 +380,7 @@ export const UninstallerView: React.FC = () => {
                       {formatBytes(selectedApp.total_size_bytes)}
                     </div>
                     <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
-                      {selectedApp.associated_files.length} hạng mục liên quan
-                    </div>
+                      {selectedApp.associated_files.length} {ct("hạng mục liên quan")} </div>
                   </div>
                 </div>
 
@@ -395,8 +389,7 @@ export const UninstallerView: React.FC = () => {
                   <div className="mt-3 p-2.5 rounded-lg bg-rose-50/30 dark:bg-rose-950/30 border border-rose-200/50 dark:border-rose-800/50 flex items-center gap-2.5 text-xs text-rose-700 dark:text-rose-300">
                     <ShieldAlert size={16} className="text-rose-600 dark:text-rose-400 shrink-0" />
                     <span>
-                      <strong>Bảo vệ bởi macOS SIP (System Integrity Protection):</strong> Ứng dụng này là thành phần cốt lõi của hệ thống Apple và không thể gỡ bỏ để tránh hỏng hệ điều hành.
-                    </span>
+                      <strong>{ct("Bảo vệ bởi macOS SIP (System Integrity Protection):")}</strong> {ct("Ứng dụng này là thành phần cốt lõi của hệ thống Apple và không thể gỡ bỏ để tránh hỏng hệ điều hành.")} </span>
                   </div>
                 )}
 
@@ -404,8 +397,7 @@ export const UninstallerView: React.FC = () => {
                   <div className="mt-3 p-2.5 rounded-lg bg-amber-50/30 dark:bg-amber-950/30 border border-amber-200/50 dark:border-amber-800/50 flex items-center gap-2.5 text-xs text-amber-800 dark:text-amber-300">
                     <ShieldAlert size={16} className="text-amber-700 dark:text-amber-400 shrink-0" />
                     <span>
-                      <strong>Khóa bảo vệ tự thân:</strong> Không thể gỡ bỏ ứng dụng VXClean khi chính nó đang được khởi chạy và làm việc.
-                    </span>
+                      <strong>{ct("Khóa bảo vệ tự thân:")}</strong> {ct("Không thể gỡ bỏ ứng dụng VXClean khi chính nó đang được khởi chạy và làm việc.")} </span>
                   </div>
                 )}
               </div>
@@ -413,8 +405,8 @@ export const UninstallerView: React.FC = () => {
               {/* Associated Files List */}
               <div className="flex-1 overflow-y-auto p-4 space-y-2">
                 <div className="flex items-center justify-between text-xs font-medium text-slate-500 dark:text-slate-400 px-1 mb-1">
-                  <span>DANH SÁCH TỆP & THƯ MỤC CẤU THÀNH ({selectedApp.associated_files.length})</span>
-                  <span>Đã chọn: {formatBytes(totalSelectedSize)}</span>
+                  <span>{ct("DANH SÁCH TỆP & THƯ MỤC CẤU THÀNH (")}{selectedApp.associated_files.length})</span>
+                  <span>{ct("Đã chọn:")} {formatBytes(totalSelectedSize)}</span>
                 </div>
 
                 <div className="space-y-1.5">
@@ -471,7 +463,7 @@ export const UninstallerView: React.FC = () => {
                               e.stopPropagation();
                               revealInFileManager(file.path);
                             }}
-                            title="Mở trong Finder"
+                            title={ct("Mở trong Finder")}
                             className="p-1 rounded text-slate-500 hover:text-cyan-700 dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                           >
                             <ExternalLink size={13} />
@@ -487,22 +479,19 @@ export const UninstallerView: React.FC = () => {
               <div className="p-4 border-t border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-[#121622]/80 flex items-center justify-between">
                 <div>
                   {resultMessage ? (
-                    <div className={`flex items-center gap-2 text-xs font-medium ${resultMessage.startsWith('Lỗi khi gỡ bỏ:') ? 'text-rose-400' : 'text-emerald-400'}`}>
-                      {resultMessage.startsWith('Lỗi khi gỡ bỏ:') ? <AlertTriangle size={15} /> : <CheckCircle2 size={15} />}
+                    <div className={`flex items-center gap-2 text-xs font-medium ${(resultMessage.startsWith("Lỗi khi gỡ bỏ:") || resultMessage.startsWith("Uninstall error:")) ? 'text-rose-400' : 'text-emerald-400'}`}>
+                      {(resultMessage.startsWith("Lỗi khi gỡ bỏ:") || resultMessage.startsWith("Uninstall error:")) ? <AlertTriangle size={15} /> : <CheckCircle2 size={15} />}
                       {resultMessage}
                     </div>
                   ) : (
                     <div className="text-xs text-slate-500 dark:text-slate-400 leading-snug">
                       {selectedApp.is_system_protected || selectedApp.is_self_app ? (
-                        <span className="text-rose-600 dark:text-rose-400">Ứng dụng này đang bị khóa bởi hệ thống</span>
+                        <span className="text-rose-600 dark:text-rose-400">{ct("Ứng dụng này đang bị khóa bởi hệ thống")}</span>
                       ) : (
                         <div>
-                          <div>
-                            Dung lượng thu hồi dự kiến: <strong className="text-cyan-700 dark:text-cyan-400 font-mono">{formatBytes(totalSelectedSize)}</strong>
+                          <div>{ct("Dung lượng thu hồi dự kiến:")} <strong className="text-cyan-700 dark:text-cyan-400 font-mono">{formatBytes(totalSelectedSize)}</strong>
                           </div>
-                          <div className="text-[11px] text-slate-500">
-                            (chuyển vào Thùng rác an toàn)
-                          </div>
+                          <div className="text-[11px] text-slate-500">{ct("(chuyển vào Thùng rác an toàn)")} </div>
                         </div>
                       )}
                     </div>
@@ -522,12 +511,12 @@ export const UninstallerView: React.FC = () => {
                   {isUninstalling ? (
                     <>
                       <RefreshCw size={14} className="animate-spin shrink-0" />
-                      <span className="whitespace-nowrap">Đang gỡ bỏ...</span>
+                      <span className="whitespace-nowrap">{ct("Đang gỡ bỏ...")}</span>
                     </>
                   ) : (
                     <>
                       <Trash2 size={14} className="shrink-0" />
-                      <span className="whitespace-nowrap">Gỡ bỏ triệt để ({selectedPaths.size} mục)</span>
+                      <span className="whitespace-nowrap">{ct("Gỡ bỏ triệt để (")}{selectedPaths.size} {ct("mục)")}</span>
                     </>
                   )}
                 </button>
@@ -535,9 +524,7 @@ export const UninstallerView: React.FC = () => {
             </>
           ) : (
             <div className="flex-1 flex flex-col items-center justify-center text-slate-500 text-xs">
-              <Package size={32} className="mb-2 opacity-40" />
-              Chọn một ứng dụng từ danh sách bên trái để xem phân rã chi tiết
-            </div>
+              <Package size={32} className="mb-2 opacity-40" />{ct("Chọn một ứng dụng từ danh sách bên trái để xem phân rã chi tiết")} </div>
           )}
         </div>
       </div>
@@ -551,20 +538,19 @@ export const UninstallerView: React.FC = () => {
                 <AlertTriangle size={20} />
               </div>
               <div>
-                <h3 className="text-sm font-bold text-slate-900 dark:text-white">Yêu cầu Quyền Quản trị viên (Admin)</h3>
-                <p className="text-xs text-rose-600 dark:text-rose-400">Cảnh báo thay đổi phương thức xóa</p>
+                <h3 className="text-sm font-bold text-slate-900 dark:text-white">{ct("Yêu cầu Quyền Quản trị viên (Admin)")}</h3>
+                <p className="text-xs text-rose-600 dark:text-rose-400">{ct("Cảnh báo thay đổi phương thức xóa")}</p>
               </div>
             </div>
 
             <div className="space-y-2.5 text-xs text-slate-600 dark:text-slate-300 bg-slate-100/60 dark:bg-slate-900/60 p-3 rounded-lg border border-slate-200 dark:border-slate-800">
-              <p>
-                Một số tệp của ứng dụng này nằm trong phân vùng thuộc quyền sở hữu của <strong>root/hệ thống</strong>.
+              <p>{ct("Một số tệp của ứng dụng này nằm trong phân vùng thuộc quyền sở hữu của")} <strong>{ct("root/hệ thống")}</strong>.
               </p>
               <div className="p-2 rounded bg-rose-50/40 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900 text-[11px] text-rose-700 dark:text-rose-300 space-y-1">
-                <strong>QUAN TRỌNG:</strong>
-                <div>• Hành động này sẽ chuyển phương thức từ <strong>Chuyển vào Thùng rác (trashItem)</strong> sang <strong>XÓA VĨNH VIỄN (rm -rf)</strong>.</div>
-                <div>• Tệp bị xóa bằng quyền quản trị sẽ <strong>KHÔNG THỂ KHÔI PHỤC</strong>.</div>
-                <div>• Hệ thống macOS sẽ yêu cầu Touch ID hoặc Mật khẩu quản trị viên.</div>
+                <strong>{ct("QUAN TRỌNG:")}</strong>
+                <div>{ct("• Hành động này sẽ chuyển phương thức từ")} <strong>{ct("Chuyển vào Thùng rác (trashItem)")}</strong> sang <strong>{ct("XÓA VĨNH VIỄN (rm -rf)")}</strong>.</div>
+                <div>{ct("• Tệp bị xóa bằng quyền quản trị sẽ")} <strong>{ct("KHÔNG THỂ KHÔI PHỤC")}</strong>.</div>
+                <div>{ct("• Hệ thống macOS sẽ yêu cầu Touch ID hoặc Mật khẩu quản trị viên.")}</div>
               </div>
             </div>
 
@@ -572,16 +558,12 @@ export const UninstallerView: React.FC = () => {
               <button
                 onClick={() => setShowAdminModal(false)}
                 className="px-3.5 py-1.5 rounded-lg text-xs font-medium border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-700 transition-colors"
-              >
-                Hủy thao tác
-              </button>
+              >{ct("Hủy thao tác")} </button>
               <button
                 onClick={() => executeUninstall(true)}
                 className="px-4 py-1.5 rounded-lg text-xs font-semibold bg-rose-600 hover:bg-rose-500 text-white shadow-lg shadow-rose-950 transition-colors flex items-center gap-1.5"
               >
-                <ShieldAlert size={14} />
-                Xác nhận & Cấp quyền Root
-              </button>
+                <ShieldAlert size={14} />{ct("Xác nhận & Cấp quyền Root")} </button>
             </div>
           </div>
         </div>

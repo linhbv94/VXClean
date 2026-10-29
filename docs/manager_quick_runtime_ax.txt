@@ -1,0 +1,303 @@
+The following is a diff from the previous accessibility tree for Window: "VXClean" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 47-48
++				58 container (expanded) Secondary Actions: Collapse (showing 0-100 of 185 items)
++					59 summary Xem và chọn từng mục, Value: on
++						60 text Xem và chọn từng mục
++					61 container
++						62 checkbox Value: 1, com.apple.appleaccountd · 263.17 KB /Users/vic/Library/Caches/com.apple.appleaccountd · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						63 text com.apple.appleaccountd  ·  263.17 KB /Users/vic/Library/Caches/com.apple.appleaccountd  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					64 container
++						65 checkbox Value: 1, com.adobe.acc.AdobeCreativeCloud · 81.92 KB /Users/vic/Library/Caches/com.adobe.acc.AdobeCreativeCloud · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						66 text com.adobe.acc.AdobeCreativeCloud  ·  81.92 KB /Users/vic/Library/Caches/com.adobe.acc.AdobeCreativeCloud  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					67 container
++						68 checkbox Value: 1, CSHelpIndex.plist · 28.19 KB /Users/vic/Library/Caches/com.apple.helpd/CSHelpIndex.plist · Xóa vĩnh viễn Cache trang trợ giúp/index của macOS được dựng/tải lại; không xóa tài liệu nguồn, HSTS hoặc Preferences.
++						69 text CSHelpIndex.plist  ·  28.19 KB /Users/vic/Library/Caches/com.apple.helpd/CSHelpIndex.plist  ·  Xóa vĩnh viễn Cache trang trợ giúp/index của macOS được dựng/tải lại; không xóa tài liệu nguồn, HSTS hoặc Preferences.
++					70 container
++						71 checkbox Value: 1, Cache.db · 700.42 KB /Users/vic/Library/Caches/com.apple.helpd/Cache.db · Xóa vĩnh viễn Database HTTP cache tạo lại khi cần; cache web phải tải lại. Giữ Preferences, cookie/auth/state ngoài cache; content đang đổi vẫn bị từ chối.
++						72 text Cache.db  ·  700.42 KB /Users/vic/Library/Caches/com.apple.helpd/Cache.db  ·  Xóa vĩnh viễn Database HTTP cache tạo lại khi cần; cache web phải tải lại. Giữ Preferences, cookie/auth/state ngoài cache; content đang đổi vẫn bị từ chối.
++					73 container
++						74 checkbox Value: 1, Cache.db-shm · 32.77 KB /Users/vic/Library/Caches/com.apple.helpd/Cache.db-shm · Xóa vĩnh viễn Database HTTP cache tạo lại khi cần; cache web phải tải lại. Giữ Preferences, cookie/auth/state ngoài cache; content đang đổi vẫn bị từ chối.
++						75 text Cache.db-shm  ·  32.77 KB /Users/vic/Library/Caches/com.apple.helpd/Cache.db-shm  ·  Xóa vĩnh viễn Database HTTP cache tạo lại khi cần; cache web phải tải lại. Giữ Preferences, cookie/auth/state ngoài cache; content đang đổi vẫn bị từ chối.
++					76 container
++						77 checkbox Value: 1, Cache.db-wal · 3.67 MB /Users/vic/Library/Caches/com.apple.helpd/Cache.db-wal · Xóa vĩnh viễn Database HTTP cache tạo lại khi cần; cache web phải tải lại. Giữ Preferences, cookie/auth/state ngoài cache; content đang đổi vẫn bị từ chối.
++						78 text Cache.db-wal  ·  3.67 MB /Users/vic/Library/Caches/com.apple.helpd/Cache.db-wal  ·  Xóa vĩnh viễn Database HTTP cache tạo lại khi cần; cache web phải tải lại. Giữ Preferences, cookie/auth/state ngoài cache; content đang đổi vẫn bị từ chối.
++					79 container
++						80 checkbox Value: 1, Generated · 16.77 MB /Users/vic/Library/Caches/com.apple.helpd/Generated · Xóa vĩnh viễn Cache trang trợ giúp/index của macOS được dựng/tải lại; không xóa tài liệu nguồn, HSTS hoặc Preferences.
++						81 text Generated  ·  16.77 MB /Users/vic/Library/Caches/com.apple.helpd/Generated  ·  Xóa vĩnh viễn Cache trang trợ giúp/index của macOS được dựng/tải lại; không xóa tài liệu nguồn, HSTS hoặc Preferences.
++					82 container
++						83 checkbox Value: 1, HelpCache.plist · 32.94 KB /Users/vic/Library/Caches/com.apple.helpd/HelpCache.plist · Xóa vĩnh viễn Cache trang trợ giúp/index của macOS được dựng/tải lại; không xóa tài liệu nguồn, HSTS hoặc Preferences.
++						84 text HelpCache.plist  ·  32.94 KB /Users/vic/Library/Caches/com.apple.helpd/HelpCache.plist  ·  Xóa vĩnh viễn Cache trang trợ giúp/index của macOS được dựng/tải lại; không xóa tài liệu nguồn, HSTS hoặc Preferences.
++					85 container
++						86 checkbox Value: 1, fsCachedData · 14.27 MB /Users/vic/Library/Caches/com.apple.helpd/fsCachedData · Xóa vĩnh viễn HTTP cache tải lại khi cần; giữ database, HSTS, cấu hình và dữ liệu app. Có thể cần mạng khi xem lại nội dung.
++						87 text fsCachedData  ·  14.27 MB /Users/vic/Library/Caches/com.apple.helpd/fsCachedData  ·  Xóa vĩnh viễn HTTP cache tải lại khi cần; giữ database, HSTS, cấu hình và dữ liệu app. Có thể cần mạng khi xem lại nội dung.
++					88 container
++						89 checkbox Value: 1, ActiveTileGroup.pbd · 291.06 KB /Users/vic/Library/Caches/GeoServices/ActiveTileGroup.pbd · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						90 text ActiveTileGroup.pbd  ·  291.06 KB /Users/vic/Library/Caches/GeoServices/ActiveTileGroup.pbd  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					91 container
++						92 checkbox Value: 1, DirectReadConfigStore.plist · 130 B /Users/vic/Library/Caches/GeoServices/DirectReadConfigStore.plist · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						93 text DirectReadConfigStore.plist  ·  130 B /Users/vic/Library/Caches/GeoServices/DirectReadConfigStore.plist  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					94 container
++						95 checkbox Value: 1, ResourceManifest.pbd · 318.3 KB /Users/vic/Library/Caches/GeoServices/ResourceManifest.pbd · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						96 text ResourceManifest.pbd  ·  318.3 KB /Users/vic/Library/Caches/GeoServices/ResourceManifest.pbd  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					97 container
++						98 checkbox Value: 1, Default-34898.iconmappack · 148.81 KB /Users/vic/Library/Caches/GeoServices/Resources/Default-34898.iconmappack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						99 text Default-34898.iconmappack  ·  148.81 KB /Users/vic/Library/Caches/GeoServices/Resources/Default-34898.iconmappack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					100 container
++						101 checkbox Value: 1, Default-42752@2x.iconmappack · 148.81 KB /Users/vic/Library/Caches/GeoServices/Resources/Default-42752@2x.iconmappack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						102 text Default-42752@2x.iconmappack  ·  148.81 KB /Users/vic/Library/Caches/GeoServices/Resources/Default-42752@2x.iconmappack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					103 container
++						104 checkbox Value: 1, Default_Icons-19122@2x.icondatapack · 3.48 MB /Users/vic/Library/Caches/GeoServices/Resources/Default_Icons-19122@2x.icondatapack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						105 text Default_Icons-19122@2x.icondatapack  ·  3.48 MB /Users/vic/Library/Caches/GeoServices/Resources/Default_Icons-19122@2x.icondatapack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					106 container
++						107 checkbox Value: 1, Default_Icons-19156@2x.iconconfigpack · 3.76 MB /Users/vic/Library/Caches/GeoServices/Resources/Default_Icons-19156@2x.iconconfigpack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						108 text Default_Icons-19156@2x.iconconfigpack  ·  3.76 MB /Users/vic/Library/Caches/GeoServices/Resources/Default_Icons-19156@2x.iconconfigpack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					109 container
++						110 checkbox Value: 1, Default_Icons-30655.icondatapack · 1.29 MB /Users/vic/Library/Caches/GeoServices/Resources/Default_Icons-30655.icondatapack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						111 text Default_Icons-30655.icondatapack  ·  1.29 MB /Users/vic/Library/Caches/GeoServices/Resources/Default_Icons-30655.icondatapack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					112 container
++						113 checkbox Value: 1, Default_Icons-30682.iconconfigpack · 3.65 MB /Users/vic/Library/Caches/GeoServices/Resources/Default_Icons-30682.iconconfigpack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						114 text Default_Icons-30682.iconconfigpack  ·  3.65 MB /Users/vic/Library/Caches/GeoServices/Resources/Default_Icons-30682.iconconfigpack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					115 container
++						116 checkbox Value: 1, Default_Shields-2100.icondatapack · 301.68 KB /Users/vic/Library/Caches/GeoServices/Resources/Default_Shields-2100.icondatapack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						117 text Default_Shields-2100.icondatapack  ·  301.68 KB /Users/vic/Library/Caches/GeoServices/Resources/Default_Shields-2100.icondatapack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					118 container
++						119 checkbox Value: 1, Default_Shields-2102.iconconfigpack · 98.41 KB /Users/vic/Library/Caches/GeoServices/Resources/Default_Shields-2102.iconconfigpack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						120 text Default_Shields-2102.iconconfigpack  ·  98.41 KB /Users/vic/Library/Caches/GeoServices/Resources/Default_Shields-2102.iconconfigpack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					121 container
++						122 checkbox Value: 1, Default_Shields-844@2x.icondatapack · 796.65 KB /Users/vic/Library/Caches/GeoServices/Resources/Default_Shields-844@2x.icondatapack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						123 text Default_Shields-844@2x.icondatapack  ·  796.65 KB /Users/vic/Library/Caches/GeoServices/Resources/Default_Shields-844@2x.icondatapack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					124 container
++						125 checkbox Value: 1, Default_Shields-847@2x.iconconfigpack · 100.2 KB /Users/vic/Library/Caches/GeoServices/Resources/Default_Shields-847@2x.iconconfigpack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						126 text Default_Shields-847@2x.iconconfigpack  ·  100.2 KB /Users/vic/Library/Caches/GeoServices/Resources/Default_Shields-847@2x.iconconfigpack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					127 container
++						128 checkbox Value: 1, DetailedLandCoverPavedArea-1.png · 9.99 KB /Users/vic/Library/Caches/GeoServices/Resources/DetailedLandCoverPavedArea-1.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						129 text DetailedLandCoverPavedArea-1.png  ·  9.99 KB /Users/vic/Library/Caches/GeoServices/Resources/DetailedLandCoverPavedArea-1.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					130 container
++						131 checkbox Value: 1, DetailedLandCoverPavedArea-1@2x.png · 72.89 KB /Users/vic/Library/Caches/GeoServices/Resources/DetailedLandCoverPavedArea-1@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						132 text DetailedLandCoverPavedArea-1@2x.png  ·  72.89 KB /Users/vic/Library/Caches/GeoServices/Resources/DetailedLandCoverPavedArea-1@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					133 container
++						134 checkbox Value: 1, Expert_Partners_Icons-31@2x.iconconfigpack · 846 B /Users/vic/Library/Caches/GeoServices/Resources/Expert_Partners_Icons-31@2x.iconconfigpack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						135 text Expert_Partners_Icons-31@2x.iconconfigpack  ·  846 B /Users/vic/Library/Caches/GeoServices/Resources/Expert_Partners_Icons-31@2x.iconconfigpack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					136 container
++						137 checkbox Value: 1, Expert_Partners_Icons-33@2x.icondatapack · 44.98 KB /Users/vic/Library/Caches/GeoServices/Resources/Expert_Partners_Icons-33@2x.icondatapack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						138 text Expert_Partners_Icons-33@2x.icondatapack  ·  44.98 KB /Users/vic/Library/Caches/GeoServices/Resources/Expert_Partners_Icons-33@2x.icondatapack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					139 container
++						140 checkbox Value: 1, Expert_Partners_Icons-34.iconconfigpack · 847 B /Users/vic/Library/Caches/GeoServices/Resources/Expert_Partners_Icons-34.iconconfigpack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						141 text Expert_Partners_Icons-34.iconconfigpack  ·  847 B /Users/vic/Library/Caches/GeoServices/Resources/Expert_Partners_Icons-34.iconconfigpack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					142 container
++						143 checkbox Value: 1, Expert_Partners_Icons-35.icondatapack · 12.34 KB /Users/vic/Library/Caches/GeoServices/Resources/Expert_Partners_Icons-35.icondatapack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						144 text Expert_Partners_Icons-35.icondatapack  ·  12.34 KB /Users/vic/Library/Caches/GeoServices/Resources/Expert_Partners_Icons-35.icondatapack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					145 container
++						146 checkbox Value: 1, Guides_Icons_Default-1043.iconconfigpack · 9.15 KB /Users/vic/Library/Caches/GeoServices/Resources/Guides_Icons_Default-1043.iconconfigpack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						147 text Guides_Icons_Default-1043.iconconfigpack  ·  9.15 KB /Users/vic/Library/Caches/GeoServices/Resources/Guides_Icons_Default-1043.iconconfigpack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					148 container
++						149 checkbox Value: 1, Guides_Icons_Default-1044.icondatapack · 2.76 MB /Users/vic/Library/Caches/GeoServices/Resources/Guides_Icons_Default-1044.icondatapack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						150 text Guides_Icons_Default-1044.icondatapack  ·  2.76 MB /Users/vic/Library/Caches/GeoServices/Resources/Guides_Icons_Default-1044.icondatapack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					151 container
++						152 checkbox Value: 1, Guides_Icons_Default-852@2x.iconconfigpack · 9.13 KB /Users/vic/Library/Caches/GeoServices/Resources/Guides_Icons_Default-852@2x.iconconfigpack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						153 text Guides_Icons_Default-852@2x.iconconfigpack  ·  9.13 KB /Users/vic/Library/Caches/GeoServices/Resources/Guides_Icons_Default-852@2x.iconconfigpack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					154 container
++						155 checkbox Value: 1, Guides_Icons_Default-853@2x.icondatapack · 6.89 MB /Users/vic/Library/Caches/GeoServices/Resources/Guides_Icons_Default-853@2x.icondatapack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						156 text Guides_Icons_Default-853@2x.icondatapack  ·  6.89 MB /Users/vic/Library/Caches/GeoServices/Resources/Guides_Icons_Default-853@2x.icondatapack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					157 container
++						158 checkbox Value: 1, LandCoverGradient1-1.png · 10.07 KB /Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient1-1.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						159 text LandCoverGradient1-1.png  ·  10.07 KB /Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient1-1.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					160 container
++						161 checkbox Value: 1, LandCoverGradient16-1.png · 10.07 KB /Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient16-1.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						162 text LandCoverGradient16-1.png  ·  10.07 KB /Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient16-1.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					163 container
++						164 checkbox Value: 1, LandCoverGradient8-1.png · 10.48 KB /Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient8-1.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						165 text LandCoverGradient8-1.png  ·  10.48 KB /Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient8-1.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					166 container
++						167 checkbox Value: 1, LandCoverGradient8-1@2x.png · 70.75 KB /Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient8-1@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						168 text LandCoverGradient8-1@2x.png  ·  70.75 KB /Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient8-1@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					169 container
++						170 checkbox Value: 1, LandCoverGradient9-1.png · 9.5 KB /Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient9-1.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						171 text LandCoverGradient9-1.png  ·  9.5 KB /Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient9-1.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					172 container
++						173 checkbox Value: 1, LandCoverGradient9-1@2x.png · 61.96 KB /Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient9-1@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						174 text LandCoverGradient9-1@2x.png  ·  61.96 KB /Users/vic/Library/Caches/GeoServices/Resources/LandCoverGradient9-1@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					175 container
++						176 checkbox Value: 1, LocalizationStyleAttributes-8.plist · 6.39 KB /Users/vic/Library/Caches/GeoServices/Resources/LocalizationStyleAttributes-8.plist · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						177 text LocalizationStyleAttributes-8.plist  ·  6.39 KB /Users/vic/Library/Caches/GeoServices/Resources/LocalizationStyleAttributes-8.plist  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					178 container
++						179 checkbox Value: 1, POITypeMapping-9.json · 4.88 KB /Users/vic/Library/Caches/GeoServices/Resources/POITypeMapping-9.json · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						180 text POITypeMapping-9.json  ·  4.88 KB /Users/vic/Library/Caches/GeoServices/Resources/POITypeMapping-9.json  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					181 container
++						182 checkbox Value: 1, Railroad_Crossing-1.iconconfigpack · 5.2 KB /Users/vic/Library/Caches/GeoServices/Resources/Railroad_Crossing-1.iconconfigpack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						183 text Railroad_Crossing-1.iconconfigpack  ·  5.2 KB /Users/vic/Library/Caches/GeoServices/Resources/Railroad_Crossing-1.iconconfigpack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					184 container
++						185 checkbox Value: 1, Railroad_Crossing-1@2x.iconconfigpack · 6.67 KB /Users/vic/Library/Caches/GeoServices/Resources/Railroad_Crossing-1@2x.iconconfigpack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						186 text Railroad_Crossing-1@2x.iconconfigpack  ·  6.67 KB /Users/vic/Library/Caches/GeoServices/Resources/Railroad_Crossing-1@2x.iconconfigpack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					187 container
++						188 checkbox Value: 1, Railroad_Crossing-5.icondatapack · 11.9 KB /Users/vic/Library/Caches/GeoServices/Resources/Railroad_Crossing-5.icondatapack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						189 text Railroad_Crossing-5.icondatapack  ·  11.9 KB /Users/vic/Library/Caches/GeoServices/Resources/Railroad_Crossing-5.icondatapack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					190 container
++						191 checkbox Value: 1, Railroad_Crossing-5@2x.icondatapack · 41.48 KB /Users/vic/Library/Caches/GeoServices/Resources/Railroad_Crossing-5@2x.icondatapack · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						192 text Railroad_Crossing-5@2x.icondatapack  ·  41.48 KB /Users/vic/Library/Caches/GeoServices/Resources/Railroad_Crossing-5@2x.icondatapack  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					193 container
++						194 checkbox Value: 1, RealisticRoadHighway-1.png · 13.63 KB /Users/vic/Library/Caches/GeoServices/Resources/RealisticRoadHighway-1.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						195 text RealisticRoadHighway-1.png  ·  13.63 KB /Users/vic/Library/Caches/GeoServices/Resources/RealisticRoadHighway-1.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					196 container
++						197 checkbox Value: 1, RealisticRoadHighway-1@2x.png · 130.92 KB /Users/vic/Library/Caches/GeoServices/Resources/RealisticRoadHighway-1@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						198 text RealisticRoadHighway-1@2x.png  ·  130.92 KB /Users/vic/Library/Caches/GeoServices/Resources/RealisticRoadHighway-1@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					199 container
++						200 checkbox Value: 1, RealisticRoadLocalRoad-1.png · 26.32 KB /Users/vic/Library/Caches/GeoServices/Resources/RealisticRoadLocalRoad-1.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						201 text RealisticRoadLocalRoad-1.png  ·  26.32 KB /Users/vic/Library/Caches/GeoServices/Resources/RealisticRoadLocalRoad-1.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					202 container
++						203 checkbox Value: 1, RealisticRoadLocalRoad-1@2x.png · 153.76 KB /Users/vic/Library/Caches/GeoServices/Resources/RealisticRoadLocalRoad-1@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						204 text RealisticRoadLocalRoad-1@2x.png  ·  153.76 KB /Users/vic/Library/Caches/GeoServices/Resources/RealisticRoadLocalRoad-1@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					205 container
++						206 checkbox Value: 1, SFDisplayShields-Bold-1.otf · 6.3 KB /Users/vic/Library/Caches/GeoServices/Resources/SFDisplayShields-Bold-1.otf · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						207 text SFDisplayShields-Bold-1.otf  ·  6.3 KB /Users/vic/Library/Caches/GeoServices/Resources/SFDisplayShields-Bold-1.otf  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					208 container
++						209 checkbox Value: 1, SFDisplayShields-CompressedBold-1.otf · 6.38 KB /Users/vic/Library/Caches/GeoServices/Resources/SFDisplayShields-CompressedBold-1.otf · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						210 text SFDisplayShields-CompressedBold-1.otf  ·  6.38 KB /Users/vic/Library/Caches/GeoServices/Resources/SFDisplayShields-CompressedBold-1.otf  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					211 container
++						212 checkbox Value: 1, SFShieldsCondensed-Bold-1.otf · 17.8 KB /Users/vic/Library/Caches/GeoServices/Resources/SFShieldsCondensed-Bold-1.otf · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						213 text SFShieldsCondensed-Bold-1.otf  ·  17.8 KB /Users/vic/Library/Caches/GeoServices/Resources/SFShieldsCondensed-Bold-1.otf  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					214 container
++						215 checkbox Value: 1, SFShieldsSemicondensed-Bold-1.otf · 17.87 KB /Users/vic/Library/Caches/GeoServices/Resources/SFShieldsSemicondensed-Bold-1.otf · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						216 text SFShieldsSemicondensed-Bold-1.otf  ·  17.87 KB /Users/vic/Library/Caches/GeoServices/Resources/SFShieldsSemicondensed-Bold-1.otf  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					217 container
++						218 checkbox Value: 1, altitude-1427.xml · 415.36 KB /Users/vic/Library/Caches/GeoServices/Resources/altitude-1427.xml · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						219 text altitude-1427.xml  ·  415.36 KB /Users/vic/Library/Caches/GeoServices/Resources/altitude-1427.xml  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					220 container
++						221 checkbox Value: 1, cemetery-15.png · 33.45 KB /Users/vic/Library/Caches/GeoServices/Resources/cemetery-15.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						222 text cemetery-15.png  ·  33.45 KB /Users/vic/Library/Caches/GeoServices/Resources/cemetery-15.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					223 container
++						224 checkbox Value: 1, cemetery-15@2x.png · 71.21 KB /Users/vic/Library/Caches/GeoServices/Resources/cemetery-15@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						225 text cemetery-15@2x.png  ·  71.21 KB /Users/vic/Library/Caches/GeoServices/Resources/cemetery-15@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					226 container
++						227 checkbox Value: 1, checker-1.png · 257 B /Users/vic/Library/Caches/GeoServices/Resources/checker-1.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						228 text checker-1.png  ·  257 B /Users/vic/Library/Caches/GeoServices/Resources/checker-1.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					229 container
++						230 checkbox Value: 1, checker-1@2x.png · 401 B /Users/vic/Library/Caches/GeoServices/Resources/checker-1@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						231 text checker-1@2x.png  ·  401 B /Users/vic/Library/Caches/GeoServices/Resources/checker-1@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					232 container
++						233 checkbox Value: 1, clut-night-2.png · 9.27 KB /Users/vic/Library/Caches/GeoServices/Resources/clut-night-2.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						234 text clut-night-2.png  ·  9.27 KB /Users/vic/Library/Caches/GeoServices/Resources/clut-night-2.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					235 container
++						236 checkbox Value: 1, concrete-17.png · 25.04 KB /Users/vic/Library/Caches/GeoServices/Resources/concrete-17.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						237 text concrete-17.png  ·  25.04 KB /Users/vic/Library/Caches/GeoServices/Resources/concrete-17.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					238 container
++						239 checkbox Value: 1, concrete-17@2x.png · 91.36 KB /Users/vic/Library/Caches/GeoServices/Resources/concrete-17@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						240 text concrete-17@2x.png  ·  91.36 KB /Users/vic/Library/Caches/GeoServices/Resources/concrete-17@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					241 container
++						242 checkbox Value: 1, default-57903.styl · 501.07 KB /Users/vic/Library/Caches/GeoServices/Resources/default-57903.styl · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						243 text default-57903.styl  ·  501.07 KB /Users/vic/Library/Caches/GeoServices/Resources/default-57903.styl  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					244 container
++						245 checkbox Value: 1, default-64193@2x.styl · 503.32 KB /Users/vic/Library/Caches/GeoServices/Resources/default-64193@2x.styl · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						246 text default-64193@2x.styl  ·  503.32 KB /Users/vic/Library/Caches/GeoServices/Resources/default-64193@2x.styl  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					247 container
++						248 checkbox Value: 1, default-iosmac-11838.styl · 497.81 KB /Users/vic/Library/Caches/GeoServices/Resources/default-iosmac-11838.styl · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						249 text default-iosmac-11838.styl  ·  497.81 KB /Users/vic/Library/Caches/GeoServices/Resources/default-iosmac-11838.styl  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					250 container
++						251 checkbox Value: 1, default-iosmac-11883@2x.styl · 500.17 KB /Users/vic/Library/Caches/GeoServices/Resources/default-iosmac-11883@2x.styl · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						252 text default-iosmac-11883@2x.styl  ·  500.17 KB /Users/vic/Library/Caches/GeoServices/Resources/default-iosmac-11883@2x.styl  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					253 container
++						254 checkbox Value: 1, golf_course-15.png · 33.99 KB /Users/vic/Library/Caches/GeoServices/Resources/golf_course-15.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						255 text golf_course-15.png  ·  33.99 KB /Users/vic/Library/Caches/GeoServices/Resources/golf_course-15.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					256 container
++						257 checkbox Value: 1, golf_course-15@2x.png · 72.85 KB /Users/vic/Library/Caches/GeoServices/Resources/golf_course-15@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						258 text golf_course-15@2x.png  ·  72.85 KB /Users/vic/Library/Caches/GeoServices/Resources/golf_course-15@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					259 container
++						260 checkbox Value: 1, land-18.png · 390 B /Users/vic/Library/Caches/GeoServices/Resources/land-18.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						261 text land-18.png  ·  390 B /Users/vic/Library/Caches/GeoServices/Resources/land-18.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					262 container
++						263 checkbox Value: 1, land-19@2x.png · 761 B /Users/vic/Library/Caches/GeoServices/Resources/land-19@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						264 text land-19@2x.png  ·  761 B /Users/vic/Library/Caches/GeoServices/Resources/land-19@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					265 container
++						266 checkbox Value: 1, land-carplay-1.png · 297 B /Users/vic/Library/Caches/GeoServices/Resources/land-carplay-1.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						267 text land-carplay-1.png  ·  297 B /Users/vic/Library/Caches/GeoServices/Resources/land-carplay-1.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					268 container
++						269 checkbox Value: 1, land-carplay-1@2x.png · 608 B /Users/vic/Library/Caches/GeoServices/Resources/land-carplay-1@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						270 text land-carplay-1@2x.png  ·  608 B /Users/vic/Library/Caches/GeoServices/Resources/land-carplay-1@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					271 container
++						272 checkbox Value: 1, localizationRegions-4.plist · 188 B /Users/vic/Library/Caches/GeoServices/Resources/localizationRegions-4.plist · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						273 text localizationRegions-4.plist  ·  188 B /Users/vic/Library/Caches/GeoServices/Resources/localizationRegions-4.plist  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					274 container
++						275 checkbox Value: 1, night-DetailedLandCoverPavedArea-2.png · 20.03 KB /Users/vic/Library/Caches/GeoServices/Resources/night-DetailedLandCoverPavedArea-2.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						276 text night-DetailedLandCoverPavedArea-2.png  ·  20.03 KB /Users/vic/Library/Caches/GeoServices/Resources/night-DetailedLandCoverPavedArea-2.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					277 container
++						278 checkbox Value: 1, night-DetailedLandCoverPavedArea-2@2x.png · 89.84 KB /Users/vic/Library/Caches/GeoServices/Resources/night-DetailedLandCoverPavedArea-2@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						279 text night-DetailedLandCoverPavedArea-2@2x.png  ·  89.84 KB /Users/vic/Library/Caches/GeoServices/Resources/night-DetailedLandCoverPavedArea-2@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					280 container
++						281 checkbox Value: 1, night-DetailedLandCoverSand-1.png · 17.66 KB /Users/vic/Library/Caches/GeoServices/Resources/night-DetailedLandCoverSand-1.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						282 text night-DetailedLandCoverSand-1.png  ·  17.66 KB /Users/vic/Library/Caches/GeoServices/Resources/night-DetailedLandCoverSand-1.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					283 container
++						284 checkbox Value: 1, night-DetailedLandCoverSand-1@2x.png · 62.41 KB /Users/vic/Library/Caches/GeoServices/Resources/night-DetailedLandCoverSand-1@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						285 text night-DetailedLandCoverSand-1@2x.png  ·  62.41 KB /Users/vic/Library/Caches/GeoServices/Resources/night-DetailedLandCoverSand-1@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					286 container
++						287 checkbox Value: 1, night-RealisticRoadHighway-1.png · 29.12 KB /Users/vic/Library/Caches/GeoServices/Resources/night-RealisticRoadHighway-1.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						288 text night-RealisticRoadHighway-1.png  ·  29.12 KB /Users/vic/Library/Caches/GeoServices/Resources/night-RealisticRoadHighway-1.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					289 container
++						290 checkbox Value: 1, night-RealisticRoadHighway-1@2x.png · 142.33 KB /Users/vic/Library/Caches/GeoServices/Resources/night-RealisticRoadHighway-1@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						291 text night-RealisticRoadHighway-1@2x.png  ·  142.33 KB /Users/vic/Library/Caches/GeoServices/Resources/night-RealisticRoadHighway-1@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					292 container
++						293 checkbox Value: 1, night-RealisticRoadLocalRoad-1.png · 29.39 KB /Users/vic/Library/Caches/GeoServices/Resources/night-RealisticRoadLocalRoad-1.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						294 text night-RealisticRoadLocalRoad-1.png  ·  29.39 KB /Users/vic/Library/Caches/GeoServices/Resources/night-RealisticRoadLocalRoad-1.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					295 container
++						296 checkbox Value: 1, night-RealisticRoadLocalRoad-1@2x.png · 140.66 KB /Users/vic/Library/Caches/GeoServices/Resources/night-RealisticRoadLocalRoad-1@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						297 text night-RealisticRoadLocalRoad-1@2x.png  ·  140.66 KB /Users/vic/Library/Caches/GeoServices/Resources/night-RealisticRoadLocalRoad-1@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					298 container
++						299 checkbox Value: 1, night-cemetery-2.png · 18.61 KB /Users/vic/Library/Caches/GeoServices/Resources/night-cemetery-2.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						300 text night-cemetery-2.png  ·  18.61 KB /Users/vic/Library/Caches/GeoServices/Resources/night-cemetery-2.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					301 container
++						302 checkbox Value: 1, night-cemetery-2@2x.png · 53.37 KB /Users/vic/Library/Caches/GeoServices/Resources/night-cemetery-2@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						303 text night-cemetery-2@2x.png  ·  53.37 KB /Users/vic/Library/Caches/GeoServices/Resources/night-cemetery-2@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					304 container
++						305 checkbox Value: 1, night-concrete-1.png · 21.28 KB /Users/vic/Library/Caches/GeoServices/Resources/night-concrete-1.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						306 text night-concrete-1.png  ·  21.28 KB /Users/vic/Library/Caches/GeoServices/Resources/night-concrete-1.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					307 container
++						308 checkbox Value: 1, night-concrete-1@2x.png · 86.47 KB /Users/vic/Library/Caches/GeoServices/Resources/night-concrete-1@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						309 text night-concrete-1@2x.png  ·  86.47 KB /Users/vic/Library/Caches/GeoServices/Resources/night-concrete-1@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					310 container
++						311 checkbox Value: 1, night-golf_course-2.png · 19.44 KB /Users/vic/Library/Caches/GeoServices/Resources/night-golf_course-2.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						312 text night-golf_course-2.png  ·  19.44 KB /Users/vic/Library/Caches/GeoServices/Resources/night-golf_course-2.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					313 container
++						314 checkbox Value: 1, night-golf_course-2@2x.png · 56.21 KB /Users/vic/Library/Caches/GeoServices/Resources/night-golf_course-2@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						315 text night-golf_course-2@2x.png  ·  56.21 KB /Users/vic/Library/Caches/GeoServices/Resources/night-golf_course-2@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					316 container
++						317 checkbox Value: 1, night-land-2.png · 392 B /Users/vic/Library/Caches/GeoServices/Resources/night-land-2.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						318 text night-land-2.png  ·  392 B /Users/vic/Library/Caches/GeoServices/Resources/night-land-2.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					319 container
++						320 checkbox Value: 1, night-land-2@2x.png · 763 B /Users/vic/Library/Caches/GeoServices/Resources/night-land-2@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						321 text night-land-2@2x.png  ·  763 B /Users/vic/Library/Caches/GeoServices/Resources/night-land-2@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					322 container
++						323 checkbox Value: 1, night-land-carplay-1.png · 297 B /Users/vic/Library/Caches/GeoServices/Resources/night-land-carplay-1.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						324 text night-land-carplay-1.png  ·  297 B /Users/vic/Library/Caches/GeoServices/Resources/night-land-carplay-1.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					325 container
++						326 checkbox Value: 1, night-land-carplay-1@2x.png · 608 B /Users/vic/Library/Caches/GeoServices/Resources/night-land-carplay-1@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						327 text night-land-carplay-1@2x.png  ·  608 B /Users/vic/Library/Caches/GeoServices/Resources/night-land-carplay-1@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					328 container
++						329 checkbox Value: 1, night-park-2.png · 19.17 KB /Users/vic/Library/Caches/GeoServices/Resources/night-park-2.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						330 text night-park-2.png  ·  19.17 KB /Users/vic/Library/Caches/GeoServices/Resources/night-park-2.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					331 container
++						332 checkbox Value: 1, night-park-2@2x.png · 61.31 KB /Users/vic/Library/Caches/GeoServices/Resources/night-park-2@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						333 text night-park-2@2x.png  ·  61.31 KB /Users/vic/Library/Caches/GeoServices/Resources/night-park-2@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					334 container
++						335 checkbox Value: 1, night-water-2.png · 7.73 KB /Users/vic/Library/Caches/GeoServices/Resources/night-water-2.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						336 text night-water-2.png  ·  7.73 KB /Users/vic/Library/Caches/GeoServices/Resources/night-water-2.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					337 container
++						338 checkbox Value: 1, night-water-2@2x.png · 26.23 KB /Users/vic/Library/Caches/GeoServices/Resources/night-water-2@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						339 text night-water-2@2x.png  ·  26.23 KB /Users/vic/Library/Caches/GeoServices/Resources/night-water-2@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					340 container
++						341 checkbox Value: 1, northpole-1.c3h · 7.5 KB /Users/vic/Library/Caches/GeoServices/Resources/northpole-1.c3h · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						342 text northpole-1.c3h  ·  7.5 KB /Users/vic/Library/Caches/GeoServices/Resources/northpole-1.c3h  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					343 container
++						344 checkbox Value: 1, northpole_0_0_0-1.c3b · 152.89 KB /Users/vic/Library/Caches/GeoServices/Resources/northpole_0_0_0-1.c3b · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						345 text northpole_0_0_0-1.c3b  ·  152.89 KB /Users/vic/Library/Caches/GeoServices/Resources/northpole_0_0_0-1.c3b  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					346 container
++						347 checkbox Value: 1, park-16.png · 31.55 KB /Users/vic/Library/Caches/GeoServices/Resources/park-16.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						348 text park-16.png  ·  31.55 KB /Users/vic/Library/Caches/GeoServices/Resources/park-16.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					349 container
++						350 checkbox Value: 1, park-16@2x.png · 64.11 KB /Users/vic/Library/Caches/GeoServices/Resources/park-16@2x.png · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						351 text park-16@2x.png  ·  64.11 KB /Users/vic/Library/Caches/GeoServices/Resources/park-16@2x.png  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					352 container
++						353 checkbox Value: 1, publisher_attribution_dot_coms-99.pb · 24.9 KB /Users/vic/Library/Caches/GeoServices/Resources/publisher_attribution_dot_coms-99.pb · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						354 text publisher_attribution_dot_coms-99.pb  ·  24.9 KB /Users/vic/Library/Caches/GeoServices/Resources/publisher_attribution_dot_coms-99.pb  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++					355 container
++						356 checkbox Value: 1, publisher_attribution_manifest_index-82.pb · 3.25 KB /Users/vic/Library/Caches/GeoServices/Resources/publisher_attribution_manifest_index-82.pb · Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
++						357 text publisher_attribution_manifest_index-82.pb  ·  3.25 KB /Users/vic/Library/Caches/GeoServices/Resources/publisher_attribution_manifest_index-82.pb  ·  Xóa vĩnh viễn Dọn nội dung cache trong vùng MClean; app/OS có thể tải, index hoặc build lại và chậm hơn lần đầu. Giữ directory, state/runtime được bảo vệ.
+The focused UI element is 59 summary Xem và chọn từng mục, Value: on

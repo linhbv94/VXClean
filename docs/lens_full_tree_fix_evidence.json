@@ -1,0 +1,53 @@
+{
+  "local_version": "1.0.15",
+  "problem": "50,000-node/depth cutoff caused first-visit folder navigation to rescan",
+  "fix": "Full flat typed Rust snapshot in host; UI queries direct-child DTO; gzip worker-to-host only",
+  "navigation_node_or_depth_cutoff": false,
+  "retention_ms": 300000,
+  "host_snapshot_capacity": 2,
+  "worker_output_limit_compressed_bytes": 33554432,
+  "worker_timeout_seconds": 120,
+  "rust_tests": 43,
+  "native_fixture_groups": 35,
+  "windows_shared_scanner_type_check": "PASS x86_64-pc-windows-msvc; full Windows app/runtime unverified",
+  "large_fixture": {
+    "filesystem_files": 50050,
+    "full_retention_query": "PASS",
+    "file_created_after_scan_not_in_cached_view": "PASS",
+    "wire_roundtrip": "PASS",
+    "synthetic_depth": 100
+  },
+  "host_query_test": "PASS after fixture removed from disk; grants/identities/manifests remain empty; expiration and mutation invalidation tested",
+  "native_ui": {
+    "root": "/Users/vic",
+    "root_is_partial": true,
+    "root_displayed_allocated_bytes_approx": 43060000000,
+    "first_visit_chain": [
+      "Library",
+      "Application Support",
+      "Google",
+      "Chrome",
+      "Default",
+      "Service Worker"
+    ],
+    "all_steps": "PASS: result immediately visible, no scan indicator or Cancel button",
+    "return_to_Library": "PASS",
+    "worker_process_check": "PASS: only main /Applications/VXClean.app process after navigation",
+    "app_left_at": "/Users/vic/Library"
+  },
+  "library_worker_probe": {
+    "nodes": 180189,
+    "directories": 20161,
+    "compressed_bytes": 4101576,
+    "wall_seconds": 12.31,
+    "worker_max_rss_bytes": 28360704,
+    "allocated_bytes": 15698571264,
+    "partial": true,
+    "note": "CLI inherits caller permissions; RSS is scanner worker only, not app+WebView total"
+  },
+  "package_codesign": "PASS",
+  "installed_codesign": "PASS",
+  "updater_signature": "PASS",
+  "real_data_mutation": false,
+  "public_release": false
+}

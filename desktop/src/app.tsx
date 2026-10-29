@@ -1,3 +1,5 @@
+import {CleanLanguageProvider} from './services/ui_language';
+import {AppUpdates} from './components/app_updates';
 import {ScanAccessDialog} from './components/scan_access_dialog';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { TabId, Capabilities, SystemSnapshot } from './types';
@@ -25,9 +27,17 @@ const getInitialThemeMode = (): ThemeMode => {
 };
 
 export default function App() {
-  const [updateVersion, setUpdateVersion] = useState<string | null>(null);
-  const [updateFocusRequest, setUpdateFocusRequest] = useState(0);
+  const [language, setLanguage] = useState<'vi' | 'en'>(() => localStorage.getItem('vxclean_lang') === 'en' ? 'en' : 'vi');
+  useEffect(() => { localStorage.setItem('vxclean_lang',language); document.documentElement.lang = language; if(isTauriEnvironment()) void import('@tauri-apps/api/core').then(m=>m.invoke('set_app_language',{lang:language})).catch(console.error); }, [language]);
+  const [updateFocusRequest] = useState(0);
   const [themeMode, setThemeMode] = useState<ThemeMode>(getInitialThemeMode);
+  useEffect(() => {
+    const sync = (e: StorageEvent) => {
+      if(e.key === 'vxclean_lang') setLanguage(e.newValue === 'en' ? 'en' : 'vi');
+      if(e.key === 'vxclean_theme' && ['dark','light','system'].includes(e.newValue || '')) setThemeMode(e.newValue as ThemeMode);
+    };
+    window.addEventListener('storage',sync);return () => window.removeEventListener('storage',sync);
+  }, []);
   const [isDark, setIsDark] = useState<boolean>(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false);
   const [currentTab, setCurrentTab] = useState<TabId>('dashboard');
@@ -40,16 +50,6 @@ export default function App() {
   const isBrowserPreview = !isTauriEnvironment();
   const isWindowsDummy = capabilities?.platform === 'windows';
   const isRefreshingRef = useRef<boolean>(false);
-
-  useEffect(() => {
-    if (isBrowserPreview || !import.meta.env.PROD) return;
-    let disposed = false;
-    void import('@tauri-apps/plugin-updater').then(m => m.check()).then(async update => {
-      if (!disposed && update) setUpdateVersion(update.version);
-      await update?.close();
-    }).catch(() => { /* Manual check in Settings reports connection/manifest errors. */ });
-    return () => { disposed = true; };
-  }, [isBrowserPreview]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -175,8 +175,10 @@ export default function App() {
   };
 
   return (
+    <CleanLanguageProvider value={language}>
     <div className="flex flex-col h-screen w-screen overflow-hidden bg-slate-50 dark:bg-[#0f1117] text-slate-800 dark:text-slate-100">
       <TitleBar
+        language={language}
         isDark={isDark}
         onToggleTheme={() => setThemeMode((prev) => (prev === 'dark' ? 'light' : 'dark'))}
         isBrowserPreview={isBrowserPreview}
@@ -184,8 +186,8 @@ export default function App() {
         onRefresh={loadSnapshot}
       />
       {capabilities?.platform === 'windows' && <div role="status" className="px-4 py-2 text-xs bg-amber-500/10 text-amber-700 dark:text-amber-300">Windows · Bản giao diện. Quét, dọn rác, gỡ ứng dụng và giám sát hệ thống chưa được hỗ trợ.</div>}
-      <OperationHistory />
-      {updateVersion && <div role="status" className="px-4 py-2 text-xs bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 flex items-center gap-3">Có VXClean {updateVersion}.<button className="underline" onClick={() => {setUpdateFocusRequest(n => n + 1);setIsSettingsOpen(true);}}>Xem cập nhật</button><button onClick={() => setUpdateVersion(null)}>Để sau</button></div>}
+      <OperationHistory language={language}/>
+      <AppUpdates notice language={language}/>
       <div className="flex flex-1 overflow-hidden">
         <Sidebar
           currentTab={currentTab}
@@ -217,14 +219,17 @@ export default function App() {
         </main>
       </div>
 
-      <ScanAccessDialog/>
+      <ScanAccessDialog language={language}/>
       <SettingsModal
         updateFocusRequest={updateFocusRequest}
         isOpen={isSettingsOpen}
         onClose={() => setIsSettingsOpen(false)}
+        language={language}
+        onChangeLanguage={setLanguage}
         themeMode={themeMode}
         onChangeThemeMode={setThemeMode}
       />
     </div>
+    </CleanLanguageProvider>
   );
 }

@@ -3,7 +3,7 @@
 > **Cập nhật implementation local 2026-10-10:** xem [truth sau triển khai](17_local_implementation_status.md) và [báo cáo build/QA](../local_completion_report.md). Nội dung target dưới đây không đồng nghĩa mọi gate đã pass; các nhánh thiếu evidence đang blocked.
 
 
-Version: 1.0.0 — Ngày cập nhật: 2026-10-10. Target macOS; **tray/lifecycle đã triển khai và QA panel trên gói arm64; đa màn hình/sleep-wake chưa QA**. Không đổi app identifier/icon bundle chính. Asset user cung cấp: [vxclean_icon_menubar.svg](../../vxclean_icon_menubar.svg).
+Version: 1.1.0 — Ngày cập nhật: 2026-10-29. Target macOS; **tray/lifecycle đã triển khai và QA panel trên gói arm64; đa màn hình/sleep-wake chưa QA**. Không đổi app identifier/icon bundle chính. Asset user cung cấp: [vxclean_icon_menubar.svg](../../vxclean_icon_menubar.svg).
 
 ## 1. Head bar và icon
 
@@ -13,7 +13,7 @@ Version: 1.0.0 — Ngày cập nhật: 2026-10-10. Target macOS; **tray/lifecycl
 
 ## 2. Popover tổng quan
 
-Click trái icon mở/toggle panel không kích hoạt Dock; click phải native menu “Mở VXClean”, “Cài đặt…”, “Thoát VXClean”. Panel khoảng 340 px rộng, co chiều cao theo pin/status, neo vào tray item, clamp trong visible monitor bounds, rounded/padding theo theme VX. Không mở cả native menu và panel trên cùng click.
+Click trái icon mở/toggle panel không kích hoạt Dock; click phải native menu “Mở VXClean”, “Cài đặt…”, “Thoát VXClean”. Panel khoảng 340 px rộng, co chiều cao theo pin/status, neo vào tray item, clamp trong visible monitor bounds, radius12px/viền1px/clip nội dung theo theme VX; native window và html/body trong suốt để bốn góc không còn nền vuông. Không mở cả native menu và panel trên cùng click.
 
 ```text
 VXClean                      Cập nhật 14:32:05
@@ -59,3 +59,7 @@ Tray creation thất bại → **giữ main/Dock mở**, báo lỗi; không hide
 - Packaged macOS GUI phải được kiểm tra, source build/unit test không thay visual/lifecycle QA. Ghi rõ artifact/version/hash/OS/architecture và checks còn thiếu.
 
 Tham chiếu kỹ thuật: [Tauri system tray](https://v2.tauri.app/learn/system-tray/). Dùng API của phiên bản dependency đang cài; bật feature `tray-icon` nếu cần, template flag và activation policy theo crate/native APIs thực tế, không dựa vào docs cũ của SwiftUI.
+
+## Lịch sử cập nhật
+
+- 1.1.0 (2026-10-29): Chốt radius12 và nền alpha xuyên các lớp cho popover; cần QA native bản mới, không kế thừa kết luận visual của gói cũ.

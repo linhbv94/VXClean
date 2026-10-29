@@ -1,0 +1,71 @@
+{
+  "captured_at": "2026-10-28T13:41:07.859511+07:00",
+  "phase": "before_user_restart",
+  "apps": [
+    {
+      "path": "/Applications/Antigravity IDE.app",
+      "version": "2.5.5",
+      "bundle_id": "com.google.antigravity-ide",
+      "commit": "ecfbad74d93962fc8ca485d93ab9b4f3d4cb6cf8",
+      "build_date": "2026-08-13T08:37:22.547Z",
+      "files": 16141,
+      "logical_bytes": 723039661,
+      "allocated_bytes": 769036288,
+      "info_sha256": "6806d6c1134d1b0ee9c66304732b6afb230c27cba6e457837759102b35c6c82b",
+      "main_sha256": "a654016a7736998e3dd0b4a5fd626a15e01c8b2d1412cc8876d545359a45d69b"
+    },
+    {
+      "path": "/Users/vic/Library/Caches/com.google.antigravity-ide.ShipIt/update.og1Mqjc/Antigravity IDE.app",
+      "version": "2.6.0",
+      "bundle_id": "com.google.antigravity-ide",
+      "commit": "9e3a5da5d6731effd57d47d88bbe5df14ac6ccdd",
+      "build_date": "2026-10-26T18:06:23.613Z",
+      "files": 16119,
+      "logical_bytes": 587768862,
+      "allocated_bytes": 633704448,
+      "info_sha256": "10977d04e783467496a651db0a21936aad649cc2cd5986f0aa8de8e2d0a9a67b",
+      "main_sha256": "d9868442a6ed82f49f012db6c5c38d60634c3afa1c962670d66d1d9a5d7381f8"
+    }
+  ],
+  "state_format": "json",
+  "shipit_state": {
+    "launchAfterInstallation": false,
+    "updateBundleURL": "file:///Users/vic/Library/Caches/com.google.antigravity-ide.ShipIt/update.og1Mqjc/Antigravity%20IDE.app/",
+    "useUpdateBundleName": false,
+    "bundleIdentifier": "com.google.antigravity-ide",
+    "targetBundleURL": "file:///Applications/Antigravity%20IDE.app/"
+  },
+  "shipit_stderr": "2026-10-28 12:58:09.880 ShipIt[23164:18545826] Detected this as an install request\n",
+  "updater_log_lines": [
+    "2026-10-28 10:57:09.649 [info] update#setState idle",
+    "2026-10-28 10:57:39.651 [info] update#setState checking for updates",
+    "2026-10-28 10:57:40.049 [info] update#setState idle",
+    "2026-10-28 11:57:39.618 [info] update#setState checking for updates",
+    "2026-10-28 11:57:40.149 [info] update#setState idle",
+    "2026-10-28 12:57:39.681 [info] update#setState checking for updates",
+    "2026-10-28 12:57:40.123 [info] update#setState downloading",
+    "2026-10-28 12:58:09.779 [info] update#setState downloaded",
+    "2026-10-28 12:58:09.786 [info] update#setState ready",
+    "2026-10-28 00:35:45.261 [info] update#setState checking for updates",
+    "2026-10-28 00:35:45.765 [info] update#setState idle",
+    "2026-10-28 01:49:10.727 [info] update#setState checking for updates",
+    "2026-10-28 01:49:11.849 [info] update#setState idle",
+    "2026-10-28 03:03:33.563 [info] update#setState checking for updates",
+    "2026-10-28 03:03:34.650 [info] update#setState idle",
+    "2026-10-28 04:07:54.444 [info] update#setState checking for updates",
+    "2026-10-28 04:07:55.600 [info] update#setState idle",
+    "2026-10-28 05:22:53.340 [info] update#setState checking for updates",
+    "2026-10-28 05:22:54.450 [info] update#setState idle",
+    "2026-10-28 06:24:11.261 [info] update#setState checking for updates",
+    "2026-10-28 06:24:12.323 [info] update#setState idle",
+    "2026-10-28 07:31:43.180 [info] update#setState checking for updates",
+    "2026-10-28 07:31:44.176 [info] update#setState idle",
+    "2026-10-28 08:37:52.041 [info] update#setState checking for updates",
+    "2026-10-28 08:37:53.339 [info] update#setState idle",
+    "2026-10-28 09:37:52.038 [info] update#setState checking for updates",
+    "2026-10-28 09:37:52.553 [info] update#setState idle"
+  ],
+  "staged_signature_verified": true,
+  "read_only": true,
+  "updated_or_deleted": false
+}

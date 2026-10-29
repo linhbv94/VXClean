@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-10",
+  "task": "vxclean_release_preparation",
+  "destination": {
+    "title": "Review UI và nối engine",
+    "thread_id": "01a11f50-f03a-73c3-8b15-549ac9bd2d8e",
+    "host_id": "local",
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "low"
+  },
+  "handoff": "release_preparation_handoff.md",
+  "dispatch_status": "received_and_in_progress",
+  "active_turn_id": "01a1253c-0488-7d80-9074-56951e45a55a",
+  "scope_state": "specs_prepared_implementation_delegated_not_yet_reviewed",
+  "anti_counters_from_planning_chat": {
+    "initial_execution": 0,
+    "correction_rounds": 0,
+    "consultations": 0,
+    "historical_issue_counters_must_be_preserved": true
+  },
+  "checks_completed_here": [
+    "TypeScript tsc --noEmit",
+    "UTF-8 and contract JSON validation",
+    "relative links in current specs and handoff",
+    "spec00_06 historical snapshots preserved",
+    "SVG XML parse",
+    "git diff --check"
+  ],
+  "source_change_here": "Removed Bản thử span from desktop/src/components/title_bar.tsx",
+  "not_verified_here": [
+    "policy engine implementation",
+    "menubar implementation",
+    "new packaged GUI runtime",
+    "release readiness",
+    "publish"
+  ]
+}

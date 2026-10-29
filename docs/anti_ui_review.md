@@ -1,0 +1,21 @@
+# Review UI — vòng sửa 3/3
+
+Version: 1.0.0 — Ngày: 2026-10-09
+
+Đây là vòng sửa 3/3 của task feedback UI/engine, không còn vòng CLI tự động sau lượt này. Vòng 1 phục hồi tool đã có tiến triển: UI đã viết và build đạt. 0 lần tham vấn đã dùng. Giữ quyền/phạm vi như task gốc, không sửa bridge/types/native/Rust/tests/spec; không chạy agent CLI khác. Không thay đổi window Anti khác.
+
+Codex đã review diff/source và test geometry thực; cần sửa các điểm sau:
+
+1. Circle packing hiện sai: với sizes [100,25,4], 650×500 có 1 overlap và area ratio 3,255 thay vì 4. 150 circles có 170 overlaps. [0,0,100] có 3 overlaps, zero size vẫn chiếm diện tích. Thay clamp radius/minimum riêng từng circle bằng radius tỷ lệ sqrt(bytes) + scale CHUNG, chỉ plot positive sizes. Bỏ Math.random, bỏ centering gravity gây overlap sau pass cuối và bỏ r=Math.max(12,..) sau normalize. Có thể dùng tangent constructive với fallback đặt bên phải bounding box, bảo đảm không overlap rồi fit toàn bộ bằng common scale. Diện tích tương ứng đúng bytes; labels/hit area tùy radius, zero/denied vẫn thấy trong List. Tránh O(n^4) cho directory rất nhiều children: view chỉ vẽ top ~80 circles, có thông báo chuyển List để xem đủ; không sửa size tổng hoặc đường dẫn, không tạo đường dẫn giả. Chạy `node ../scripts/test_circle_packing.cjs` tại desktop (script do Codex tạo, không sửa test) rồi npm run build. Helper function packCircles phải pass đủ 18 geometry cases, không đổi test để né lỗi.
+2. App list ẩn protected nhưng loadApps vẫn chọn res.apps[0] có thể là protected; chọn app visible đầu tiên hoặc giữ selection nếu vẫn visible, không để panel chi tiết của app đã ẩn. Sau search nếu current app không trong kết quả, không để thao tác gỡ cho app vô hình (có thể clear selection rồi chọn row khi user click).
+3. Bridge mới đã có type/API đầy đủ: runDetailedScan, runAnalyzeSpaceLens(path,onProgress,shouldCancel), chooseScanFolder, openFullDiskAccessSettings, can_trash,is_partial. Bỏ as any và fallback runSmartScan/fabricated empty categories trong desktop path; dùng runDetailedScan typed thật, backend luôn trả đủ 10 categories. canTrashNode fail closed nếu flag không có trong native data; preview flag thiếu thì không cho trash, không tự suy quyền từ blacklist UI.
+4. ResizeObserver cần kiểm tra dynamic view switching/resizing native; default circles/List theo mode, không giữ width640 khi container chưa được gắn lúc effect chạy. Nếu effect hiện tại đã gắn ổn thì giữ và report kiểm chứng.
+5. SmartScan 'Chọn tất cả' hiện thực ra chỉ chọn mặc định, label sai; đổi thành 'Chọn mục mặc định' nếu giữ hành vi này, hoặc cho chọn tất cả thật theo tương tác explicit. Checkbox Large Files phải cho user chọn chủ động; hiện eligibleItems=[] làm checkbox category không có tác dụng. Không được thay lựa chọn DEFAULT; manual selection được phép và phải chính xác. Giữ per-item checkbox, readonly Docker disabled.
+6. Thêm cleanup khi unmount cho scan async SmartScan/Lens/Cleanup: hủy/quét invalidation, tránh state từ scan cũ cập nhật root hoặc tab mới; cẩn thận StrictMode double effects auto-start (defer launch timer + cleanup timer hoặc lifecycle token phù hợp). Dashboard click phải auto scan đúng 1 lần.
+7. Cleanup AI description không ghi Cursor khi scanner chỉ có Ollama/LM Studio; Node không nói build artifacts khi engine chỉ cache npm/yarn/pnpm. Giữ nội dung đúng backend, dùng tông Light/Dark trong Lens (tránh hardcode slate-950 + chữ white ở Light).
+
+Backend Lens mới tối ưu POSIX, DTO chỉ direct children (không có children lồng dưới node con). Double click directory gọi analyzePath(node.path), kể cả node.children=[]; scan lại subtree. Default home thật đã đạt16.38s, partial=true. Giữ progress/cancel/picker và full root permission flow.
+
+Chỉ sửa UI đã chỉ định, không thay logic engine. Báo kết quả cập nhật docs/anti_ui_handoff.md, ghi counter3/3, checks và giới hạn runtime; Codex sẽ QA native. Không commit/push/release.
+
+Context bắt buộc trong cwd: docs/anti_ui_context.md. Runner lượt này cấp chính xác git status chỉ đọc, npm run build và node ../scripts/test_circle_packing.cjs tại desktop. Chỉ dùng shell cho các lệnh đó; không shell ls/git diff/khác. Dùng view_file để đọc source. Sau đọc hãy sửa các lỗi đã có bằng chứng, không cần kiểm kê thêm và không phải chờ Codex. Giữ nguồn tests không sửa.

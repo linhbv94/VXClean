@@ -1,0 +1,81 @@
+{
+  "updated_at": "2026-10-11",
+  "scope": "quick_scan_and_clean_first_detailed_later",
+  "local_quick_preparation": "passed",
+  "published": false,
+  "tests": {
+    "native_fixture_groups": 23,
+    "rust_unit_tests": 21,
+    "rust_native_roundtrips": [
+      "quick_cleanup",
+      "orphan_cleanup"
+    ],
+    "scan_retention_groups": 10,
+    "frontend_build_exit": 0,
+    "diff_check_exit": 0
+  },
+  "production_disposable_fixture": {
+    "disposable_fixture_only": true,
+    "production_packaged_engine": true,
+    "fixture_bytes": 1120000,
+    "success_count": 1,
+    "failure_count": 0,
+    "permanently_freed_bytes": 1120000,
+    "post_scan_fixture_absent_or_zero": true,
+    "operation_id": "e35b7de2-a413-44c0-b031-9c3f3d60ee67",
+    "post_scan_duration_ms": 22065
+  },
+  "production_read_only_scan": {
+    "duration_ms": 22174,
+    "is_partial": true,
+    "timed_out_categories": [
+      "large_files"
+    ],
+    "categories": [
+      {
+        "category": "system_junk",
+        "found_bytes": 1197893974,
+        "eligible_bytes": 224010324,
+        "item_count": 166
+      },
+      {
+        "category": "user_caches",
+        "found_bytes": 128262531,
+        "eligible_bytes": 98489678,
+        "item_count": 175
+      },
+      {
+        "category": "large_files",
+        "found_bytes": 0,
+        "eligible_bytes": 0,
+        "item_count": 0
+      }
+    ]
+  },
+  "packaged_ui": {
+    "dashboard_single_click_auto_scan": true,
+    "group_checkbox_off_on": true,
+    "individual_checkbox_off_on": true,
+    "confirmation_and_cancel": true,
+    "navigation_retains_results": true,
+    "partial_warning_does_not_claim_empty_or_all_fda": true,
+    "actual_ui_delete_clicked": false,
+    "mutation_proof": "Rust producer→native consumer actual fixture plus packaged production engine actual disposable cache cleanup; UI confirmation cancelled to avoid user-data deletion",
+    "post_cleanup_rescan": "321.3MB total eligible;224.01MB SystemJunk;97.29MB UserCache; fixture disappeared",
+    "screenshot": "quick_release_ui.png"
+  },
+  "large_files_timeout_cause": "Owned read-only worker sampled: Foundation NSURLDirectoryEnumerator nextObject → DirEnumRead → open blocked. 20s worker timeout keeps cache results and reports partial.",
+  "limitations": [
+    "Detailed cleanup deferred; not fully accepted",
+    "Physical menubar click not verified",
+    "Intel/macOS13 runtime not verified",
+    "Updater install/restart not verified; crypto/signature/tamper verified",
+    "Ad-hoc signed; not Apple notarized"
+  ],
+  "artifact_evidence": "local_artifact_evidence.json",
+  "release_ready_for_quick_local_handoff": false,
+  "current_artifact_accepted": false,
+  "quick_gate_reopened": "User rejected found/cleanable gap; spec21 parity and MClean cache coverage required",
+  "superseded_by": "quick_scan_parity_evidence.json",
+  "historical_only": true
+}

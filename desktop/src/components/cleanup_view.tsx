@@ -1,3 +1,4 @@
+import {useCleanText} from '../services/ui_language';
 import {isScanAccessDeferred} from '../services/scan_access';
 import { useAppQuitDialog } from './app_quit_dialog';
 import { useConfirmation } from './confirmation_dialog';
@@ -97,6 +98,8 @@ const ALL_10_CATEGORIES: CategoryDefinition[] = [
 ];
 
 export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) => {
+  const ct = useCleanText();
+
   const { confirm, dialog } = useConfirmation();
   const appQuit=useAppQuitDialog();
   const [activeTab, setActiveTab] = useState<'categories' | 'orphans'>('categories');
@@ -199,7 +202,7 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
     if (!data || isCleaning || (!global && !currentSummary)) return;
     const candidates = global ? data.categories.flatMap(c => c.items) : currentSummary!.items;
     const chosen = [...new Map(candidates.filter(i => i.is_cleanable !== false && selectedPaths.has(i.path)).map(i => [i.path, i])).values()];
-    const consequences = [...new Set(chosen.map(i => i.consequence_vi ?? 'Xem lại dữ liệu trước khi dọn.'))].join('\n• ');
+    const consequences = [...new Set(chosen.map(i => ct(i.consequence_vi ?? "Xem lại dữ liệu trước khi dọn.")))].join('\n• ');
     const targets: CleanPayload['targets'] = chosen
       .map((it) => ({
         path: it.path,
@@ -211,13 +214,9 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
     const prunes = targets.filter(item => item.deletion_method === 'pnpm_prune').length;
     if (
       !(await confirm(
-        `Dọn ${targets.length} mục? ${permanent} mục sẽ bị xóa vĩnh viễn; ${
-          targets.length - permanent - prunes
-        } mục chuyển vào Thùng rác. ${prunes ? `${prunes} thao tác do pnpm tự prune; dung lượng thu hồi chưa biết trước.` : ''}${
-          chosen.some(i => i.safety_level === 'user_data')
+        (ct("Dọn ") + (targets.length) + ct(" mục? ") + (permanent) + ct(" mục sẽ bị xóa vĩnh viễn; ") + (targets.length - permanent - prunes) + ct(" mục chuyển vào Thùng rác. ") + (prunes ? `${prunes}${ct(" thao tác do pnpm tự prune; dung lượng thu hồi chưa biết trước.")}` : '') + ct("") + (chosen.some(i => i.safety_level === 'user_data')
             ? ' Có dữ liệu cá nhân: kiểm tra trước khi dọn.'
-            : ''
-        }\n\nHậu quả:\n• ${consequences}`
+            : '') + ct("\n\nHậu quả:\n• ") + (consequences) + ct(""))
       ))
     )
       return;
@@ -234,18 +233,18 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
         if(choice==='cancel') return;
         if(choice==='skip') {
           cleanTargets=targets.filter(t=>chosen.some(i=>i.path===t.path && !i.requires_app_quit));
-          if(!cleanTargets.length){setLifecycleInfo('Đã bỏ qua các app đang mở; không dọn dữ liệu.');return;}
+          if(!cleanTargets.length){setLifecycleInfo(ct("Đã bỏ qua các app đang mở; không dọn dữ liệu."));return;}
         } else {
         lifecycle = await bridge.prepareCleanupApps(data.scan_id, targets);
-        if (lifecycle.status !== 'ready_for_rescan' && lifecycle.status !== 'not_needed') throw new Error('App chưa đóng (Save/Cancel/timeout). Không dọn các mục đã chọn.');
+        if (lifecycle.status !== 'ready_for_rescan' && lifecycle.status !== 'not_needed') throw new Error(ct("App chưa đóng (Save/Cancel/timeout). Không dọn các mục đã chọn."));
         scanRetention.invalidate();
         cleanScan = await bridge.runDetailedScan(undefined,undefined,false);
         setData(cleanScan);
         const fresh = cleanScan.categories.flatMap(c => c.items);
         cleanTargets = targets.filter(t => fresh.some(i => i.path === t.path && i.deletion_method === t.deletion_method && i.is_cleanable !== false && !i.requires_app_quit));
-        if (cleanTargets.length !== targets.length) throw new Error('Dữ liệu hoặc helper còn thay đổi sau khi đóng app. Không dọn; hãy quét và chọn lại.');
+        if (cleanTargets.length !== targets.length) throw new Error(ct("Dữ liệu hoặc helper còn thay đổi sau khi đóng app. Không dọn; hãy quét và chọn lại."));
         const total = fresh.filter(i => cleanTargets.some(t => t.path === i.path)).reduce((n,i) => n+i.size_bytes,0);
-        if (!(await confirm(`Sau khi đóng app và quét lại: ${cleanTargets.length} mục, ${formatBytes(total)} (ước tính). Dọn đúng các đường dẫn đã chọn?`))) return;
+        if (!(await confirm((ct("Sau khi đóng app và quét lại: ") + (cleanTargets.length) + ct(" mục, ") + (formatBytes(total)) + ct(" (ước tính). Dọn đúng các đường dẫn đã chọn?"))))) return;
         }
       }
       const result = await bridge.runClean({
@@ -257,10 +256,10 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
       setCleanedSuccess(result.failure_count === 0);
       if (result.failure_count)
         setError(
-          `Dọn được ${result.success_count} mục; ${result.failure_count} mục thất bại.\n${result.details
+          (ct("Dọn được ") + (result.success_count) + ct(" mục; ") + (result.failure_count) + ct(" mục thất bại.\n") + (result.details
             .filter((d) => d.status !== 'success')
             .map((d) => d.error_message)
-            .join('\n')}`
+            .join('\n')) + ct(""))
         );
       setTimeout(() => setCleanedSuccess(false), 2500);
     } catch (e) {
@@ -269,8 +268,8 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
       if (lifecycle?.operation_id) {
         try {
           const restored = await bridge.finishCleanupApps(lifecycle.operation_id);
-          setLifecycleInfo(restored.apps.map(a => `${a.bundle_id}: ${a.reopen_status === 'restore_requested_not_verified' ? 'đã yêu cầu Chrome phục hồi phiên; kiểm tra tab/profile' : a.reopened ? 'đã mở lại' : a.closed ? 'chưa mở lại; xem lịch sử thao tác' : 'giữ nguyên'}`).join(' · '));
-        } catch (e) { setLifecycleInfo(`Không mở lại được app: ${bridge.errorText(e)}. Mở lại từ lịch sử thao tác.`); }
+          setLifecycleInfo(restored.apps.map(a => `${a.bundle_id}: ${a.reopen_status === 'restore_requested_not_verified' ? ct("đã yêu cầu Chrome phục hồi phiên; kiểm tra tab/profile") : a.reopened ? ct("đã mở lại") : a.closed ? ct("chưa mở lại; xem lịch sử thao tác") : ct("giữ nguyên")}`).join(' · '));
+        } catch (e) { setLifecycleInfo((ct("Không mở lại được app: ") + (bridge.errorText(e)) + ct(". Mở lại từ lịch sử thao tác."))); }
       }
       scanRetention.invalidate();
       window.dispatchEvent(new Event("vxclean_operation_history_changed"));
@@ -317,7 +316,7 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
             }`}
           >
             <Trash2 className="w-3.5 h-3.5 text-cyan-500" />
-            <span>Danh mục Dọn dẹp</span>
+            <span>{ct("Danh mục Dọn dẹp")}</span>
           </button>
 
           <button
@@ -330,7 +329,7 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
             }`}
           >
             <FileQuestion className="w-3.5 h-3.5 text-amber-500" />
-            <span>Tệp Mồ côi (Tàn dư ứng dụng cũ)</span>
+            <span>{ct("Tệp Mồ côi (Tàn dư ứng dụng cũ)")}</span>
           </button>
         </div>
 
@@ -342,27 +341,27 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
             className="flex items-center gap-1 px-2.5 py-1 text-xs text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 rounded hover:bg-black/5 dark:hover:bg-white/5 transition-colors disabled:opacity-50 cursor-pointer"
           >
             <RotateCw className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin' : ''}`} />
-            <span>Quét lại</span>
+            <span>{ct("Quét lại")}</span>
           </button>
         )}
       </div>
 
       {activeTab === 'categories' && data && !isLoading && <div className="px-4 py-2 border-b border-slate-200 dark:border-white/5 flex items-center gap-3 text-xs">
-        <button disabled={isCleaning || eligibleItems.length === 0} onClick={toggleAll} className="px-3 py-1.5 border border-slate-300 dark:border-white/10 rounded-lg disabled:opacity-40">Chọn tất cả đủ điều kiện</button>
-        <button disabled={isCleaning || !eligibleItems.some(i => selectedPaths.has(i.path))} onClick={() => void handleCleanCurrent(true)} className="px-3 py-1.5 bg-cyan-500 text-slate-900 rounded-lg font-semibold disabled:opacity-40">Dọn lựa chọn toàn bộ nhóm</button>
-        <span className="text-slate-500">Mục được bảo vệ / chưa xác minh không được chọn.</span>
+        <button disabled={isCleaning || eligibleItems.length === 0} onClick={toggleAll} className="px-3 py-1.5 border border-slate-300 dark:border-white/10 rounded-lg disabled:opacity-40">{ct("Chọn tất cả đủ điều kiện")}</button>
+        <button disabled={isCleaning || !eligibleItems.some(i => selectedPaths.has(i.path))} onClick={() => void handleCleanCurrent(true)} className="px-3 py-1.5 bg-cyan-500 text-slate-900 rounded-lg font-semibold disabled:opacity-40">{ct("Dọn lựa chọn toàn bộ nhóm")}</button>
+        <span className="text-slate-500">{ct("Mục được bảo vệ / chưa xác minh không được chọn.")}</span>
       </div>}
-      {activeTab === 'categories' && !!data?.unsupported_cache_paths?.length && <div role="status" className="text-xs text-amber-500 p-3">Đã bỏ qua cache tùy chỉnh ngoài phạm vi an toàn: {data.unsupported_cache_paths.join(', ')}.</div>}
+      {activeTab === 'categories' && !!data?.unsupported_cache_paths?.length && <div role="status" className="text-xs text-amber-500 p-3">{ct("Đã bỏ qua cache tùy chỉnh ngoài phạm vi an toàn:")} {data.unsupported_cache_paths.join(', ')}.</div>}
       {activeTab === 'categories' && !isLoading && data && data.fda_limited_categories.length > 0 && (
         <div role="status" className="px-4 py-2 text-xs text-amber-700 dark:text-amber-400 bg-amber-500/10 flex items-center justify-between gap-3 shrink-0">
-          <span>Quét chưa đầy đủ do quyền truy cập: {data.fda_limited_categories.join(', ')}.</span>
+          <span>{ct("Quét chưa đầy đủ do quyền truy cập:")} {data.fda_limited_categories.join(', ')}.</span>
           <button type="button" className="whitespace-nowrap underline cursor-pointer" onClick={() => {
             void bridge.openFullDiskAccessSettings().catch((e) => setError(bridge.errorText(e)));
-          }}>Mở Cài đặt FDA</button>
+          }}>{ct("Mở Cài đặt FDA")}</button>
         </div>
       )}
 
-      {activeTab === 'categories' && !isLoading && !!data?.timed_out_categories?.length && <div role="status" className="px-4 py-2 text-xs text-amber-500 bg-amber-500/10">Quét chưa đầy đủ: {data.timed_out_categories.join(', ')} quá thời gian chờ truy cập thư mục. Kết quả các nhóm khác vẫn dùng được; quét lại sau khi kiểm tra quyền hoặc ổ lưu trữ.</div>}
+      {activeTab === 'categories' && !isLoading && !!data?.timed_out_categories?.length && <div role="status" className="px-4 py-2 text-xs text-amber-500 bg-amber-500/10">{ct("Quét chưa đầy đủ:")} {data.timed_out_categories.join(', ')} {ct("quá thời gian chờ truy cập thư mục. Kết quả các nhóm khác vẫn dùng được; quét lại sau khi kiểm tra quyền hoặc ổ lưu trữ.")}</div>}
       {/* Main Tab Content */}
       <RetainedScreen active={active && activeTab === 'orphans'} scope="orphans">
         <OrphansView />
@@ -375,16 +374,14 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
             </div>
           )}
           <RotateCw className="w-8 h-8 animate-spin text-cyan-500 mb-3" />
-          <span className="text-xs">Đang quét các danh mục chi tiết...</span>
+          <span className="text-xs">{ct("Đang quét các danh mục chi tiết...")}</span>
         </div>
       ) : (
         <div className="flex-1 flex overflow-hidden">
           {/* CỘT TRÁI: 10 DANH MỤC HỆ THỐNG */}
           <div className="w-72 border-r border-slate-200 dark:border-white/5 bg-slate-100/40 dark:bg-[#141821]/40 flex flex-col p-3 gap-1 shrink-0 overflow-y-auto">
             <div className="px-2 py-1 mb-1">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                Danh mục chi tiết
-              </h3>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400">{ct("Danh mục chi tiết")} </h3>
             </div>
             <div className="space-y-1">
               {data?.categories.slice().sort((a, b) => ALL_10_CATEGORIES.findIndex((d) => d.category === a.category) - ALL_10_CATEGORIES.findIndex((d) => d.category === b.category)).map((cat) => {
@@ -406,11 +403,11 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
                   >
                     <div className="flex items-center gap-2.5 truncate">
                       <Icon className="w-4 h-4 text-cyan-500 shrink-0" />
-                      <span className="text-xs truncate">{cat.title}</span>
+                      <span className="text-xs truncate">{ct(cat.title)}</span>
                     </div>
                     <div className="flex items-center gap-1.5 shrink-0">
                       {isArchive && (
-                        <span className="w-2 h-2 rounded-full bg-amber-500" title="Cần lưu ý" />
+                        <span className="w-2 h-2 rounded-full bg-amber-500" title={ct("Cần lưu ý")} />
                       )}
                       <span
                         className={`text-[11px] font-mono ${
@@ -433,22 +430,19 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
                 <div className="flex items-start justify-between pb-4 border-b border-slate-200 dark:border-white/5 shrink-0">
                   <div>
                     <div className="flex items-center gap-2">
-                      <h2 className="text-base font-semibold">{currentSummary.title}</h2>
+                      <h2 className="text-base font-semibold">{ct(currentSummary.title)}</h2>
                       <span className="text-xs font-mono px-2 py-0.5 rounded bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 font-bold">
                         {formatBytes(currentSummary.total_bytes)}
                       </span>
                       {currentSummary.items.length === 0 && (
-                        <span className="text-[10px] px-1.5 py-0.2 rounded bg-slate-500/10 text-slate-400 font-mono">
-                          Trống
-                        </span>
+                        <span className="text-[10px] px-1.5 py-0.2 rounded bg-slate-500/10 text-slate-400 font-mono">{ct("Trống")} </span>
                       )}
                     </div>
                     <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                      {currentSummary.description}
+                      {ct(currentSummary.description)}
                     </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                      Đã phát hiện: {formatBytes(currentSummary.total_bytes)} · Có thể chọn dọn: {formatBytes(currentSummary.items.filter(item => item.is_cleanable).reduce((sum, item) => sum + item.size_bytes, 0))}
-                      {currentSummary.items.some(i => i.deletion_method === 'pnpm_prune') && <span className="block mt-1">Store pnpm: {formatBytes(currentSummary.items.reduce((n,i) => n + (i.store_size_bytes ?? 0),0))} · Dung lượng thu hồi do pnpm quyết định sau prune.</span>}
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{ct("Đã phát hiện:")} {formatBytes(currentSummary.total_bytes)} {ct("· Có thể chọn dọn:")} {formatBytes(currentSummary.items.filter(item => item.is_cleanable).reduce((sum, item) => sum + item.size_bytes, 0))}
+                      {currentSummary.items.some(i => i.deletion_method === 'pnpm_prune') && <span className="block mt-1">Store pnpm: {formatBytes(currentSummary.items.reduce((n,i) => n + (i.store_size_bytes ?? 0),0))} {ct("· Dung lượng thu hồi do pnpm quyết định sau prune.")}</span>}
                     </p>
                   </div>
                   {currentSummary.items.length > 0 && (
@@ -457,9 +451,7 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
                         type="button"
                         onClick={toggleAllInCurrent}
                         className="px-2.5 py-1 text-xs rounded border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors cursor-pointer"
-                      >
-                        Đổi chọn
-                      </button>
+                      >{ct("Đổi chọn")} </button>
                       <button
                         type="button"
                         disabled={isCleaning || currentSummary.items.filter((it) => selectedPaths.has(it.path)).length === 0}
@@ -469,15 +461,15 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
                         {isCleaning ? (
                           <>
                             <RotateCw className="w-3.5 h-3.5 animate-spin" />
-                            <span>Đang dọn...</span>
+                            <span>{ct("Đang dọn...")}</span>
                           </>
                         ) : cleanedSuccess ? (
                           <>
                             <Check className="w-3.5 h-3.5 text-emerald-800" />
-                            <span>Đã dọn xong</span>
+                            <span>{ct("Đã dọn xong")}</span>
                           </>
                         ) : (
-                          <span>Dọn mục đã chọn</span>
+                          <span>{ct("Dọn mục đã chọn")}</span>
                         )}
                       </button>
                     </div>
@@ -491,12 +483,12 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
                       <Check className="w-6 h-6 text-emerald-400" />
                     </div>
                     <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1">
-                      {(data?.fda_limited_categories.includes(currentSummary.category) || data?.timed_out_categories?.includes(currentSummary.category)) ? 'Chưa thể quét đầy đủ danh mục này' : 'Không phát hiện mục cần dọn'}
+                      {(data?.fda_limited_categories.includes(currentSummary.category) || data?.timed_out_categories?.includes(currentSummary.category)) ? ct("Chưa thể quét đầy đủ danh mục này") : ct("Không phát hiện mục cần dọn")}
                     </h3>
                     <p className="text-xs text-slate-500 max-w-sm">
-                      {data?.timed_out_categories?.includes(currentSummary.category) ? 'Lượt duyệt thư mục quá thời gian chờ; không kết luận danh mục trống. Các nhóm khác vẫn có kết quả.' : data?.fda_limited_categories.includes(currentSummary.category)
-                        ? 'Cấp quyền truy cập trong Cài đặt hệ thống rồi quét lại để kiểm tra phần chưa đọc được.'
-                        : `Không có mục được scanner phát hiện trong ${currentSummary.title} ở lượt quét này.`}
+                      {data?.timed_out_categories?.includes(currentSummary.category) ? ct("Lượt duyệt thư mục quá thời gian chờ; không kết luận danh mục trống. Các nhóm khác vẫn có kết quả.") : data?.fda_limited_categories.includes(currentSummary.category)
+                        ? ct("Cấp quyền truy cập trong Cài đặt hệ thống rồi quét lại để kiểm tra phần chưa đọc được.")
+                        : (ct("Không có mục được scanner phát hiện trong ") + (currentSummary.title) + ct(" ở lượt quét này."))}
                     </p>
                   </div>
                 ) : (
@@ -521,9 +513,9 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
                               <p className="text-[11px] font-mono text-slate-400 truncate">
                                 {item.path}
                               </p>
-                              <p className="text-[11px] mt-1 text-slate-500 dark:text-slate-400 whitespace-normal">{item.consequence_vi ?? 'Chưa có mô tả rule.'}{item.requires_app_quit ? ' Cần đóng app trước dọn; VXClean sẽ mở lại sau thao tác.' : ''}</p>
-                              {item.blocked_reason && <p className="text-[11px] mt-1 text-amber-600 dark:text-amber-400 whitespace-normal">{item.blocked_reason}</p>}
-                              <span className="text-[10px] text-slate-500">{item.safety_level === 'rebuildable' ? 'Cache tái tạo được' : item.safety_level === 'user_data' ? 'Dữ liệu cá nhân' : item.safety_level === 'protected' ? 'Được bảo vệ' : 'Chưa xác minh'}</span>
+                              <p className="text-[11px] mt-1 text-slate-500 dark:text-slate-400 whitespace-normal">{ct(item.consequence_vi ?? "Chưa có mô tả rule.")}{item.requires_app_quit ? ct(" Cần đóng app trước dọn; VXClean sẽ mở lại sau thao tác.") : ''}</p>
+                              {item.blocked_reason && <p className="text-[11px] mt-1 text-amber-600 dark:text-amber-400 whitespace-normal">{ct(item.blocked_reason)}</p>}
+                              <span className="text-[10px] text-slate-500">{item.safety_level === 'rebuildable' ? ct("Cache tái tạo được") : item.safety_level === 'user_data' ? ct("Dữ liệu cá nhân") : item.safety_level === 'protected' ? ct("Được bảo vệ") : ct("Chưa xác minh")}</span>
                             </div>
                           </label>
                           <div className="flex items-center gap-3 shrink-0">
@@ -532,18 +524,18 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
                               <br />
                               <span className="text-[10px] font-normal text-slate-400">
                                 {item.is_cleanable === false
-                                  ? 'Không cho dọn'
-                                  : item.deletion_method === 'pnpm_prune' ? 'pnpm tự dọn · thu hồi chưa biết'
+                                  ? ct("Không cho dọn")
+                                  : item.deletion_method === 'pnpm_prune' ? ct("pnpm tự dọn · thu hồi chưa biết")
                                   : item.deletion_method === 'trash'
-                                  ? 'Thùng rác'
-                                  : 'Xóa vĩnh viễn'}
+                                  ? ct("Thùng rác")
+                                  : ct("Xóa vĩnh viễn")}
                               </span>
                             </span>
                             <button
                               type="button"
                               onClick={() => bridge.revealInFileManager(item.path)}
                               className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-white/10 text-slate-400 hover:text-slate-200 transition-colors cursor-pointer"
-                              title="Mở trong Finder"
+                              title={ct("Mở trong Finder")}
                             >
                               <ExternalLink className="w-3.5 h-3.5" />
                             </button>
@@ -556,27 +548,23 @@ export const CleanupView: React.FC<{ active?: boolean }> = ({ active = true }) =
 
                 {currentSummary.items.length > 0 && (
                   <div className="pt-3 border-t border-slate-200 dark:border-white/5 text-[11px] text-slate-400 flex justify-between items-center shrink-0">
-                    <span>
-                      Cơ chế xử lý:{' '}
+                    <span>{ct("Cơ chế xử lý:")}{' '}
                       <strong className="text-slate-300">
                         {currentSummary.category === 'trash_bin'
-                          ? 'Làm rỗng Thùng rác'
+                          ? ct("Làm rỗng Thùng rác")
                           : currentSummary.items.every((item) => item.deletion_method === 'trash')
-                          ? 'Chuyển vào Thùng rác'
-                          : 'Theo từng mục (xem xác nhận)'}
+                          ? ct("Chuyển vào Thùng rác")
+                          : ct("Theo từng mục (xem xác nhận)")}
                       </strong>
                     </span>
-                    <span>
-                      Đã chọn{' '}
+                    <span>{ct("Đã chọn")}{' '}
                       <strong className="font-mono text-cyan-500">
                         {
                           currentSummary.items.filter((it) => selectedPaths.has(it.path)).length
                         }{' '}
                         /{' '}
                         {currentSummary.items.length}
-                      </strong>{' '}
-                      tệp
-                    </span>
+                      </strong>{' '}{ct("tệp")} </span>
                   </div>
                 )}
               </>

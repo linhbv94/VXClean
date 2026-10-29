@@ -1,3 +1,4 @@
+import {useCleanText} from '../services/ui_language';
 import React from 'react';
 import { TabId, Capabilities } from '../types';
 import {
@@ -23,8 +24,7 @@ const NAV_ITEMS: { id: TabId; label: string; icon: React.ComponentType<{ classNa
   { id: 'cleanup', label: 'Dọn rác chi tiết', icon: Trash2 },
 ];
 
-export const Sidebar: React.FC<SidebarProps> = ({ currentTab, onSelectTab, capabilities }) => (
-  <aside className="w-56 border-r border-black/5 dark:border-white/5 bg-slate-100/40 dark:bg-[#141821]/40 flex flex-col justify-between p-2 select-none shrink-0">
+export const Sidebar: React.FC<SidebarProps> = ({ currentTab, onSelectTab, capabilities }) => { const ct = useCleanText(); return (<aside className="w-56 border-r border-black/5 dark:border-white/5 bg-slate-100/40 dark:bg-[#141821]/40 flex flex-col justify-between p-2 select-none shrink-0">
     <nav className="flex flex-col gap-1">
       {NAV_ITEMS.map(({ id, label, icon: Icon }) => {
         const isAvailable = id === 'dashboard' || capabilities?.platform === 'windows' || Boolean(capabilities?.features[id]);
@@ -42,11 +42,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentTab, onSelectTab, capab
             }`}
           >
             <Icon className="w-3.5 h-3.5 shrink-0" />
-            <span className="truncate">{label}</span>
+            <span className="truncate">{ct(label)}</span>
             {!isAvailable && (
-              <span className="ml-auto text-[9px] px-1 py-0.2 rounded bg-amber-500/15 text-amber-600 dark:text-amber-400 shrink-0">
-                Chưa bật
-              </span>
+              <span className="ml-auto text-[9px] px-1 py-0.2 rounded bg-amber-500/15 text-amber-600 dark:text-amber-400 shrink-0">{ct("Chưa bật")} </span>
             )}
           </button>
         );
@@ -55,5 +53,4 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentTab, onSelectTab, capab
     <div className="px-2 py-1 text-[10px] text-slate-400 font-mono truncate">
       {capabilities?.platform ?? 'macos'} • VXClean
     </div>
-  </aside>
-);
+  </aside>); };

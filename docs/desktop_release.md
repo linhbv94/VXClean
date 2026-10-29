@@ -32,3 +32,8 @@ Mac Silicon/Intel: engine thật Swift/Rust. Windowsx64: UI/updater-only, không
 Mac dùng certificate leaf fe024021592c718a39ad70b76d2edc5da0cd6b70, appID riêng. Updater key và OS signer là hai lớp khác nhau. Không cấp/reset FDA hoặc trust toàn máy trong QA. Muốn claim giữ FDA: từ bundle cũ→mới qua updater thật, kiểm installed bytes và probe quyền mới, không cấp lại trong lượt đó. Gói helper là sealed resource: kiểm expected architecture/SDK/test-hook absence và thử tamper trong bản sao khiến parent verification fail.
 
 Windows/Intel GUI và updater E2E cần bằng chứng riêng; không suy từ MacSilicon. Note phải ghi rõ Windows UI-only. Self-signed Mac chưa notarize và Windows chưa Authenticode có thể cần cho phép mở lần đầu; không hướng dẫn tắt bảo vệ toàn máy.
+
+
+### Local signing recovery (2026-10-29)
+
+Nếu codesign hỏi mật khẩu keychain cũ do duplicate identity, không yêu cầu user đoán mật khẩu. Dùng session ký tạm cùng certificate/key hiện có theo [runbook workspace](../../_summary/standard_docs/desktop_system_permissions.md). Giữ nguyên fingerprint/bundle ID, chạy build_signed_macos app-only và strict/DR gate. Session tạm phải cleanup, không đổi trust/TCC, không cần release.

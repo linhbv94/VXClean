@@ -1,0 +1,138 @@
+{
+  "local_version": "1.0.9",
+  "native_groups": 32,
+  "rust_tests": 26,
+  "wifi_log_absent_from_gui_quick_scan": true,
+  "result": {
+    "details": [
+      {
+        "affected_bytes": 54753,
+        "method_used": "admin_shell",
+        "path": "/var/log/powermanagement",
+        "status": "success"
+      },
+      {
+        "affected_bytes": 38934,
+        "method_used": "admin_shell",
+        "path": "/var/log/DiagnosticMessages",
+        "status": "success"
+      },
+      {
+        "affected_bytes": 1136,
+        "method_used": "admin_shell",
+        "path": "/var/log/fsck_hfs.log",
+        "status": "success"
+      },
+      {
+        "affected_bytes": 2802,
+        "method_used": "admin_shell",
+        "path": "/var/log/system.log",
+        "status": "success"
+      },
+      {
+        "affected_bytes": 24821,
+        "method_used": "remove_item",
+        "path": "/Users/vic/Library/Logs/CreativeCloud",
+        "status": "success"
+      },
+      {
+        "affected_bytes": 255086136,
+        "method_used": "remove_item",
+        "path": "/tmp/vxclean_swift_module_cache",
+        "status": "success"
+      },
+      {
+        "affected_bytes": 2604,
+        "method_used": "remove_item",
+        "path": "/tmp/vxclean_live_quick_remaining_rust.log",
+        "status": "success"
+      },
+      {
+        "affected_bytes": 3416,
+        "method_used": "remove_item",
+        "path": "/tmp/vxclean_live_quick_remaining_native.log",
+        "status": "success"
+      },
+      {
+        "affected_bytes": 3442,
+        "method_used": "remove_item",
+        "path": "/tmp/vxclean_codex_wifi_scope_native.log",
+        "status": "success"
+      },
+      {
+        "affected_bytes": 4044,
+        "method_used": "remove_item",
+        "path": "/tmp/vxclean_1_0_9_build.log",
+        "status": "success"
+      },
+      {
+        "affected_bytes": 2593,
+        "method_used": "remove_item",
+        "path": "/tmp/vxclean_codex_wifi_scope_rust.log",
+        "status": "success"
+      },
+      {
+        "affected_bytes": 6949,
+        "method_used": "remove_item",
+        "path": "/Users/vic/Library/Caches/GeoServices/networkDefaults.plist",
+        "status": "success"
+      },
+      {
+        "affected_bytes": 61028778,
+        "method_used": "remove_item",
+        "path": "/Users/vic/Library/Caches/Google/Chrome",
+        "status": "success"
+      },
+      {
+        "affected_bytes": 2459686,
+        "method_used": "remove_item",
+        "path": "/Users/vic/Library/Caches/Codex",
+        "status": "success"
+      },
+      {
+        "affected_bytes": 65506,
+        "method_used": "remove_item",
+        "path": "/Users/vic/Library/Caches/com.apple.CloudTelemetry",
+        "status": "success"
+      },
+      {
+        "affected_bytes": 901550,
+        "method_used": "remove_item",
+        "path": "/Users/vic/Library/Caches/com.apple.python",
+        "status": "success"
+      },
+      {
+        "affected_bytes": 15008,
+        "method_used": "remove_item",
+        "path": "/Users/vic/Library/Caches/com.apple.nsservicescache.plist",
+        "status": "success"
+      },
+      {
+        "affected_bytes": 173688,
+        "method_used": "remove_item",
+        "path": "/Users/vic/Library/Caches/com.apple.duetexpertd",
+        "status": "success"
+      }
+    ],
+    "duration_ms": 4349,
+    "failure_count": 0,
+    "operation_id": "3f166bef-1094-44ba-8e50-e244253f7478",
+    "operation_scope": "quick_cleanup",
+    "permanently_freed_bytes": 319875846,
+    "platform": "macos",
+    "policy_version": "1.0.0",
+    "protocol_version": "2.0",
+    "size_kind": "logical_estimate",
+    "success_count": 18,
+    "total_affected_bytes": 319875846,
+    "trashed_bytes": 0
+  },
+  "started_at": 1791731615.623808,
+  "finished_at": 1791731619.9754949,
+  "wifi_log_exists_after_clean": true,
+  "codex_post_clean": {
+    "files": 1,
+    "bytes": 2592,
+    "older_than_clean_start": 0
+  }
+}

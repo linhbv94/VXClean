@@ -61,7 +61,7 @@ Windows về sau: cùng UI/contract, adapter hệ thống riêng.
 ```
 
 - Stack frontend khớp dependency của VXMedia/VXPhotos: React 19.3, TypeScript 7.0, Vite 8.3, Tailwind 4.3, Tauri 2.12 và Lucide React.
-- Dùng theme navy/slate, accent cyan, mật độ desktop compact, font hệ thống, dark/light theo [master_theme.md](../../_summary/master_theme.md).
+- Dùng theme navy/slate, accent cyan, mật độ desktop compact, font hệ thống, dark/light theo [master_theme.md](../../_summary/standard_docs/master_theme.md).
 - Tạo React shell/sidebar/dashboard và trạng thái chức năng chưa chuyển.
 - Tạo Swift entry tại `desktop/native/main.swift`, **compile cùng `MClean/Services/SystemMonitor.swift` thật**, không viết lại thuật toán telemetry.
 - Rust có hai command: `get_capabilities` và `get_system_snapshot`. Snapshot chứa protocol_version `1.0`, platform, timestamp và CPU/RAM/disk/battery.
@@ -109,7 +109,7 @@ Trạng thái "Chưa chuyển" trong bản thử là thông tin tiến độ tri
 
 ## 6. File nên đọc khi tiếp quản
 
-1. Log này và [theme chung](../../_summary/master_theme.md).
+1. Log này và [theme chung](../../_summary/standard_docs/master_theme.md).
 2. [Kiểm chứng Tauri/GUI](tauri_bridge_verification.md), [đối soát hành vi xóa](safety_audit.md), [provenance](upstream_provenance.md).
 3. [App React](../desktop/src/app.tsx), [dashboard](../desktop/src/components/dashboard.tsx), [sidebar](../desktop/src/components/sidebar.tsx), [CSS](../desktop/src/index.css), [DTO](../desktop/src/types.ts), [frontend bridge](../desktop/src/services/tauri_bridge.ts).
 4. [Rust bridge](../desktop/src_tauri/src/engine_bridge.rs), [Swift entry](../desktop/native/main.swift), [SystemMonitor dùng chung](../MClean/Services/SystemMonitor.swift).

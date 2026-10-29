@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-10",
+  "real_user_data_deleted_in_this_turn": false,
+  "native_fixture_groups_passed": 22,
+  "rust_tests_passed": 20,
+  "foundation_fixture": {
+    "body_bytes": 500000,
+    "cold_read_before_bytes": 500000,
+    "cold_read_after_native_cleanup": "cache miss",
+    "regenerated_body_bytes": 500000,
+    "cache_db_wal_shm_byte_unchanged_during_cleanup": true,
+    "parent_state_and_wrong_type_preserved": true
+  },
+  "production_read_only_scan": {
+    "categories": [
+      {
+        "category": "system_junk",
+        "found_bytes": 1194298754,
+        "eligible_bytes": 0,
+        "eligible_count": 0
+      },
+      {
+        "category": "user_caches",
+        "found_bytes": 126124976,
+        "eligible_bytes": 14970397,
+        "eligible_count": 3
+      },
+      {
+        "category": "large_files",
+        "found_bytes": 700602492,
+        "eligible_bytes": 700602492,
+        "eligible_count": 5
+      }
+    ],
+    "full_caches_readable_bytes_sample": 1689702806,
+    "scope_excluded_root_samples": {
+      "Antigravity_and_ShipIt": 843953768,
+      "Adobe": 422015885,
+      "Google": 295556833
+    },
+    "historical_same_scope_afternoon_snapshot_available": false
+  },
+  "previous_authorized_chrome_cleanup": {
+    "partial_started_local": "2026-10-10 22:31:30 +07:00",
+    "partial_known_removed_bytes": 385094063,
+    "final_local_interval": "2026-10-10 22:49:54–22:53:36 +07:00",
+    "final_removed_bytes": 804438535,
+    "evidence": "chrome_cleanup_runtime_evidence.json"
+  },
+  "source_sha256": {
+    "desktop/native/cleanup_policy.swift": "eeef3734fec4ad7d594e4e5bdcb79662c1bf0a9179389f3914658f05a183202e",
+    "desktop/native/maintenance_cli.swift": "d5e379dbdd65d30cbee33b38d4d1a3c0b37500a76c21c104d86911860a6b3e0f",
+    "desktop/src/components/smart_scan_view.tsx": "268ad112962aa228282c3d38744638676744fcc5cb8ac3dfaf18450732b0f591",
+    "scripts/test_native_maintenance.py": "228137a46199a02a70768136a70dd46d507c51e005ce3c7065c70950ae5234c3",
+    "scripts/urlcache_fixture.swift": "8f1e959fc416a17647f55c588d849ba803157cb09c8e4c8033c5e4c9ee723d43"
+  },
+  "packaged_ui_verification": {
+    "quick_scan_completed": true,
+    "user_cache_found_display": "126.17 MB",
+    "eligible_cache_bytes": 14970397,
+    "group_toggle_off_on": true,
+    "individual_toggle_off_on": true,
+    "blocked_reason_and_consequence_visible": true,
+    "cleanup_button_enabled_for_eligible_selection": true,
+    "real_cleanup_executed": false,
+    "old_diagnostic_eligible_on_real_machine": 0
+  },
+  "universal_os_safety_certified": false,
+  "artifact_evidence": "local_artifact_evidence.json"
+}

@@ -1,8 +1,10 @@
+import {useCleanText} from '../services/ui_language';
 import React, { useState, useRef, useEffect } from 'react';
 import { Shield, Settings, Minus, Square, X } from 'lucide-react';
 import { minimizeWindow, toggleMaximizeWindow, closeWindow, setWindowDecorations } from '../services/tauri_bridge';
 
 interface TitleBarProps {
+  language?: 'vi' | 'en';
   isDark: boolean;
   onToggleTheme: () => void;
   isBrowserPreview: boolean;
@@ -11,12 +13,15 @@ interface TitleBarProps {
 }
 
 export const TitleBar: React.FC<TitleBarProps> = ({
+  language = 'vi',
   isDark,
   onToggleTheme,
   isBrowserPreview,
   onOpenSettings,
   onRefresh,
 }) => {
+  const ct = useCleanText();
+
   const isMac =
     typeof navigator !== 'undefined' &&
     (/Mac|iPod|iPhone|iPad/.test(navigator.platform) || /Macintosh/.test(navigator.userAgent));
@@ -42,43 +47,41 @@ export const TitleBar: React.FC<TitleBarProps> = ({
 
   const menus: Record<string, Array<{ label: string; shortcut?: string; action: () => void }>> = {
     Tệp: [
-      ...(onRefresh ? [{ label: 'Làm mới dữ liệu', shortcut: 'Cmd/Ctrl+R', action: onRefresh }] : []),
-      { label: 'Cài đặt...', shortcut: 'Cmd/Ctrl+,', action: onOpenSettings },
-      { label: 'Đóng cửa sổ', shortcut: 'Alt+F4', action: () => closeWindow() },
+      ...(onRefresh ? [{ label: ct("Làm mới dữ liệu"), shortcut: 'Cmd/Ctrl+R', action: onRefresh }] : []),
+      { label: ct("Cài đặt..."), shortcut: 'Cmd/Ctrl+,', action: onOpenSettings },
+      { label: ct("Đóng cửa sổ"), shortcut: 'Alt+F4', action: () => closeWindow() },
     ],
     Xem: [
-      { label: isDark ? 'Chuyển sang Giao diện Sáng' : 'Chuyển sang Giao diện Tối', action: onToggleTheme },
+      { label: isDark ? ct("Chuyển sang Giao diện Sáng") : ct("Chuyển sang Giao diện Tối"), action: onToggleTheme },
     ],
     'Trợ giúp': [
-      { label: 'Giới thiệu VXClean...', action: onOpenSettings },
+      { label: ct("Giới thiệu VXClean..."), action: onOpenSettings },
     ],
   };
 
   return (
     <header
+      data-vx-titlebar-profile={isMac ? "standard_32" : "windows_32"}
       data-tauri-drag-region
       style={{ WebkitAppRegion: 'drag' } as React.CSSProperties}
       className={`h-8 w-full ${
         isMac ? 'pl-[82px] pr-3' : 'pl-2 pr-2'
       } flex items-center justify-between border-b border-black/5 dark:border-white/5 select-none text-xs font-medium bg-slate-100/90 dark:bg-[#0f1117]/90 backdrop-blur-md z-40 shrink-0`}
     >
-      {/* Left: Brand (Mac) or Menu Bar (Windows) */}
+      {/* Left: Brand + Menus (Windows) */}
       <div className="flex items-center gap-2">
-        {/* macOS Brand: Icon + App Title (System font) */}
-        {isMac && (
-          <div className="flex items-center gap-1.5 shrink-0 cursor-default">
-            <Shield className="w-4 h-4 text-cyan-500 shrink-0" />
-            <span className="truncate text-slate-800 dark:text-slate-200 font-semibold text-xs leading-none">
-              VXClean
-            </span>
-          </div>
-        )}
+        <div className="flex items-center gap-1.5 shrink-0 cursor-default">
+          <Shield data-vx-titlebar-glyph className="w-4 h-4 text-cyan-500 shrink-0" />
+          <span data-vx-titlebar-name className="truncate text-slate-800 dark:text-slate-200 font-semibold text-xs leading-4">
+            VXClean
+          </span>
+        </div>
 
-        {/* Windows Menus (Icon & Title hidden per desktop UI standard) */}
+        {/* Windows Menus */}
         {!isMac && (
-          <div ref={menuRef} style={{ WebkitAppRegion: 'no-drag' } as React.CSSProperties} className="flex items-center gap-0.5 text-slate-700 dark:text-slate-300 shrink-0">
+          <div ref={menuRef} data-vx-windows-menu style={{ WebkitAppRegion: 'no-drag' } as React.CSSProperties} className="flex items-center gap-0.5 text-slate-700 dark:text-slate-300 shrink-0 ml-1">
             {Object.keys(menus).map((menuKey) => (
-              <div key={menuKey} className="relative">
+              <div key={ct(menuKey)} className="relative">
                 <button
                   type="button"
                   onClick={() => setActiveMenu(activeMenu === menuKey ? null : menuKey)}
@@ -89,7 +92,7 @@ export const TitleBar: React.FC<TitleBarProps> = ({
                     activeMenu === menuKey ? 'bg-black/10 dark:bg-white/15 text-cyan-700 dark:text-cyan-300 font-semibold' : ''
                   }`}
                 >
-                  {menuKey}
+                  {ct(menuKey)}
                 </button>
 
                 {activeMenu === menuKey && (
@@ -104,7 +107,7 @@ export const TitleBar: React.FC<TitleBarProps> = ({
                         }}
                         className="w-full text-left px-3 py-1.5 flex items-center justify-between text-xs hover:bg-cyan-50 dark:hover:bg-cyan-500/20 text-slate-800 dark:text-slate-200 hover:text-cyan-900 dark:hover:text-cyan-200 transition-colors"
                       >
-                        <span>{item.label}</span>
+                        <span>{ct(item.label)}</span>
                         {item.shortcut && (
                           <span className="text-[10px] text-slate-400 font-mono ml-3">{item.shortcut}</span>
                         )}
@@ -121,7 +124,7 @@ export const TitleBar: React.FC<TitleBarProps> = ({
       {/* Right Controls */}
       <div
         style={{ WebkitAppRegion: 'no-drag' } as React.CSSProperties}
-        className="flex items-center gap-1.5"
+        className="flex items-center gap-2"
       >
         {isBrowserPreview && (
           <span className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/20 mr-1">
@@ -134,10 +137,12 @@ export const TitleBar: React.FC<TitleBarProps> = ({
         <button
           type="button"
           onClick={onOpenSettings}
-          title="Cài đặt (Cmd+,)"
-          className="p-1 rounded-md text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-100 hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer leading-none"
+          data-vx-titlebar-settings
+          aria-label={language === "vi" ? ct("Cài đặt") : "Settings"}
+          title={language === "vi" ? ct("Cài đặt (Cmd+,)") : "Settings (Cmd+,)"}
+          className="w-7 h-7 inline-flex items-center justify-center rounded-md text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-100 hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer leading-none"
         >
-          <Settings className="w-3.5 h-3.5" />
+          <Settings className="w-4 h-4" />
         </button>
 
         {/* Windows style window controls (Hidden on macOS) */}

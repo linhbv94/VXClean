@@ -1,3 +1,4 @@
+import {useCleanText} from '../services/ui_language';
 import React from 'react';
 
 export interface PageHeaderProps {
@@ -19,6 +20,8 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
   actions,
   className = '',
 }) => {
+  const ct = useCleanText();
+
   return (
     <div
       className={`p-4 border-b border-slate-200/80 dark:border-slate-800/80 bg-slate-50/60 dark:bg-[#0f1117]/60 flex items-center justify-between shrink-0 select-none ${className}`}
@@ -31,11 +34,11 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
         </div>
         <div className="min-w-0">
           <h1 className="text-base font-semibold text-slate-900 dark:text-white tracking-wide truncate">
-            {title}
+            {ct(title)}
           </h1>
           {subtitle && (
             <p className="text-xs text-slate-500 dark:text-slate-400 truncate mt-0.5">
-              {subtitle}
+              {ct(subtitle)}
             </p>
           )}
         </div>

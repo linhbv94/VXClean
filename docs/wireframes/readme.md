@@ -2,7 +2,7 @@
 
 > **Mã tài liệu:** `docs/wireframes/readme.md`
 > **Phiên bản:** 1.0.0
-> **Hệ quy chiếu Thiết kế:** [Master Styleguide](../../_summary/master_theme.md) và [Báo cáo Đối soát An toàn](../safety_audit.md)
+> **Hệ quy chiếu Thiết kế:** [Master Styleguide](../../../_summary/standard_docs/master_theme.md) và [Báo cáo Đối soát An toàn](../safety_audit.md)
 > **Tài liệu Đặc tả Giao diện Toàn diện:** Xem chi tiết tại [03_ui_wireframe.md](../spec/03_ui_wireframe.md)
 
 ---

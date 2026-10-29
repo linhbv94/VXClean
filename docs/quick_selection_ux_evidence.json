@@ -1,0 +1,22 @@
+{
+  "version": "1.0.10",
+  "platform": "macos_arm64",
+  "released": false,
+  "frontend_build": "passed",
+  "native_app_build": "passed",
+  "codesign": "deep strict passed",
+  "updater_signature_and_tamper": "passed",
+  "history_notice_scenarios": 8,
+  "native_ui_checks": [
+    "cold launch final package: no interrupted history banner",
+    "click category title: deselect whole group",
+    "click size: select whole group",
+    "click empty card background: deselect whole group",
+    "click empty right side of summary row: collapse only, selection unchanged",
+    "individual checkbox: only one item changes, category indeterminate",
+    "group checkbox from partial: selects all once",
+    "Space on focused card: toggles whole group"
+  ],
+  "runtime_mutations": "none; only scan and selection UX tested",
+  "initial_qa_issue": "old ChatGPT reopen_pending still showed banner; corrected final filter to latest operation, retained journals and updater guards"
+}

@@ -1,0 +1,66 @@
+{
+  "audit_date": "2026-10-10",
+  "platform": "macos",
+  "os_version": "26.7",
+  "architecture": "arm64",
+  "head": "59b2aee83fa41783afe3a921f63025b3c1f6816d",
+  "scope": "local_working_tree_not_installed_binary",
+  "source_sha256": {
+    "desktop/native/maintenance_cli.swift": "587750dca625c71bc301d9f9a676023e7d1d8600b46276abfd3e02b2c347323e",
+    "desktop/native/compact_lens_scanner.swift": "acbb8b0adef773e6164e1eca13bb2369a980a88f27fcb621144812c03594aebe",
+    "desktop/src_tauri/src/maintenance_bridge.rs": "494d52f7cddb2bf20f7177c943130e477bfb7594110f8e036d3bef9372d0ffc7",
+    "desktop/src_tauri/src/lib.rs": "332b833233616ba2cd6540aa5a62678308aa4a2ed13c55e7bd364d100f4ba059",
+    "desktop/src_tauri/src/engine_bridge.rs": "34d7452bb818b00c71fceda25616d644f74d3966f0a914d795d1100e06d7f28b",
+    "desktop/src/components/cleanup_view.tsx": "e139c0f3ecd212761153d64ef26ced773f5bc05b1632cdb50dfecbb0fe1b5b9e",
+    "desktop/src/components/uninstaller_view.tsx": "698de6953ec4104e5107b549318d678b715791988e1638b23befafb0e944e760",
+    "desktop/src/components/orphans_view.tsx": "2844e090e414f9e7c6b40874c78b5a9ef362640d7b05107aefdaaf9d8da430b8",
+    "desktop/src/services/uninstall_selection.ts": "cf38b0a1fb9188e529d506307f38a37f70ab78d7fed8be4cbf2811ce6e35500f",
+    "MClean/Services/ScanEngine.swift": "e3d90c71f3ae76f473c8df071b1f2be089ee26d61582e808c7b62fb5c79637b7",
+    "docs/cleanup_dictionary.json": "91c0a5296ebd17b5e9a1066de966d8d44506715b992f39f059ddce2588a5a72d",
+    "docs/spec/13_engine_behavior_truth.md": "29d3b1e488f008eff7fb0498717c8e7e9b558929146ca47d55775784a8ad4650"
+  },
+  "fixture_probes": {
+    "orphan_host_shaped_payload": {
+      "exit_code": 0,
+      "success_count": 0,
+      "failure_count": 1,
+      "reason": "Thiếu định danh tệp từ host",
+      "source_preserved": true
+    },
+    "orphan_control_with_identities": {
+      "success_count": 1,
+      "source_removed": true
+    },
+    "generic_cache_parent_new_child": {
+      "default_selected": true,
+      "success_count": 1,
+      "new_hidden_child_removed": true
+    },
+    "npm_parent_includes_npx": {
+      "default_selected": true,
+      "success_count": 1,
+      "npx_runtime_marker_removed": true,
+      "duplicate_scan_rows": 2
+    },
+    "uninstall_retry_after_bundle_removed": {
+      "exit_code": 1,
+      "error": "Ứng dụng được bảo vệ hoặc không hợp lệ",
+      "residual_preserved": true,
+      "simulation": "bundle removed in fixture to model successful first-pass bundle Trash; no admin AppleEvent invoked"
+    }
+  },
+  "regression_results": {
+    "native_groups": 11,
+    "native_trash_success_verified_this_run": false,
+    "native_trash_failure_preserved_source": true,
+    "rust_lib_tests": 6,
+    "retention_groups": 10,
+    "uninstall_selection_cases": 5,
+    "circle_geometry_cases": 18,
+    "typescript_no_emit": "passed"
+  },
+  "binary_hash_comparison": {
+    "desktop/native/vxclean_engine": "14783d9fe3db9bd4db62164d6597202d22a875ce8399561858b17c7b9bf0b18f",
+    "desktop/src_tauri/target/debug/bundle/macos/VXClean.app/Contents/Resources/vxclean_engine": "44ed660ada6e180ec443d2b4203a767bffefb70fb7fd1f5be7f2c9e3bc51a5aa"
+  }
+}

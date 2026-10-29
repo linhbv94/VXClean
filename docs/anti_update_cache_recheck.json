@@ -1,0 +1,88 @@
+{
+  "updated_at": "2026-10-11",
+  "read_only": true,
+  "user_data_deleted": false,
+  "items": [
+    {
+      "app_bundle_ids": [],
+      "blocked_reason": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn.",
+      "can_delete": false,
+      "category": "user_caches",
+      "conditions": [],
+      "consequence_vi": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn.",
+      "deletion_method": "remove_item",
+      "effective_safety": "protected",
+      "id": "/Users/vic/Library/Caches/com.google.antigravity",
+      "is_cleanable": false,
+      "is_selected_by_default": false,
+      "name": "com.google.antigravity",
+      "operation_scope": "quick_cleanup",
+      "path": "/Users/vic/Library/Caches/com.google.antigravity",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "updater_state",
+      "safety_level": "protected",
+      "size_bytes": 363255137,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/Library/Caches/com.google.antigravity"
+    },
+    {
+      "app_bundle_ids": [],
+      "blocked_reason": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn.",
+      "can_delete": false,
+      "category": "user_caches",
+      "conditions": [],
+      "consequence_vi": "Gói cập nhật/pending/ShipIt đang thuộc cơ chế cập nhật ứng dụng; không tính là cache frontend để dọn.",
+      "deletion_method": "remove_item",
+      "effective_safety": "protected",
+      "id": "/Users/vic/Library/Caches/com.google.antigravity.ShipIt",
+      "is_cleanable": false,
+      "is_selected_by_default": false,
+      "name": "com.google.antigravity.ShipIt",
+      "operation_scope": "quick_cleanup",
+      "path": "/Users/vic/Library/Caches/com.google.antigravity.ShipIt",
+      "requires_admin": false,
+      "requires_app_quit": false,
+      "rule_id": "updater_state",
+      "safety_level": "protected",
+      "size_bytes": 15927,
+      "size_kind": "logical_estimate",
+      "target_id": "/Users/vic/Library/Caches/com.google.antigravity.ShipIt"
+    }
+  ],
+  "total_remaining_bytes": 363271064,
+  "previous_antigravity_bytes": 363255137,
+  "previous_shipit_bytes": 480701475,
+  "shipit_update_directory_now_absent": true,
+  "after_restart": {
+    "items": [
+      {
+        "path": "/Users/vic/Library/Caches/com.google.antigravity",
+        "size_bytes": 363255137,
+        "rule_id": "updater_state"
+      },
+      {
+        "path": "/Users/vic/Library/Caches/com.google.antigravity-ide",
+        "size_bytes": 81920,
+        "rule_id": "updater_state"
+      },
+      {
+        "path": "/Users/vic/Library/Caches/com.google.antigravity.ShipIt",
+        "size_bytes": 15927,
+        "rule_id": "updater_state"
+      }
+    ],
+    "archive_paths": [
+      "update.zip",
+      "pending/Antigravity.zip"
+    ],
+    "each_archive_bytes": 181627488,
+    "both_archive_sha256": "079ba05eb9768f13461fb39411dc7b6ebb2ac16abc905820273394ce86f61340",
+    "archive_bundle_id": "com.google.antigravity",
+    "archive_version": "2.22.0",
+    "installed_antigravity_version": "2.22.0",
+    "installed_antigravity_ide_version": "2.5.5",
+    "inference": "Duplicate installer archives for installed version; not proof updater is inactive. Separate app and IDE bundle IDs.",
+    "pnpm_legacy_cache_exists": false
+  }
+}
