@@ -61,3 +61,4 @@ desktop/native/vxclean_engine
 
 # Local updater signing material
 .release_keys/
+docs
